@@ -1,7 +1,9 @@
 // pages/api/trustpilot-scrape.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
-import cheerio from "cheerio";
+// import cheerio from "cheerio";
+import * as cheerio from "cheerio";
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
       const url = "https://www.trustpilot.com/review/majority.com";

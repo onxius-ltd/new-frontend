@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+// import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar"; // 👈 import your component
 import Preloader from "@/components/Preloader"; // 👈 import your component
@@ -7,20 +7,23 @@ import Footer from "@/components/Footer";
 import Copyright from "@/components/Copyright";
 import BackToTop from "@/components/BackToTop";
 import Script from "next/script";
-import TrustPilotReviews from "@/components/TrustPilotReviews";
-import HomeHeader from "@/components/HomeHeader";
-import Header from "@/components/Header";
+// import TrustPilotReviews from "@/components/TrustPilotReviews";
+// import HomeHeader from "@/components/HomeHeader";
+// import Header from "@/components/Header";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-});
+
+
+// const plusJakartaSans = Plus_Jakarta_Sans({
+//   variable: "--font-plus-jakarta-sans",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Onxius | Innovative IT Solutions, Web Development & Digital Transformation",
@@ -104,11 +107,11 @@ export default function RootLayout({
       <body
       >
         {
-          <>
+          <div>
             <Preloader />
             <Navbar />
             {children}
-            <TrustPilotReviews />
+            {/* <TrustPilotReviews /> */}
             <Footer />
             <Copyright />
             <BackToTop />
@@ -145,7 +148,13 @@ export default function RootLayout({
 
             {/* Your custom template script */}
             <Script src="/assets/js/main.js" strategy="afterInteractive" />
-          </>
+
+            {/* bootstrap js */}
+            <Script
+              src="bootstrap/dist/js/bootstrap.bundle.min.js"
+              strategy="afterInteractive"
+            />
+          </div>
         }
       </body>
     </html>
