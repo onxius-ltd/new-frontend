@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import HomeHeader from "./HomeHeader";
@@ -13,7 +13,6 @@ import Header from "./Header";
 export default function Navbar() {
       const pathname = usePathname();
       const [isOpen, setIsOpen] = useState(false);
-
 
       return (
             <>
