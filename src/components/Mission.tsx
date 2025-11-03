@@ -1,17 +1,12 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
 export default function OurMission() {
 
       return (
-            <>
-
+            <div>
                   {/* <!-- Our Mission Start --> */}
                   <div className="container-fluid py-2 sm:py-3 lg:py-5" style={{ marginTop: "6rem" }}>
                         <div className="container">
@@ -32,12 +27,12 @@ export default function OurMission() {
                                                 <br />
                                                 We envision a world where innovation bridges every gap and helps businesses reach new heights. Our vision is to lead this change — guiding brands toward digital excellence and sustainable success in an ever-evolving marketplace.
                                           </p>
-                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let's Talk &#x2799;</Link>
+                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link>
                                     </div>
                               </div>
                         </div>
                   </div>
                   {/* <!-- Our Mission End --> */}
-            </>
+            </div>
       );
 }

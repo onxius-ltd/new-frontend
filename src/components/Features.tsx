@@ -1,10 +1,6 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
 
-import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AboutFearute from "./AboutFeature";
 
 const features = [
@@ -34,11 +30,9 @@ const features = [
       }
 ];
 
-
-
 export default function Fearutes() {
       return (
-            <>
+            <div>
                   {/* Feature Start */}
                   <div className="container-fluid feature overflow-hidden py-5">
                         <div className="container py-5">
@@ -61,11 +55,12 @@ export default function Fearutes() {
                               <div className="row g-4 justify-content-center text-center mb-5">
                                     {features?.length > 0 &&
                                           features.map((item, index) => {
-                                                let timing = index / 10;
+                                                const timing = index / 10;
                                                 return (
                                                       <div
                                                             className="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-                                                            data-wow-delay="0.1s"
+                                                            data-wow-delay={`${timing}s`}
+                                                            key={`${index}`}
                                                       >
                                                             <div className="text-center p-4">
                                                                   <div className="d-inline-block rounded bg-light p-4 mb-4">
@@ -157,6 +152,6 @@ export default function Fearutes() {
                         </div>
                   </div>
                   {/* Feature End */}
-            </>
+            </div>
       );
 }

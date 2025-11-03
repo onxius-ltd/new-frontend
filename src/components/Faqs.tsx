@@ -1,10 +1,5 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-
-import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const faqs = [
       {
@@ -38,49 +33,48 @@ const faqs = [
 export default function Faqs() {
 
       return (
-            <>
-                  <>
-                        {/* FAQ Start */}
-                        <div className="container-fluid FAQ bg-light overflow-hidden py-5">
-                              <div className="container py-5">
-                                    <div className="row g-5 align-items-center">
-                                          {/* left side faqs */}
-                                          <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+            <div>
+                  {/* FAQ Start */}
+                  <div className="container-fluid FAQ bg-light overflow-hidden py-5">
+                        <div className="container py-5">
+                              <div className="row g-5 align-items-center">
+                                    {/* left side faqs */}
+                                    <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                                          <div className="accordion" id="accordionExample">
                                                 <div className="accordion" id="accordionExample">
-                                                      <div className="accordion" id="accordionExample">
-                                                            {faqs?.length > 0 && faqs.map((item, index) => {
-                                                                  const isFirst = index === 0; // only first open
+                                                      {faqs?.length > 0 && faqs.map((item, index) => {
+                                                            const isFirst = index === 0; // only first open
 
-                                                                  return (
-                                                                        <div className="accordion-item border-0 mb-4" key={index}>
-                                                                              <h2 className="accordion-header" id={`heading-${index}`}>
-                                                                                    <button
-                                                                                          className={`accordion-button rounded-top ${!isFirst ? 'collapsed' : ''}`}
-                                                                                          type="button"
-                                                                                          data-bs-toggle="collapse"
-                                                                                          data-bs-target={`#collapse-${index}`}
-                                                                                          aria-expanded={isFirst ? 'true' : 'false'}
-                                                                                          aria-controls={`collapse-${index}`}
-                                                                                    >
-                                                                                          {item.title}
-                                                                                    </button>
-                                                                              </h2>
-
-                                                                              <div
-                                                                                    id={`collapse-${index}`}
-                                                                                    className={`accordion-collapse collapse ${isFirst ? 'show' : ''}`}
-                                                                                    aria-labelledby={`heading-${index}`}
-                                                                                    data-bs-parent="#accordionExample"
+                                                            return (
+                                                                  <div className="accordion-item border-0 mb-4" key={index}>
+                                                                        <h2 className="accordion-header" id={`heading-${index}`}>
+                                                                              <button
+                                                                                    className={`accordion-button rounded-top ${!isFirst ? 'collapsed' : ''}`}
+                                                                                    type="button"
+                                                                                    data-bs-toggle="collapse"
+                                                                                    data-bs-target={`#collapse-${index}`}
+                                                                                    aria-expanded={isFirst ? 'true' : 'false'}
+                                                                                    aria-controls={`collapse-${index}`}
                                                                               >
-                                                                                    <div className="accordion-body my-2">
-                                                                                          <p>{item.description}</p>
-                                                                                    </div>
+                                                                                    {item.title}
+                                                                              </button>
+                                                                        </h2>
+
+                                                                        <div
+                                                                              id={`collapse-${index}`}
+                                                                              className={`accordion-collapse collapse ${isFirst ? 'show' : ''}`}
+                                                                              aria-labelledby={`heading-${index}`}
+                                                                              data-bs-parent="#accordionExample"
+                                                                        >
+                                                                              <div className="accordion-body my-2">
+                                                                                    <p>{item.description}</p>
                                                                               </div>
                                                                         </div>
-                                                                  );
-                                                            })}
-                                                      </div>
-                                                      {/* <div className="accordion-item border-0 mb-4">
+                                                                  </div>
+                                                            );
+                                                      })}
+                                                </div>
+                                                {/* <div className="accordion-item border-0 mb-4">
                                                             <h2 className="accordion-header" id="headingOne">
                                                                   <button
                                                                         className="accordion-button rounded-top"
@@ -188,21 +182,19 @@ export default function Faqs() {
                                                                   </div>
                                                             </div>
                                                       </div> */}
-                                                </div>
                                           </div>
-                                          {/* right side image */}
-                                          <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                                                <div className="FAQ-img RotateMoveRight rounded">
+                                    </div>
+                                    {/* right side image */}
+                                    <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                                          <div className="FAQ-img RotateMoveRight rounded">
 
-                                                      <Image src="/assets/images/faqs-onxius.png" className="img-fluid w-100 h-100" alt="ONXIUS FAQs" width={500} height={500} />
-                                                </div>
+                                                <Image src="/assets/images/faqs-onxius.png" className="img-fluid w-100 h-100" alt="ONXIUS FAQs" width={500} height={500} />
                                           </div>
                                     </div>
                               </div>
                         </div>
-                        {/* FAQ End */}
-                  </>
-
-            </>
+                  </div>
+                  {/* FAQ End */}
+            </div>
       );
 }

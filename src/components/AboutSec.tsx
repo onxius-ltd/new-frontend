@@ -1,15 +1,12 @@
-"use client"; 
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
 export default function AboutSec() {
 
       return (
-            <>
+            <div>
                   {/* <!-- About Start --> */}
                   <div className="container-fluid py-2 sm:py-3 lg:py-5" style={{ marginTop: "6rem" }}>
                         <div className="container">
@@ -28,12 +25,12 @@ export default function AboutSec() {
                                                 scalable, and user-friendly solutions that help businesses grow and succeed in
                                                 today’s fast-paced world.
                                           </p>
-                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let's Talk &#x2799;</Link>
+                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link>
                                     </div>
                               </div>
                         </div>
                   </div>
                   {/* <!-- About End --> */}
-            </>
+            </div>
       );
 }

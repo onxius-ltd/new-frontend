@@ -1,16 +1,12 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
 export default function Footer() {
 
       return (
-            <>
+            <div>
                   {/* Footer Start */}
                   <div className="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
                         <div className="container py-5">
@@ -108,7 +104,6 @@ export default function Footer() {
                         </div>
                   </div>
                   {/* Footer End */}
-            </>
-
+            </div>
       );
 }

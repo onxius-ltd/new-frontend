@@ -1,10 +1,7 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { useState } from "react";
 import HomeHeader from "./HomeHeader";
 import { usePathname } from "next/navigation";
 import Header from "./Header";
@@ -15,7 +12,7 @@ export default function Navbar() {
       const [isOpen, setIsOpen] = useState(false);
 
       return (
-            <>
+            <div>
                   {/* Navbar & Hero Start */}
                   <div className="container-fluid header position-relative overflow-hidden p-0">
                         {/* navbar */}
@@ -49,54 +46,15 @@ export default function Navbar() {
                                           <Link href="/about" className="nav-item nav-link">
                                                 About
                                           </Link>
-                                          {/* <div className="nav-item dropdown">
-                                                <Link
-                                                      href="#"
-                                                      className="nav-link dropdown-toggle"
-                                                      data-bs-toggle="dropdown"
-                                                >
-                                                      Pages
-                                                </Link>
-                                                <div className="dropdown-menu m-0">
-                                                      <Link href="/feature" className="dropdown-item">
-                                                            Features
-                                                      </Link>
-                                                      <Link href="/pricing" className="dropdown-item">
-                                                            Pricing
-                                                      </Link>
-                                                      <Link href="/blog" className="dropdown-item">
-                                                            Blog
-                                                      </Link>
-                                                      <Link href="/testimonial" className="dropdown-item">
-                                                            Testimonial
-                                                      </Link>
-                                                      <Link href="/404" className="dropdown-item">
-                                                            404 Page
-                                                      </Link>
-                                                </div>
-                                          </div> */}
                                           <Link href="/contact" className="nav-item nav-link">
                                                 Contact Us
                                           </Link>
                                     </div>
-                                    {/* <Link
-                                          href="#"
-                                          className="btn butn-custom-outline border border-primary rounded-pill text-primary py-2 px-4 me-4"
-                                    >
-                                          Log In
-                                    </Link>
-                                    <Link
-                                          href="#"
-                                          className="btn butn-custom rounded-pill py-2 px-4"
-                                    >
-                                          Sign Up
-                                    </Link> */}
-
                                     <Link
                                           href="/contact"
                                           className="btn butn-custom rounded-pill py-2 px-4"
                                     >
-                                          Let's Talk &#x2799;
+                                          Let&apos;s Talk &#x2799;
                                     </Link>
                               </div>
                         </nav>
@@ -105,6 +63,6 @@ export default function Navbar() {
                         {/* Hero Header End */}
                   </div>
                   {/* Navbar & Hero End */}
-            </>
+            </div>
       );
 }
