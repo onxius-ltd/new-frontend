@@ -1,9 +1,9 @@
 "use client"; // if using Next.js 13+ app directory
 
-import Slider from "react-slick";
-import Image from "next/image";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import Image from "next/image";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 type Testimonial = {
       name: string;
@@ -39,26 +39,26 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function TestimonialsCarousel() {
-      const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            customPaging: (i: number) => (
-                  <Image
-                        src={testimonials[i].image}
-                        width={50}
-                        height={50}
-                        className="rounded-full border-2 border-primary"
-                        alt={testimonials[i].name}
-                  />
-            ),
-      };
+      // const settings = {
+      //       dots: true,
+      //       infinite: true,
+      //       speed: 500,
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1,
+      //       customPaging: (i: number) => (
+      //             <Image
+      //                   src={testimonials[i].image}
+      //                   width={50}
+      //                   height={50}
+      //                   className="rounded-full border-2 border-primary"
+      //                   alt={testimonials[i].name}
+      //             />
+      //       ),
+      // };
 
       return (
             <div className="testimonial-carousel lg:w-2/3 m-auto">
-                  <Slider {...settings}>
+                  {/* <Slider {...settings}>
                         {testimonials.map((t, index) => (
                               <div key={index} className="testimonial-item p-5 text-center ">
                                     <div className=" ">
@@ -80,7 +80,7 @@ export default function TestimonialsCarousel() {
                                     </div>
                               </div>
                         ))}
-                  </Slider>
+                  </Slider> */}
             </div>
       );
 }

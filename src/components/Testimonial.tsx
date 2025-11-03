@@ -1,34 +1,30 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { useEffect } from "react";
-import TestimonialsCarousel from "./TestimonialsCarousel";
-
-
+// import { useEffect } from "react";
+// import TestimonialsCarousel from "./TestimonialsCarousel";
 
 
 export default function Testimonial() {
 
-      useEffect(() => {
-            if (typeof window !== "undefined" && (window as any).jQuery) {
-                  const $ = (window as any).jQuery;
-                  if ($.fn.owlCarousel) {
-                        $(".testimonial-carousel").owlCarousel({
-                              items: 1,
-                              loop: true,
-                              autoplay: true,
-                              autoplayTimeout: 4000,
-                              autoplayHoverPause: true,
-                              dots: true,
-                              nav: false,
-                              smartSpeed: 1000,
-                        });
-                  }
-            }
-      }, []);
+      // useEffect(() => {
+      //       if (typeof window !== "undefined" && (window as any).jQuery) {
+      //             const $ = (window as any).jQuery;
+      //             if ($.fn.owlCarousel) {
+      //                   $(".testimonial-carousel").owlCarousel({
+      //                         items: 1,
+      //                         loop: true,
+      //                         autoplay: true,
+      //                         autoplayTimeout: 4000,
+      //                         autoplayHoverPause: true,
+      //                         dots: true,
+      //                         nav: false,
+      //                         smartSpeed: 1000,
+      //                   });
+      //             }
+      //       }
+      // }, []);
 
       return (
-            <>
+            <div>
                   {/* Testimonial Start */}
                   <div className="container-fluid testimonial py-5 bg-white">
                         <div className="container py-5">
@@ -49,10 +45,10 @@ export default function Testimonial() {
                                     </p>
                               </div>
                               {/* testimonial carousel */}
-                              <TestimonialsCarousel />
+                              {/* <TestimonialsCarousel /> */}
                         </div>
                   </div>
                   {/* Testimonial End */}
-            </>
+            </div>
       );
 }

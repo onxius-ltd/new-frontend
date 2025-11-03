@@ -1,15 +1,10 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
 
 export default function AboutFearute() {
       return (
-            <>
+            <div>
                   {/* feature projects */}
                   <div className="row g-5 pt-5" style={{ marginTop: "6rem" }}>
                         <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
@@ -49,10 +44,10 @@ export default function AboutFearute() {
                                     </div>
                               </div>
                               <div className="py-8">
-                                    <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let's Talk &#x2799;</Link>
+                                    <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link>
                               </div>
                         </div>
                   </div>
-            </>
+            </div>
       );
 }

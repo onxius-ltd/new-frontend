@@ -1,16 +1,11 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
-
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 
 export default function Copyright() {
 
       return (
-            <>
+            <div>
                   {/* Copyright Start */}
                   <div className="container-fluid copyright py-4">
                         <div className="container">
@@ -37,6 +32,6 @@ export default function Copyright() {
                         </div>
                   </div>
                   {/* Copyright End */}
-            </>
+            </div>
       );
 }

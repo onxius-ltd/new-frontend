@@ -1,8 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 interface FormData {
       name: string;
@@ -79,7 +76,8 @@ const ContactForm: React.FC = () => {
                                           <input
                                                 type={field.type}
                                                 name={field.name}
-                                                value={(formData as any)[field.name]}
+                                                // value={(formData as any)[field.name]}
+                                                value={formData[field.name as keyof FormData]}
                                                 onChange={handleChange}
                                                 className="form-control"
                                                 id={field.name}
