@@ -26,9 +26,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // });
 
 export const metadata: Metadata = {
-  title: "Onxius | Innovative IT Solutions, Web Development & Digital Transformation",
+  title: "Onxius | Built for What’s Next",
   description:
     "Onxius is a modern IT solutions company delivering web development, software engineering, cloud services, and digital transformation for businesses worldwide. We create innovative, scalable, and secure technology solutions to help companies grow.",
+  other: {
+    "google-site-verification": "0dbfd026c1473dd0",
+  },
   keywords: [
     "Onxius",
     "IT solutions",

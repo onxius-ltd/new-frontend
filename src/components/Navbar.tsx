@@ -10,13 +10,35 @@ import Header from "./Header";
 export default function Navbar() {
       const pathname = usePathname();
       const [isOpen, setIsOpen] = useState(false);
+      const menus = [
+            {
+                  label: "Home",
+                  href: "/"
+            },
+            {
+                  label: "Services",
+                  href: "/services"
+            },
+            {
+                  label: "Portfolio",
+                  href: "/portfolio"
+            },
+            {
+                  label: "About",
+                  href: "/about"
+            },
+            {
+                  label: "Contact Us",
+                  href: "/contact"
+            }
+      ]
 
       return (
             <div>
                   {/* Navbar & Hero Start */}
                   <div className="container-fluid header position-relative overflow-hidden p-0">
                         {/* navbar */}
-                        <nav className="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0 d-flex justify-content-between align-items-cetner gap-2">
+                        <nav className="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0 d-flex justify-content-between align-items-cetner gap-2 w-full">
                               {/* nav logo */}
                               <Link href="/" className="navbar-brand p-0">
                                     <Image src="/assets/logo/new-onxius-logo-without-bg.png" className="img-fluid w-100 h-100" alt="ONXIUS Logo" width={240} height={85} />
@@ -34,21 +56,13 @@ export default function Navbar() {
                               {/* menus */}
                               <div className={`navbar ${isOpen ? "show" : ""}`} id="navbarCollapse">
                                     <div className="navbar-nav ms-auto py-0">
-                                          <Link href="/" className="nav-item nav-link active">
-                                                Home
-                                          </Link>
-                                          <Link href="/services" className="nav-item nav-link">
-                                                Services
-                                          </Link>
-                                          {/* <Link href="/portfolio" className="nav-item nav-link">
-                                                Portfolio
-                                          </Link> */}
-                                          <Link href="/about" className="nav-item nav-link">
-                                                About
-                                          </Link>
-                                          <Link href="/contact" className="nav-item nav-link">
-                                                Contact Us
-                                          </Link>
+                                          {
+                                                menus?.length > 0 && menus?.map((item, index) =>
+                                                      <Link href={item.href} className={`nav-item nav-link ${index == 0 ? "active" : ""}`} key={index}>
+                                                            {item.label}
+                                                      </Link>
+                                                )
+                                          }
                                     </div>
                                     <Link
                                           href="/contact"

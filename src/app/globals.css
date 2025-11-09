@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --sky-clr: #f18027;
+  --dark-grey-clr: #5c606d;
+  --metalic-gray-clr: #303347;
+  --light-gray-clr: #cfd2d8;
+  --dark-blue-clr: #ee5f11;
 }
 
 @theme inline {
@@ -23,4 +28,17 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact::before,
+.contact::after {
+  z-index: -1 !important;
+}
+
+.navbar.sticky-top {
+  box-shadow: none !important;
+}
+
+.text-shadow {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1)
 }
