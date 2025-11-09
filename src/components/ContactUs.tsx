@@ -7,7 +7,7 @@ export default function ContactUs() {
       return (
             <div>
                   {/* Contact Start */}
-                  <div className="container-fluid contact py-3">
+                  <div className="container-fluid contact py-3 bg-transparent">
                         <div className="container">
                               {/* top heading */}
                               <div
