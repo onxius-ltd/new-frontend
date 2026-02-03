@@ -21,23 +21,24 @@ export default function HomeHeader() {
                                     <h1
                                           className="display-4 text-dark mb-4 wow fadeInUp"
                                           data-wow-delay="0.3s"
+                                          style={{ fontWeight: 500 }}
                                     >
-                                          Empowering Businesses Digitally
+                                          Building the Future of Your Business
                                     </h1>
                                     <p className="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">
-                                          Your ideas, our technology—together building secure, scalable, and future-ready digital solutions.
+                                          From concept to execution, we deliver reliable, secure, and scalable solutions that help your brand grow, adapt, and lead in a digital world.
                                     </p>
                                     <Link
                                           href="#"
                                           className="btn butn-custom rounded-pill py-3 px-5 wow fadeInUp"
                                           data-wow-delay="0.7s"
                                     >
-                                          Get Started
+                                          Let&apos;s Talk &#x2799;
                                     </Link>
                               </div>
                               {/* right side content */}
                               <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                                    <Image src="/assets/images/Business analytics-rafiki.png" className="img-fluid w-100 h-100" alt="onxius" width={500} height={500} />
+                                    <Image src="/assets/images/businss-grow-next.png" className="img-fluid w-100 h-100" alt="onxius" width={500} height={500} />
 
                               </div>
                         </div>

@@ -1,53 +1,126 @@
 "use client";
+import PorfolioCard, { ItemProps } from "./PorfolioCard";
+import Globe from "@/icons/Globe";
+import AppStore from "@/icons/AppStore";
+import Car from "@/icons/Car";
+import Consultancy from "@/icons/Consultancy";
+import Microchrip from "@/icons/Microchrip";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-
-const portfolioData = [
+export const portfolioData: ItemProps[] = [
       {
             id: 1,
             title: "TEI Enterprises App",
-            description:
-                  "A modern business management app designed for streamlined operations and client engagement, available on Google Play Store.",
+            description: "A modern business management app for streamlined operations and client engagement, available on Google Play Store.",
             image: "/assets/img/tei-enterprises.png",
-            tags: ["Android App", "React Native", "Business", "Play Store", "Apple Store"],
+            tags: [
+                  {
+                        icon: <AppStore />,
+                        label: "Mobile App"
+                  },
+                  {
+                        label: "Android & iOS"
+                  },
+                  {
+                        label: "React Native"
+                  }
+            ],
             link: "https://play.google.com/store/apps/details?id=app.tei.enterprises&hl=en",
+            arrtibutes: [
+                  { counting: "+35%", label: "User Engagement" },
+                  { counting: "10,000+", label: "Active Users" }
+            ]
       },
       {
             id: 2,
             title: "Heavenly Meats LLC",
-            description:
-                  "A deliciously crafted online presence for a premium meat and BBQ business, featuring mouth-watering visuals and responsive design.",
+            description: "A premium meat and BBQ business website with mouth-watering visuals and responsive design for enhanced user experience.",
             image: "/assets/img/heavenlymeatsllc.png",
-            tags: ["Wordpress", "Elementor", "Business"],
+            tags: [
+                  {
+                        icon: <Globe />,
+                        label: "E-commerce"
+                  },
+                  {
+                        label: "Online Store"
+                  },
+                  {
+                        label: "Visual Branding"
+                  }
+            ],
             link: "https://heavenlymeatsllc.com/",
+            arrtibutes: [
+                  { counting: "+42%", label: "Online Orders" },
+                  { counting: "2.5s", label: "Load Time" }
+            ]
       },
       {
             id: 3,
             title: "Auto-Bids",
-            description:
-                  "A smart vehicle bidding and auction platform designed for seamless user experience and secure transactions.",
+            description: "A smart vehicle bidding and auction platform designed for seamless user experience, security, and efficient transactions.",
             image: "/assets/img/auto-bids.png",
-            tags: ["React", "Laravel", "SQL"],
+            tags: [
+                  {
+                        icon: <Car />,
+                        label: "Auction Platform"
+                  },
+                  {
+                        label: "Automotive"
+                  },
+                  {
+                        label: "React & Laravel"
+                  }
+            ],
             link: "https://auto-bids.com/",
+            arrtibutes: [
+                  { counting: "+58%", label: "Bidding Activity" },
+                  { counting: "5000+", label: "vehicle Registered" }
+            ]
       },
       {
             id: 4,
             title: "LA121 Consultants",
-            description:
-                  "A sleek, professional consultancy website showcasing services and expertise with a modern, minimal UI.",
+            description: "A sleek, professional consultancy website with modern minimal UI showcasing services and expertise for business growth.",
             image: "/assets/img/la121consultants.png",
-            tags: ["Vite.js", "Tailwind", "Netlify", "Firebase"],
+            tags: [
+                  {
+                        icon: <Consultancy />,
+                        label: "Consultancy"
+                  },
+                  {
+                        label: "Lead Generation"
+                  },
+                  {
+                        label: "Business Website"
+                  }
+            ],
             link: "https://la121consultants.netlify.app/",
+            arrtibutes: [
+                  { counting: "+58%", label: "Client Inquiries" },
+                  { counting: "+78%", label: "Uptime" }
+            ]
       },
       {
             id: 5,
             title: "NFT Neighbors",
-            description:
-                  "An engaging NFT community website featuring digital assets, Web3 integration, and immersive visuals.",
+            description: "An engaging NFT community platform featuring digital assets, Web3 integration, and immersive blockchain experiences.",
             image: "/assets/img/nftneighbors.png",
-            tags: ["React", "Web3", "Blockchain", "Node.js", "Mongodb", "Progressive Web App (pwa)"],
+            tags: [
+                  {
+                        icon: <Microchrip />,
+                        label: "Blockchain"
+                  },
+                  {
+                        label: "NFT Platform"
+                  },
+                  {
+                        label: "Web3"
+                  }
+            ],
             link: "https://nftneighbors.com/",
+            arrtibutes: [
+                  { counting: "500+", label: "NFTs Minted" },
+                  { counting: "+65%", label: "Community Growth" }
+            ]
       },
 ];
 
@@ -61,71 +134,22 @@ export default function Portfolio() {
                   <div className="container mx-auto px-6">
                         {/* Header */}
                         <div className="text-center mb-16">
-                              <h2 className="text-5xl font-bold mb-3 drop-shadow-sm">
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 uppercase">
-                                          OUR  Portfolio
-                                    </span>
+                              <h2 className="text-6xl font-bold mb-3 drop-shadow-sm text-capitalize">
+                                    {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 uppercase">
+                                          OUR  Work
+                                    </span> */}
+                                    Our  Work
                               </h2>
-                              <p className="text-gray-700 max-w-lg mx-auto">
-                                    Built for What’s Next ✨
+                              <p className="text-gray-700 max-w-lg mx-auto text-xl">
+                                    {/* Built for What’s Next ✨ */}
+                                    Some of our recent projects we&apos;re proud of
                               </p>
                         </div>
 
                         {/* Portfolio Cards */}
                         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                               {portfolioData?.length > 0 && portfolioData.map((item, index) => (
-                                    <motion.div
-                                          key={item.id}
-                                          initial={{ opacity: 0, y: 40 }}
-                                          whileInView={{ opacity: 1, y: 0 }}
-                                          whileHover={{ scale: 1.04, rotateX: 4, rotateY: -3 }}
-                                          transition={{ type: "spring", stiffness: 100, damping: 15 }}
-                                          viewport={{ once: true }}
-                                          className="relative rounded-md bg-white/10 dark:bg-white/5 border border-white/20 backdrop-blur-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.3)] transition-all duration-500 overflow-hidden group"
-                                    >
-                                          {/* 3D Glow Border */}
-                                          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 blur-[30px]"></div>
-
-                                          {/* Content */}
-                                          <div className="relative z-10">
-                                                <div className="relative w-full h-56">
-                                                      <Image
-                                                            src={item.image}
-                                                            alt={item.title}
-                                                            fill
-                                                            className="object-fill rounded-t-md"
-                                                      />
-                                                </div>
-
-                                                <div className="p-6">
-                                                      <h3 className="text-xl font-semibold text-[var(--dark-blue-clr)] mb-2 text-shadow ">
-                                                            {item.title}
-                                                      </h3>
-                                                      <p className="text-gray-500 text-sm mb-4">
-                                                            {item.description}
-                                                      </p>
-
-                                                      <div className="flex flex-wrap gap-2 mb-4">
-                                                            {item.tags.map((tag) => (
-                                                                  <span
-                                                                        key={tag}
-                                                                        className="text-xs font-medium px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 text-white"
-                                                                  >
-                                                                        {tag}
-                                                                  </span>
-                                                            ))}
-                                                      </div>
-
-                                                      <a
-                                                            href={item.link}
-                                                            target="_blank"
-                                                            className="text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-400 to-purple-500 transition-opacity text-black "
-                                                      >
-                                                            View Project →
-                                                      </a>
-                                                </div>
-                                          </div>
-                                    </motion.div>
+                                    <PorfolioCard data={item} key={index} />
                               ))}
                         </div>
                   </div>
