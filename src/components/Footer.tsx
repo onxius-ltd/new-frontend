@@ -60,7 +60,7 @@ export default function Footer() {
                                                 <h4 className="mb-4 text-dark">Quick Links</h4>
                                                 <Link href="/"> Home</Link>
                                                 <Link href="/services"> Services</Link>
-                                                {/* <Link href="/portfolio"> Portfolio</Link> */}
+                                                <Link href="/portfolio"> Portfolio</Link>
                                                 <Link href="/about"> About</Link>
                                                 <Link href="/contact"> Contact Us</Link>
                                                 {/* <Link href=""> Privacy Policy</Link>

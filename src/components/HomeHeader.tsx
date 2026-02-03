@@ -19,22 +19,32 @@ export default function HomeHeader() {
                               {/* left side content */}
                               <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                                     <h1
-                                          className="display-4 text-dark mb-4 wow fadeInUp"
+                                          className="display-5 text-dark mb-4 wow fadeInUp"
                                           data-wow-delay="0.3s"
                                           style={{ fontWeight: 500 }}
                                     >
-                                          Building the Future of Your Business
+                                          We Build Scalable Web & SaaS Solutions for Growing Businesses
                                     </h1>
                                     <p className="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">
-                                          From concept to execution, we deliver reliable, secure, and scalable solutions that help your brand grow, adapt, and lead in a digital world.
+                                          Custom web development, SaaS platforms, and IT solutions designed to increase revenue and automate operations.
                                     </p>
-                                    <Link
-                                          href="#"
-                                          className="btn butn-custom rounded-pill py-3 px-5 wow fadeInUp"
-                                          data-wow-delay="0.7s"
-                                    >
-                                          Let&apos;s Talk &#x2799;
-                                    </Link>
+                                    {/* cta button */}
+                                    <div className="d-flex gap-3 flex-wrap">
+                                          <Link
+                                                href="/contact"
+                                                className="btn butn-custom-outline rounded-pill py-3 px-5 wow fadeInUp"
+                                                data-wow-delay="0.7s"
+                                          >
+                                                Get a Free Consultation &#x2799;
+                                          </Link>
+                                          <Link
+                                                href="/portfolio"
+                                                className="btn butn-custom rounded-pill py-3 px-5 wow fadeInUp"
+                                                data-wow-delay="0.7s"
+                                          >
+                                                View Our Work &#x2799;
+                                          </Link>
+                                    </div>
                               </div>
                               {/* right side content */}
                               <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">

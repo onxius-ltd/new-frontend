@@ -20,11 +20,11 @@ export default function Home() {
       <ClientLogos />
       <Portfolio />
       <Services />
-      <AboutSec />
-      <OurStory />
-      <OurMission />
-      <ChooseUs />
-      <Fearutes />
+      {/* <AboutSec /> */}
+      {/* <OurStory /> */}
+      {/* <OurMission /> */}
+      {/* <ChooseUs /> */}
+      {/* <Fearutes /> */}
       <Faqs />
       {/* <Testimonial /> */}
     </div>
