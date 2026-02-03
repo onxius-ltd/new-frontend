@@ -42,3 +42,13 @@ body {
 .text-shadow {
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.1)
 }
+
+.service-content h2 {
+  font-size: 16px !important;
+  color: var(--dark-blue-clr) !important;
+}
+
+.service-content h3 {
+  font-size: 22px !important;
+  color: black !important;
+}

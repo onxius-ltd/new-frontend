@@ -29,9 +29,6 @@ export const metadata: Metadata = {
   title: "Onxius | Built for What’s Next",
   description:
     "Onxius is a modern IT solutions company delivering web development, software engineering, cloud services, and digital transformation for businesses worldwide. We create innovative, scalable, and secure technology solutions to help companies grow.",
-  other: {
-    "google-site-verification": "0dbfd026c1473dd0",
-  },
   keywords: [
     "Onxius",
     "IT solutions",
@@ -66,6 +63,15 @@ export const metadata: Metadata = {
     // images: ["https://yourdomain.com/path-to-logo-or-banner.jpg"],
   },
 };
+
+// Add viewport for responsive design
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
+// Add structured data for better SEO
+// Could add JSON-LD for organization schema
 
 export default function RootLayout({
   children,

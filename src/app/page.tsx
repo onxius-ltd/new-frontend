@@ -8,6 +8,8 @@ import OurStory from "@/components/Story";
 import OurMission from "@/components/Mission";
 import ChooseUs from "@/components/ChooseUs";
 import AboutSec from "@/components/AboutSec";
+import Portfolio from "@/components/Portfolio";
+import ClientLogos from "@/components/ClientLogos";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -15,11 +17,13 @@ import AboutSec from "@/components/AboutSec";
 export default function Home() {
   return (
     <div>
+      <ClientLogos />
+      <Portfolio />
+      <Services />
       <AboutSec />
       <OurStory />
       <OurMission />
       <ChooseUs />
-      <Services />
       <Fearutes />
       <Faqs />
       {/* <Testimonial /> */}
