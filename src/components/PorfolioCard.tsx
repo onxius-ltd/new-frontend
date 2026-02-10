@@ -1,5 +1,4 @@
 "use client";
-
 import RightAngel from "@/icons/RightAngel";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -16,16 +15,6 @@ export type tagsType = {
       label: string;
 }
 
-// export type ItemProps = {
-//       id: number;
-//       title: string;
-//       description: string;
-//       image: string;
-//       tags: tagsType[];
-//       link: string;
-//       attributes: attributesType[];
-// }
-
 export type ItemProps = {
       id: number;
       title: string;
@@ -38,7 +27,6 @@ export type ItemProps = {
       role?: string;        // NEW
       engagement?: string;  // NEW
 }
-
 
 export interface PorfolioCardProps {
       data: ItemProps;
@@ -54,7 +42,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   className="rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden h-full"
             >
                   {/* Image */}
-                  <div className="relative w-full h-[220px] overflow-hidden border-slate-50">
+                  <div className="relative w-full h-[220px] overflow-hidden border-slate-100 shadow-sm">
                         <Image
                               src={data.image}
                               alt={data.title}
@@ -62,35 +50,28 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                               className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                   </div>
-
                   {/* Content */}
-                  <div className="p-6 flex flex-col justify-between h-full gap-3">
-
+                  <div className="p-3 sm:p-4 md:p-6 flex flex-col justify-between gap-3 border">
                         {/* Top Section */}
-                        <div className="flex flex-col gap-2">
-
+                        <div className="flex flex-col gap-2 border">
                               {/* Industry Label */}
                               <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">
                                     {data.industry}
                               </span>
-
                               {/* Title */}
                               <h3 className="text-xl font-semibold text-gray-900 leading-snug">
                                     {data.title}
                               </h3>
-
                               {/* Role & Engagement */}
                               {(data.role || data.engagement) && (
-                                    <p className="text-sm text-gray-500">
+                                    <p className="text-sm text-gray-500 p-0 m-0">
                                           {data.role} • {data.engagement}
                                     </p>
                               )}
-
                               {/* Description */}
-                              <p className="text-sm text-gray-600 leading-relaxed">
+                              <p className="text-sm text-gray-600 leading-relaxed p-0 m-0">
                                     {data.description}
                               </p>
-
                               {/* Attributes */}
                               {data.attributes?.length > 0 && (
                                     <div className="flex flex-wrap gap-6 pt-2">
@@ -106,9 +87,8 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                           ))}
                                     </div>
                               )}
-
                               {/* Tags */}
-                              <div className="flex flex-wrap gap-2 pt-2">
+                              <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1 sm:pt-2">
                                     {data.tags?.map((tag, index) => (
                                           <div
                                                 key={index}
@@ -119,10 +99,9 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                           </div>
                                     ))}
                               </div>
-
                         </div>
                         {/* Footer */}
-                        {/* <div className="pt-4 border-t border-gray-200">
+                        <div className="pt-4 border-t border-gray-200 border">
                               <Link
                                     href={data.link}
                                     target="_blank"
@@ -131,7 +110,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                     View Case Study
                                     <RightAngel />
                               </Link>
-                        </div> */}
+                        </div>
                   </div>
             </motion.div>
       );

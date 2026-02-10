@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
@@ -36,7 +35,7 @@ export default function ClientLogos() {
       }, []);
 
       return (
-            <section className="px-2 py-12 md:py-16 overflow-hidden" id="logos">
+            <section className="px-2 py-8 sm:py-12 md:py-16 overflow-hidden" id="logos">
                   {/* title */}
                   {/* <h2 className="text-center text-2xl md:text-3xl font-semibold pb-10 text-gray-800">
                         Trusted by Industry Leaders
@@ -65,7 +64,7 @@ export default function ClientLogos() {
                                     {duplicatedLogos.map((image_src, index) => (
                                           <div
                                                 key={index}
-                                                className="flex-shrink-0 px-4 md:px-6 lg:px-8"
+                                                className="flex-shrink-0 px-2 sm:px-4 md:px-6 lg:px-8"
                                                 style={{ width: `${100 / logos.length}%` }}
                                           >
                                                 <div className="relative h-16 md:h-20 lg:h-24 w-full">
@@ -87,7 +86,7 @@ export default function ClientLogos() {
                         </div>
 
                         {/* Optional: Static grid for mobile with animation only on desktop */}
-                        <div className="md:hidden mt-8">
+                        {/* <div className="md:hidden mt-8">
                               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                                     {logos.map((image_src, index) => (
                                           <motion.div
@@ -111,7 +110,7 @@ export default function ClientLogos() {
                                           </motion.div>
                                     ))}
                               </div>
-                        </div>
+                        </div> */}
                   </div>
             </section>
       );

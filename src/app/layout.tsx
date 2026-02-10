@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 // import { Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/components/Navbar"; // 👈 import your component
 import Preloader from "@/components/Preloader"; // 👈 import your component
 import Footer from "@/components/Footer";
@@ -15,6 +14,9 @@ import Script from "next/script";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+import "./globals.css";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -117,13 +119,13 @@ export default function RootLayout({
       >
         {
           <div>
-            <Preloader />
+            {/* <Preloader /> */}
             <Navbar />
             {children}
             {/* <TrustPilotReviews /> */}
-            <Footer />
-            <Copyright />
-            <BackToTop />
+            {/* <Footer /> */}
+            {/* <Copyright /> */}
+            {/* <BackToTop /> */}
             {/* <!-- JavaScript Libraries --> */}
             {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -163,6 +165,15 @@ export default function RootLayout({
               src="bootstrap/dist/js/bootstrap.bundle.min.js"
               strategy="afterInteractive"
             />
+
+            {/* <!-- Google tag (gtag.js) --> */}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JZ0YM6EKD"></script>
+            <script>
+              {`window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-4JZ0YM6EKD');`}
+            </script>
           </div>
         }
       </body>
