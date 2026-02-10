@@ -45,7 +45,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   <div className="relative w-full h-[220px] overflow-hidden border-slate-100 shadow-sm">
                         <Image
                               src={data.image}
-                              alt={data.title}
+                              alt={data.title ?? "ONXIUS PROJECT"}
                               fill
                               className="object-fill group-hover:scale-105 transition-transform duration-700"
                         />
