@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function HomeHeader() {
 
       return (
-            <div className="border">
+            <div className="">
                   {/* Hero Header Start */}
                   <div className="hero-header overflow-hidden md:mt-5" >
                         {/* animated rotated image */}
