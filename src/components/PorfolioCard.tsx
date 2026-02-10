@@ -38,22 +38,22 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   key={data.id}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true }} 
                   className="rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden h-full"
             >
                   {/* Image */}
                   <div className="relative w-full h-[220px] overflow-hidden border-slate-100 shadow-sm">
                         <Image
                               src={data.image}
-                              alt={data.title}
+                              alt={data.title ?? "ONXIUS PROJECT"}
                               fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-700"
+                              className="object-fill group-hover:scale-105 transition-transform duration-700"
                         />
                   </div>
                   {/* Content */}
                   <div className="p-3 sm:p-4 md:p-6 flex flex-col justify-between gap-3 border">
                         {/* Top Section */}
-                        <div className="flex flex-col gap-2 border">
+                        <div className="flex flex-col gap-2">
                               {/* Industry Label */}
                               <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">
                                     {data.industry}
@@ -101,7 +101,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                               </div>
                         </div>
                         {/* Footer */}
-                        <div className="pt-4 border-t border-gray-200 border">
+                        <div className="pt-4 border-t border-gray-200 border hidden">
                               <Link
                                     href={data.link}
                                     target="_blank"
