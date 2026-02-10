@@ -19,13 +19,13 @@ export default function Home() {
     <div>
       <ClientLogos />
       <Portfolio />
-      {/* <Services /> */}
+      <Services />
       {/* <AboutSec /> */}
       {/* <OurStory /> */}
       {/* <OurMission /> */}
       {/* <ChooseUs /> */}
       {/* <Fearutes /> */}
-      {/* <Faqs /> */}
+      <Faqs />
       {/* <Testimonial /> */}
     </div>
   );
