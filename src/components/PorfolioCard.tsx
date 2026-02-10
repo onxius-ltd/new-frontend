@@ -38,7 +38,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   key={data.id}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true }} 
                   className="rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden h-full"
             >
                   {/* Image */}
