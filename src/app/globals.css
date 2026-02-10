@@ -52,3 +52,66 @@ body {
   font-size: 22px !important;
   color: black !important;
 }
+
+.btn {
+  @apply transition-all duration-300 cursor-pointer select-none hover:scale-3d hover:scale-105;
+}
+
+/* header */
+.hero-header {
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+}
+
+/* nav bar styling */
+@media only screen and (max-width:991px) {
+  .toggleNav {
+    position: fixed !important;
+    top: 68px !important;
+    left: 0 !important;
+    width: 100vw !important;
+    background-color: white !important;
+    z-index: 999 !important;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .toggleNav.hide {
+    display: none !important;
+  }
+
+  .toggleNav.show {
+    display: block !important;
+  }
+
+  .toggleNav .navbar-nav {
+    width: 100% !important;
+    padding: 40px !important;
+  }
+
+  .toggleNav .navbar-nav .nav-link,
+  .toggleNav .talk-button {
+    width: 100% !important;
+  }
+
+  .toggleNav .talk-button {
+    margin-top: 15px !important;
+  }
+
+  .toggleNav .talk-button.nav-item.nav-link {
+    color: white !important;
+  }
+
+  /* header */
+  .hero-header {
+    padding-top: 140px !important;
+  }
+}
+
+@media only screen and (max-width:640px) {
+
+  /* header */
+  .hero-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
