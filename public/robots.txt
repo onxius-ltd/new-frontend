@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://onxius.com
+
+# Sitemaps
+Sitemap: https://onxius.com/sitemap.xml
