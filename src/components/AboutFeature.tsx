@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function AboutFearute() {
       return (
-            <div>
+            <div className="">
                   {/* feature projects */}
-                  <div className="row g-5 pt-5" style={{ marginTop: "6rem" }}>
+                  <div className="row g-5" >
                         <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                               <div
                                     className="feature-img RotateMoveLeft h-100"
@@ -16,7 +16,7 @@ export default function AboutFearute() {
                               </div>
                         </div>
                         <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                              <h4 className="text-primary">Fearutes</h4>
+                              <h4 className="text-primary">Our Solutions</h4>
                               <h1 className="display-5 mb-4">
                                     Turn Your Visitors Into Happy Customers
                               </h1>
@@ -28,7 +28,7 @@ export default function AboutFearute() {
                                           <div className="d-flex">
                                                 <i className="fas fa-newspaper fa-4x text-secondary" />
                                                 <div className="d-flex flex-column ms-3">
-                                                      <h2 className="mb-0 fw-bold">25+</h2>
+                                                      <h2 className="mb-0 fw-bold">50+</h2>
                                                       <small className="text-dark">Created Projects</small>
                                                 </div>
                                           </div>

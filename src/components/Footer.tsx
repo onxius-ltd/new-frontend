@@ -1,6 +1,7 @@
 "use client"; // 👈 add this if you plan to use interactivity (like mobile toggle)
 import Link from "next/link";
 import Image from "next/image";
+import WhatsAppButton from "./WhatsAppButton";
 
 
 export default function Footer() {
@@ -103,6 +104,8 @@ export default function Footer() {
                               </div>
                         </div>
                   </div>
+                  {/* whatsapp me */}
+                  <WhatsAppButton />
                   {/* Footer End */}
             </div>
       );

@@ -5,6 +5,7 @@ import AppStore from "@/icons/AppStore";
 import Car from "@/icons/Car";
 import Consultancy from "@/icons/Consultancy";
 import Microchrip from "@/icons/Microchrip";
+import Link from "next/link";
 
 export const portfolioData: ItemProps[] = [
       {
@@ -12,7 +13,7 @@ export const portfolioData: ItemProps[] = [
             title: "Auto-Bids",
             industry: "Automotive SaaS Platform",
             role: "Full-Stack Developer",
-            engagement: "Delivered under current organization",
+            engagement: "Delivered during tenure at previous organization",
             description:
                   "Scalable vehicle auction and bidding platform engineered with secure transaction handling, real-time bidding logic, and role-based dashboards for buyers and administrators.",
             image: "/assets/img/auto-bids.png",
@@ -28,11 +29,31 @@ export const portfolioData: ItemProps[] = [
             ]
       },
       {
+            id: 2,
+            title: "Fatima Quranic Academy",
+            industry: "Online Quran Education Platform",
+            role: "Full-Stack Wordpress Developer",
+            engagement: "Developed and Managed Under Current Organization",
+            description:
+                  "A trusted online Quran academy connecting students worldwide with qualified tutors for Tajweed, Tafseer, and Hifz, built for performance and seamless inquiries.",
+            image: "/assets/images/fatimaquranicacademy.png",
+            tags: [
+                  { icon: <Globe />, label: "Online Quran Academy" },
+                  // { label: "Student Enrollment System" },
+                  { label: "Performance Optimized" }
+            ],
+            link: "https://fatimaquranicacademy.com/",
+            attributes: [
+                  { counting: "+60%", label: "Growth in Student Inquiries" },
+                  { counting: "Worldwide", label: "Student Reach" }
+            ]
+      },
+      {
             id: 3,
             title: "Heavenly Meats LLC",
             industry: "E-commerce / Retail",
             role: "Full-Stack Developer",
-            engagement: "Delivered during tenure at previous organization",
+            engagement: "Developed and Managed Under Current Organization",
             description:
                   "High-performance e-commerce platform developed for a premium meat brand, focused on conversion optimization and seamless ordering experience across devices.",
             image: "/assets/img/heavenlymeatsllc.png",
@@ -49,6 +70,86 @@ export const portfolioData: ItemProps[] = [
       },
       {
             id: 4,
+            title: "MYRAS BEDS",
+            industry: "Furniture & Bedding E-Commerce",
+            role: "Full-Stack WordPress Developer",
+            engagement: "Delivered during tenure at previous organization",
+            description:
+                  "A modern e-commerce bedding platform showcasing premium beds and mattresses, designed for seamless shopping, high performance, and an enhanced customer experience.",
+            image: "/assets/images/myrasbeds.png",
+            tags: [
+                  { icon: <Globe />, label: "E-Commerce Website" },
+                  { label: "Furniture & Bedding" },
+                  { label: "Performance Optimized" }
+            ],
+            link: "https://www.myrasbeds.co.uk/",
+            attributes: [
+                  { counting: "UK", label: "Market Reach" },
+                  { counting: "Online", label: "Retail Platform" }
+            ]
+      },
+      {
+            id: 5,
+            title: "MR Oil",
+            industry: "Oil & Petroleum Services",
+            role: "Full-Stack WordPress Developer",
+            engagement: "Developed and Managed Under Current Organization",
+            description:
+                  "A professional oil and petroleum services platform showcasing products, bulk supply solutions, and streamlined customer inquiries with a performance-focused design.",
+            image: "/assets/images/mr-oil.png",
+            tags: [
+                  { icon: <Globe />, label: "Corporate Website" },
+                  { label: "Energy & Petroleum" },
+                  { label: "Performance Optimized" }
+            ],
+            link: "",
+            attributes: [
+                  { counting: "B2B", label: "Client Focused" },
+                  { counting: "Industrial", label: "Market Reach" }
+            ]
+      },
+      {
+            id: 6,
+            title: "Great Transfers UK",
+            industry: "Transportation & Airport Transfer Services",
+            role: "Full-Stack Developer",
+            engagement: "Developed and Managed Under Current Organization",
+            description:
+                  "A professional airport transfer and private transportation platform designed for seamless bookings, service reliability, and optimized performance to drive customer inquiries.",
+            image: "/assets/images/greattransfers.png",
+            tags: [
+                  { icon: <Globe />, label: "Booking Website" },
+                  { label: "Transportation Services" },
+                  { label: "Performance Optimized" }
+            ],
+            link: "https://greattransfers.uk/",
+            attributes: [
+                  { counting: "+60%", label: "Increase in Bookings" },
+                  { counting: "UK Wide", label: "Service Coverage" }
+            ]
+      },
+      {
+            id: 7,
+            title: "Frenco LTD",
+            industry: "Corporate Services Platform",
+            role: "Full-Stack Developer",
+            engagement: "Delivered during tenure at previous organization",
+            description:
+                  "A professional corporate website developed to showcase services, strengthen brand credibility, and generate qualified leads through a performance-driven design.",
+            image: "/assets/images/frencoltd.png",
+            tags: [
+                  { icon: <Globe />, label: "Corporate Website" },
+                  { label: "Lead Generation" },
+                  { label: "Performance Optimized" }
+            ],
+            link: "https://frencoltd.com/",
+            attributes: [
+                  { counting: "+60%", label: "Increase in Inquiries" },
+                  { counting: "International", label: "Client Reach" }
+            ]
+      },
+      {
+            id: 8,
             title: "Online Quran Home",
             industry: "Educational Services Platform",
             role: "Full-Stack Developer",
@@ -68,11 +169,11 @@ export const portfolioData: ItemProps[] = [
             ]
       },
       {
-            id: 5,
+            id: 9,
             title: "LA121 Consultants",
             industry: "Business Consultancy",
             role: "Full-Stack Developer",
-            engagement: "Delivered during tenure at previous organization",
+            engagement: "Developed and Delivered Under Current Organization",
             description:
                   "Modern consultancy website designed to strengthen brand authority and generate qualified business leads through structured service presentation and optimized UI.",
             image: "/assets/img/la121consultants.png",
@@ -88,7 +189,7 @@ export const portfolioData: ItemProps[] = [
             ]
       },
       {
-            id: 6,
+            id: 10,
             title: "NFT Neighbors",
             industry: "Blockchain / Web3 Platform",
             role: "Full-Stack Developer & Web3 Integration Developer",
@@ -108,11 +209,11 @@ export const portfolioData: ItemProps[] = [
             ]
       },
       {
-            id: 2,
+            id: 11,
             title: "TEI Enterprises App",
             industry: "Business Management / Mobile Application",
             role: "Lead Mobile Developer",
-            engagement: "Delivered during tenure at previous organization",
+            engagement: "Developed and Managed Under Current Organization",
             description:
                   "Cross-platform business management application built to streamline internal operations, improve client coordination, and enhance overall engagement.",
             image: "/assets/img/tei-enterprises.png",
@@ -129,7 +230,11 @@ export const portfolioData: ItemProps[] = [
       },
 ];
 
-export default function Portfolio() {
+export default function Portfolio({ isPortfolioPage = false }: { isPortfolioPage?: boolean }) {
+
+      // Determine which items to show
+      const displayedData = isPortfolioPage ? portfolioData : portfolioData.slice(0, 6);
+
       return (
             <section
                   id="portfolio"
@@ -142,18 +247,28 @@ export default function Portfolio() {
                                     Selected Projects & Case Studies
                               </h2>
                               <p className="text-gray-700 max-w-3xl mx-auto text-xl">
-                                    A selection of web, SaaS, and mobile solutions built to improve performance,
+                                    A selection of web, Software as a Service, and mobile solutions built to improve performance,
                                     automate workflows, and drive measurable business growth.
                               </p>
                         </div>
 
                         {/* Portfolio Cards */}
                         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                              {portfolioData?.length > 0 && portfolioData.map((item, index) => (
+                              {displayedData?.length > 0 && displayedData.map((item, index) => (
                                     <PorfolioCard data={item} key={index} />
                               ))}
                         </div>
+
                   </div>
+                  {/* link */}
+                  {/* {!isPortfolioPage && <div className="mt-5 flex justify-center">
+                        <Link
+                              href="/portfolio"
+                              className="butn-custom butn-custom-outline rounded-pill text-primary font-bold py-2 px-4 mt-auto text-2xl"
+                        >
+                              View More &#x2799;
+                        </Link>
+                  </div>} */}
             </section>
       );
 }

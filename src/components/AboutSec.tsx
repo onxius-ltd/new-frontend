@@ -6,9 +6,9 @@ import Image from "next/image";
 export default function AboutSec() {
 
       return (
-            <div>
+            <div className="">
                   {/* <!-- About Start --> */}
-                  <div className="container-fluid py-2 sm:py-3 lg:py-5" style={{ marginTop: "6rem" }}>
+                  <div className="container-fluid">
                         <div className="container">
                               <div className="row g-5">
                                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -16,7 +16,7 @@ export default function AboutSec() {
                                                 <Image src="/assets/images/about.png" className="img-fluid w-100" alt="about onxius" width={500} height={500} />
                                           </div>
                                     </div>
-                                    <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div className="col-lg-6 wow fadeInUp flex flex-col justify-center" data-wow-delay="0.3s">
                                           <h4 className="mb-1 text-primary">About Us</h4>
                                           <h1 className="display-5 mb-4">Discover Who We Are and What Inspires Our Passion</h1>
                                           <p className="pb-4">
@@ -25,7 +25,7 @@ export default function AboutSec() {
                                                 scalable, and user-friendly solutions that help businesses grow and succeed in
                                                 today’s fast-paced world.
                                           </p>
-                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link>
+                                          <div> <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link></div>
                                     </div>
                               </div>
                         </div>

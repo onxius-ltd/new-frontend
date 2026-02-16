@@ -15,11 +15,11 @@ export default function HomeHeader() {
                               <div className="rotate-sty-2" />
                         </div>
                         {/* header content */}
-                        <div className="row align-items-center">
+                        <div className="row align-items-center md:pt-5 flex-row-reverse">
                               {/* left side content */}
                               <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                                     <h1
-                                          className="text-2xl sm:text-3xl 2xl:text-4xl text-dark mb-3 md:mb-4 wow fadeInUp xl:max-w-2xl"
+                                          className=" text-xl md:text-2xl lg:text-3xl 2xl:text-4xl text-dark mb-3 md:mb-4 wow fadeInUp xl:max-w-2xl"
                                           data-wow-delay="0.3s"
                                           style={{ fontWeight: 500 }}
                                     >
@@ -48,7 +48,7 @@ export default function HomeHeader() {
                               </div>
                               {/* right side content */}
                               <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                                    <Image src="/assets/images/businss-grow-next.png" className="img-fluid w-100 h-100" alt="onxius" width={500} height={500} />
+                                    <Image src="/assets/images/business-grow.png" className="img-fluid w-100 h-100" alt="onxius" width={500} height={500} />
 
                               </div>
                         </div>

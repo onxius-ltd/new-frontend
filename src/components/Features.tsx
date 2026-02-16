@@ -3,155 +3,94 @@
 import Image from "next/image";
 import AboutFearute from "./AboutFeature";
 
-const features = [
+const process = [
       {
-            icon: "/assets/images/Web Development Feature icon.png",
-            title: "Web Development",
-            subtitle: "Building Fast, Scalable, and Responsive Websites",
-            desc: "We create high-performance and secure websites using modern technologies like React, Next.js, and Laravel. Every website is optimized for speed, scalability, and a seamless user experience."
+            icon: "/assets/icons/Discover-and-Plan 2.png",
+            title: "Discover & Plan",
+            subtitle: "Understanding Goals & Strategy",
+            desc: "We start by understanding your business objectives, target audience, and project requirements to create a clear roadmap for success."
       },
       {
-            icon: "/assets/images/pwa feature icon.png",
-            title: "Progressive Web Apps (PWA)",
-            subtitle: "Delivering the Power of Web and Mobile in One Platform",
-            desc: "Our Progressive Web Apps combine the reach of the web with the performance of mobile. They load instantly, work offline, and offer app-like experiences that keep users engaged anywhere, anytime."
+            icon: "/assets/icons/design-icon.png",
+            title: "Design & Prototype",
+            subtitle: "Creating Intuitive Experiences",
+            desc: "Our team crafts wireframes and interactive prototypes to visualize the user journey and design seamless interfaces."
       },
       {
-            icon: "/assets/images/Mobile App Development icon.png",
-            title: "Mobile App Development",
-            subtitle: "Seamless Cross-Platform Experiences with React Native",
-            desc: "We design and develop mobile applications that provide native-like performance on both Android and iOS, ensuring an engaging user experience with minimal development overhead."
+            icon: "/assets/icons/development-icon.png",
+            title: "Develop & Build",
+            subtitle: "Turning Ideas into Reality",
+            desc: "We develop high-quality, scalable, and secure solutions using modern technologies, ensuring performance and reliability."
       },
       {
-            icon: "/assets/images/UI UX Design Feature icon.png",
-            title: "UI/UX Design",
-            subtitle: "Crafting Intuitive and Engaging Digital Experiences",
-            desc: "Our design process focuses on usability and aesthetics, ensuring that every interface we create is both visually compelling and effortless to navigate for users."
+            icon: "/assets/icons/launch-icon.png",
+            title: "Launch & Optimize",
+            subtitle: "Deploy, Monitor & Improve",
+            desc: "After deployment, we monitor performance, optimize for speed, and provide continuous support to ensure your solution thrives."
+      },
+      {
+            icon: "/assets/icons/support-icon.png",
+            title: "Support & Scale",
+            subtitle: "Ongoing Maintenance & Growth",
+            desc: "We provide ongoing maintenance, updates, and scaling strategies to help your digital product grow alongside your business."
       }
 ];
 
+
 export default function Fearutes() {
       return (
-            <div>
-                  {/* Feature Start */}
-                  <div className="container-fluid feature overflow-hidden py-5">
-                        <div className="container py-5">
-                              {/* feature content */}
+            <div className="">
+                  {/* process Start */}
+                  <div className="container-fluid feature overflow-hidden">
+                        <div className="container">
+                              {/* process content */}
                               <div
-                                    className="text-center mx-auto mb-5 wow fadeInUp"
+                                    className="text-center mx-auto wow fadeInUp"
                                     data-wow-delay="0.1s"
                                     style={{ maxWidth: 900 }}
                               >
-                                    <h4 className="text-primary">Our Feature</h4>
-                                    <h1 className="display-5 mb-4">
-                                          Innovative Features That Power Digital Growth
+                                    <h4 className="text-primary">How We Work</h4>
+                                    <h1 className="display-4 mb-2">
+                                          Our Proven Process for Digital Success
                                     </h1>
                                     <p className="mb-0">
-                                          At Onxius, we bring together creativity, technology, and innovation to deliver digital products that make a difference. Our core features focus on providing performance, scalability, and seamless user experiences — ensuring your business stands out in the modern digital landscape.
+                                          At Onxius, we follow a structured approach that turns ideas into high-impact digital solutions. From understanding your goals to designing, developing, and optimizing your product, our process ensures efficiency, quality, and measurable results. Every step is focused on delivering scalable, user-friendly solutions that drive your business forward.
                                     </p>
                               </div>
-                              {/* feature cards */}
-
-                              <div className="row g-4 justify-content-center text-center mb-5">
-                                    {features?.length > 0 &&
-                                          features.map((item, index) => {
-                                                const timing = index / 10;
+                              {/* process cards */}
+                              <div className="row g-4 justify-content-start items-stretch mb-5">
+                                    {process?.length > 0 &&
+                                          process.map((item, index) => {
+                                                const delay = index * 0.1; // fade-in delay
                                                 return (
                                                       <div
-                                                            className="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-                                                            data-wow-delay={`${timing}s`}
-                                                            key={`${index}`}
+                                                            className="col-12 col-sm-6 col-lg-4 wow fadeInUp"
+                                                            data-wow-delay={`${delay}s`}
+                                                            key={index}
                                                       >
-                                                            <div className="text-center p-4">
-                                                                  <div className="d-inline-block rounded bg-light p-4 mb-4">
-                                                                        {/* <i className="fas fa-envelope fa-5x text-secondary" /> */}
-                                                                        <Image src={item.icon} className="img-fluid w-75 mx-auto" alt={item.title} width={100} height={100} />
+                                                            <div className="p-2.5 h-100 d-flex flex-column align-items-start">
+                                                                  <div className="d-inline-block">
+                                                                        <Image
+                                                                              src={item.icon}
+                                                                              alt={item.title}
+                                                                              width={160}
+                                                                              height={160}
+                                                                              className="img-fluid w-full h-auto"
+                                                                        />
                                                                   </div>
-                                                                  <div className="feature-content">
-                                                                        <h3 className="h4">
-                                                                              {item.title}  <i className="fa fa-long-arrow-alt-right" />
-                                                                        </h3>
-                                                                        <p className="mt-4 mb-0">
-                                                                              {item.desc}
-                                                                        </p>
-                                                                  </div>
+                                                                  <h5 className="fw-bold mb-1.5 text-primary">{item.title}</h5>
+                                                                  <h6 className="text-muted mb-2.5">{item.subtitle}</h6>
+                                                                  <p className="mb-0">{item.desc}</p>
                                                             </div>
                                                       </div>
-                                                )
+                                                );
                                           })}
-                                    {/* <div
-                                          className="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-                                          data-wow-delay="0.3s"
-                                    >
-                                          <div className="text-center p-4">
-                                                <div className="d-inline-block rounded bg-light p-4 mb-4">
-                                                      <i className="fas fa-mail-bulk fa-5x text-secondary" />
-                                                </div>
-                                                <div className="feature-content">
-                                                      <a href="#" className="h4">
-                                                            Email Builder <i className="fa fa-long-arrow-alt-right" />
-                                                      </a>
-                                                      <p className="mt-4 mb-0">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit.consectetur adipisicing elit
-                                                      </p>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div
-                                          className="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-                                          data-wow-delay="0.5s"
-                                    >
-                                          <div className="text-center rounded p-4">
-                                                <div className="d-inline-block rounded bg-light p-4 mb-4">
-                                                      <i className="fas fa-sitemap fa-5x text-secondary" />
-                                                </div>
-                                                <div className="feature-content">
-                                                      <a href="#" className="h4">
-                                                            Customer Builder <i className="fa fa-long-arrow-alt-right" />
-                                                      </a>
-                                                      <p className="mt-4 mb-0">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit.consectetur adipisicing elit
-                                                      </p>
-                                                </div>
-                                          </div>
-                                    </div>
-                                    <div
-                                          className="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-                                          data-wow-delay="0.7s"
-                                    >
-                                          <div className="text-center rounded p-4">
-                                                <div className="d-inline-block rounded bg-light p-4 mb-4">
-                                                      <i className="fas fa-tasks fa-5x text-secondary" />
-                                                </div>
-                                                <div className="feature-content">
-                                                      <a href="#" className="h4">
-                                                            Campaign Manager <i className="fa fa-long-arrow-alt-right" />
-                                                      </a>
-                                                      <p className="mt-4 mb-0">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing
-                                                            elit.consectetur adipisicing elit
-                                                      </p>
-                                                </div>
-                                          </div>
-                                    </div> */}
-                                    <div className="col-12 wow fadeInUp" data-wow-delay="0.1s">
-                                          <div className="my-3">
-                                                <a
-                                                      href="#"
-                                                      className="butn-custom d-inline rounded-pill px-5 py-3 font-bold"
-                                                >
-                                                      More Features
-                                                </a>
-                                          </div>
-                                    </div>
                               </div>
-                              {/* feature projects */}
+                              {/* process projects */}
                               <AboutFearute />
                         </div>
                   </div>
-                  {/* Feature End */}
+                  {/* process End */}
             </div>
       );
 }

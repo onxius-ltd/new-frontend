@@ -1,11 +1,14 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 interface FormData {
       name: string;
       email: string;
       phone: string;
       project: string;
+      budget: string;   // ✅ Added budget
       subject: string;
       message: string;
 }
@@ -16,20 +19,29 @@ const ContactForm: React.FC = () => {
             email: "",
             phone: "",
             project: "",
+            budget: "",
             subject: "",
             message: "",
       });
-
       const [status, setStatus] = useState<string>("");
       const [loading, setLoading] = useState<boolean>(false);
+      const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
-      const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
+      const handleChange = (
+            e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+      ) => {
             const { name, value } = e.target;
             setFormData((prev) => ({ ...prev, [name]: value }));
       };
 
       const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault();
+
+            if (!captchaToken) {
+                  setStatus("Please verify reCAPTCHA");
+                  return;
+            }
             setLoading(true);
             setStatus("");
 
@@ -47,6 +59,7 @@ const ContactForm: React.FC = () => {
                               email: "",
                               phone: "",
                               project: "",
+                              budget: "",
                               subject: "",
                               message: "",
                         });
@@ -61,34 +74,65 @@ const ContactForm: React.FC = () => {
             }
       };
 
+      const fields = [
+            { name: "name", label: "Your Name", type: "text" },
+            { name: "email", label: "Your Email", type: "email" },
+            { name: "phone", label: "Your Phone", type: "text" },
+            { name: "project", label: "Your Project", type: "text" },
+            { name: "budget", label: "Budget Range", type: "select" },
+            // { name: "subject", label: "Subject", type: "text" },
+      ];
+
       return (
             <form onSubmit={handleSubmit}>
                   <div className="row g-3">
-                        {[
-                              { name: "name", label: "Your Name", type: "text" },
-                              { name: "email", label: "Your Email", type: "email" },
-                              { name: "phone", label: "Your Phone", type: "text" },
-                              { name: "project", label: "Your Project", type: "text" },
-                              { name: "subject", label: "Subject", type: "text" },
-                        ].map((field) => (
-                              <div key={field.name} className={field.name !== "subject" ? "col-lg-12 col-xl-6" : "col-12"}>
+                        {fields.map((field) => (
+                              <div
+                                    key={field.name}
+                                    className={
+                                          field.name !== "subject" && field.name !== "budget"
+                                                ? "col-lg-12 col-xl-6"
+                                                : "col-12"
+                                    }
+                              >
                                     <div className="form-floating">
-                                          <input
-                                                type={field.type}
-                                                name={field.name}
-                                                // value={(formData as any)[field.name]}
-                                                value={formData[field.name as keyof FormData]}
-                                                onChange={handleChange}
-                                                className="form-control"
-                                                id={field.name}
-                                                placeholder={field.label}
-                                                required={field.name !== "phone" && field.name !== "project"}
-                                          />
+                                          {field.type === "select" ? (
+                                                <select
+                                                      name="budget"
+                                                      value={formData.budget}
+                                                      onChange={handleChange}
+                                                      className="form-select"
+                                                      id="budget"
+                                                      required
+                                                >
+                                                      <option value="">Select Budget</option>
+                                                      <option value="0-1000">£0 - £1,000</option>
+                                                      <option value="1000-3000">£1,000 - £3,000</option>
+                                                      <option value="3000-5000">£3,000 - £5,000</option>
+                                                      <option value="5000-10000">£5,000 - £10,000</option>
+                                                      <option value="10000+">£10,000+</option>
+                                                </select>
+                                          ) : (
+                                                <input
+                                                      type={field.type}
+                                                      name={field.name}
+                                                      value={formData[field.name as keyof FormData]}
+                                                      onChange={handleChange}
+                                                      className="form-control"
+                                                      id={field.name}
+                                                      placeholder={field.label}
+                                                      required={
+                                                            field.name !== "phone" &&
+                                                            field.name !== "project"
+                                                      }
+                                                />
+                                          )}
                                           <label htmlFor={field.name}>{field.label}</label>
                                     </div>
                               </div>
                         ))}
 
+                        {/* Message */}
                         <div className="col-12">
                               <div className="form-floating">
                                     <textarea
@@ -105,6 +149,12 @@ const ContactForm: React.FC = () => {
                               </div>
                         </div>
 
+                        <ReCAPTCHA
+                              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                              onChange={(token: string | null) => setCaptchaToken(token)}
+                        />
+
+                        {/* Submit Button */}
                         <div className="col-12">
                               <button
                                     type="submit"

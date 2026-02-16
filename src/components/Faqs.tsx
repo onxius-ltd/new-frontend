@@ -35,9 +35,9 @@ export default function Faqs() {
       return (
             <div>
                   {/* FAQ Start */}
-                  <div className="container-fluid FAQ bg-light overflow-hidden py-5">
-                        <div className="container py-5">
-                              <div className="row g-5 align-items-center">
+                  <div className="container-fluid FAQ bg-light overflow-hidden">
+                        <div className="container ">
+                              <div className="row g-5 align-items-center py-5">
                                     {/* left side faqs */}
                                     <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                                           <div className="accordion" id="accordionExample">

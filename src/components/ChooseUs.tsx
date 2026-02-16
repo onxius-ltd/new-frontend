@@ -5,20 +5,22 @@ import Image from "next/image";
 export default function ChooseUs() {
 
       return (
-            <div>
+            <div className="py-5">
                   {/* <!-- Choose Us Start --> */}
-                  <div className="container-fluid py-2 sm:py-3 lg:py-5" style={{ marginTop: "6rem" }}>
+                  <div className="container-fluid">
                         <div className="container">
-                              <div className="row flex-row-reverse g-5">
-                                    <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                                          <div className="RotateMoveLeft">
-                                                <Image src="/assets/images/choose-us.png" className="img-fluid w-100" alt="why choose onxius?" width={500} height={500} />
+                              <div className="flex justify-center lg:justify-between items-center gap-3 lg:gap-5 flex-col-reverse lg:flex-row">
+                                    {/* image */}
+                                    <div className="lg:w-1/2 wow fadeInUp" data-wow-delay="0.1s">
+                                          <div className="">
+                                                <Image src="/assets/images/why-choose-us.png" className="img-fluid w-100" alt="why choose onxius?" width={500} height={500} />
                                           </div>
                                     </div>
-                                    <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    {/* content */}
+                                    <div className="lg:w-1/2 wow fadeInUp flex flex-col lg:pl-4" data-wow-delay="0.3s">
                                           <h4 className="mb-1 text-primary">Why Choose Us</h4>
-                                          <h1 className="display-5 mb-4">Experience Excellence With a Team That Truly Cares</h1>
-                                          <ul className="max-w-2xl mx-auto text-gray-600 text-left list-disc list-inside space-y-2 pb-4">
+                                          <h1 className="text-2xl">Experience Excellence With a Team That Truly Cares</h1>
+                                          <ul className="text-gray-600 text-left list-disc list-inside">
                                                 <li>
                                                       Experienced and dedicated team of professionals
                                                 </li>

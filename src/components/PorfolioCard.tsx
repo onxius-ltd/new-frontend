@@ -1,8 +1,6 @@
 "use client";
-import RightAngel from "@/icons/RightAngel";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { ReactNode } from "react";
 
 export type attributesType = {
@@ -38,7 +36,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   key={data.id}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }} 
+                  viewport={{ once: true }}
                   className="rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden h-full"
             >
                   {/* Image */}
@@ -48,10 +46,12 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                               alt={data.title ?? "ONXIUS PROJECT"}
                               fill
                               className="object-fill group-hover:scale-105 transition-transform duration-700"
+                              loading="lazy"
+
                         />
                   </div>
                   {/* Content */}
-                  <div className="p-3 sm:p-4 md:p-6 flex flex-col justify-between gap-3 border">
+                  <div className="p-3 sm:p-4 md:p-6 flex flex-col justify-between gap-3">
                         {/* Top Section */}
                         <div className="flex flex-col gap-2">
                               {/* Industry Label */}
@@ -101,7 +101,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                               </div>
                         </div>
                         {/* Footer */}
-                        <div className="pt-4 border-t border-gray-200 border hidden">
+                        {/* {data.link && <div className="pt-4 border-t border-gray-200 border">
                               <Link
                                     href={data.link}
                                     target="_blank"
@@ -110,7 +110,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                     View Case Study
                                     <RightAngel />
                               </Link>
-                        </div>
+                        </div>} */}
                   </div>
             </motion.div>
       );

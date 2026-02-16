@@ -1,15 +1,13 @@
 "use client";
 import AboutSec from "@/components/AboutSec";
 import Faqs from "@/components/Faqs";
-import OurMission from "@/components/Mission";
-import OurStory from "@/components/Story";
+import Fearutes from "@/components/Features";
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
       <AboutSec />
-      <OurStory />
-      <OurMission />
+      <Fearutes />
       <Faqs />
     </div>
   );

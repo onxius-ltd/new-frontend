@@ -109,10 +109,10 @@ const services = [
 export default function Services() {
 
       return (
-            <div>
+            <div className="">
                   {/* <!-- Service Start --> */}
-                  <div className="container-fluid service py-5">
-                        <div className="container py-5">
+                  <div className="container-fluid service">
+                        <div className="container">
                               {/* main content */}
                               <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
                                     <h4 className="mb-1 text-primary">Our Service</h4>

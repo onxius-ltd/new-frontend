@@ -35,7 +35,7 @@ export default function ClientLogos() {
       }, []);
 
       return (
-            <section className="px-2 py-8 sm:py-12 md:py-16 overflow-hidden" id="logos">
+            <section className="px-2 py-4 sm:py-8 md:py-12 lg:py-16 overflow-hidden" id="logos">
                   {/* title */}
                   {/* <h2 className="text-center text-2xl md:text-3xl font-semibold pb-10 text-gray-800">
                         Trusted by Industry Leaders
@@ -64,20 +64,20 @@ export default function ClientLogos() {
                                     {duplicatedLogos.map((image_src, index) => (
                                           <div
                                                 key={index}
-                                                className="flex-shrink-0 px-2 sm:px-4 md:px-6 lg:px-8"
-                                                style={{ width: `${100 / logos.length}%` }}
+                                                className="flex-shrink-0 px-3 sm:px-4 md:px-6 w-40 sm:w-48 md:w-52 lg:w-56"
                                           >
-                                                <div className="relative h-16 md:h-20 lg:h-24 w-full">
+                                                <div className="relative h-20 sm:h-24 md:h-28 lg:h-24 w-full">
                                                       <Image
                                                             src={image_src}
                                                             alt={`partner logo ${index % logos.length + 1}`}
                                                             fill
                                                             className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
-                                                            sizes="(max-width: 640px) 100px, (max-width: 768px) 120px, 160px"
+                                                            sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, 220px"
                                                       />
                                                 </div>
                                           </div>
                                     ))}
+
                               </motion.div>
 
                               {/* Gradient overlays for smooth edges */}
