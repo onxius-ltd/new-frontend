@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+const { RecaptchaEnterpriseServiceClient } = require('@google-cloud/recaptcha-enterprise');
+
+const client = new RecaptchaEnterpriseServiceClient();
+
 
 export async function POST(req: Request) {
   try {
@@ -7,37 +11,46 @@ export async function POST(req: Request) {
 
     if (!captchaToken) {
       return NextResponse.json(
-        { message: "Captcha is required",  },
+        { message: "Captcha is required", },
         { status: 400 }
       );
     }
 
-    // Verify with Google
-    const verifyRes = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+    const projectID = process.env.GOOGLE_PROJECT_ID!;
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
+
+    const projectPath = client.projectPath(projectID);
+
+    // Build the assessment request.
+    const request = ({
+      assessment: {
+        event: {
+          token: captchaToken,
+          siteKey: siteKey,
         },
-        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
-      }
-    );
+      },
+      parent: projectPath,
+    });
 
-    const verifyData = await verifyRes.json();
-
-    if (!verifyData.success) {
+    const [response] = await client.createAssessment(request);
+    if (!response.tokenProperties?.valid) {
       return NextResponse.json(
         { message: "Captcha verification failed", success: false },
         { status: 400 }
       );
     }
 
+    const score = response.riskAnalysis?.score || 0;
+
+    if (score < 0.5) {
+      return NextResponse.json({ success: false, message: "Recaptcha vertificaiton failed", score });
+    }
+
     // ✅ Configure your SMTP transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST, // e.g. mail.onxius.com
       port: Number(process.env.SMTP_PORT) || 465,
-      secure: true, // true for port 465
+      secure: Number(process.env.SMTP_PORT) === 465, // true for port 465
       auth: {
         user: process.env.SMTP_USER, // e.g. no-reply@onxius.com
         pass: process.env.SMTP_PASS,

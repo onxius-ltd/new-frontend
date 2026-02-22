@@ -9,7 +9,7 @@ interface FormData {
       phone: string;
       project: string;
       budget: string;   // ✅ Added budget
-      subject: string;
+      // subject: string;
       message: string;
 }
 
@@ -20,7 +20,7 @@ const ContactForm: React.FC = () => {
             phone: "",
             project: "",
             budget: "",
-            subject: "",
+            // subject: "",
             message: "",
       });
       const [status, setStatus] = useState<string>("");
@@ -44,12 +44,13 @@ const ContactForm: React.FC = () => {
             }
             setLoading(true);
             setStatus("");
+            const data = { ...formData, captchaToken };
 
             try {
                   const res = await fetch("/api/send-email", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(formData),
+                        body: JSON.stringify(data),
                   });
 
                   if (res.ok) {
@@ -60,9 +61,10 @@ const ContactForm: React.FC = () => {
                               phone: "",
                               project: "",
                               budget: "",
-                              subject: "",
+                              // subject: "",
                               message: "",
                         });
+                        setCaptchaToken(null);
                   } else {
                         setStatus("❌ Failed to send message. Please try again.");
                   }
@@ -90,7 +92,8 @@ const ContactForm: React.FC = () => {
                               <div
                                     key={field.name}
                                     className={
-                                          field.name !== "subject" && field.name !== "budget"
+                                          // field.name !== "subject" &&
+                                          field.name !== "budget"
                                                 ? "col-lg-12 col-xl-6"
                                                 : "col-12"
                                     }
