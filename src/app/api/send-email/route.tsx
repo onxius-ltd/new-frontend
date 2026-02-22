@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-const { RecaptchaEnterpriseServiceClient } = require('@google-cloud/recaptcha-enterprise');
-
-const client = new RecaptchaEnterpriseServiceClient();
-
 
 export async function POST(req: Request) {
   try {
@@ -11,71 +7,57 @@ export async function POST(req: Request) {
 
     if (!captchaToken) {
       return NextResponse.json(
-        { message: "Captcha is required", },
+        { success: false, message: "Captcha is required" },
         { status: 400 }
       );
     }
 
-    const projectID = process.env.GOOGLE_PROJECT_ID!;
-    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
+    // -------------------------------
+    // 1️⃣ Verify reCAPTCHA v2 token
+    // -------------------------------
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY!;
+    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`;
 
-    const projectPath = client.projectPath(projectID);
+    const captchaRes = await fetch(verificationUrl, { method: "POST" });
+    const captchaData = await captchaRes.json();
 
-    // Build the assessment request.
-    const request = ({
-      assessment: {
-        event: {
-          token: captchaToken,
-          siteKey: siteKey,
-        },
-      },
-      parent: projectPath,
-    });
-
-    const [response] = await client.createAssessment(request);
-    if (!response.tokenProperties?.valid) {
+    if (!captchaData.success) {
       return NextResponse.json(
-        { message: "Captcha verification failed", success: false },
+        { success: false, message: "Captcha verification failed" },
         { status: 400 }
       );
     }
 
-    const score = response.riskAnalysis?.score || 0;
-
-    if (score < 0.5) {
-      return NextResponse.json({ success: false, message: "Recaptcha vertificaiton failed", score });
-    }
-
-    // ✅ Configure your SMTP transporter
+    // -------------------------------
+    // 2️⃣ Send Email
+    // -------------------------------
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, // e.g. mail.onxius.com
+      host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 465,
-      secure: Number(process.env.SMTP_PORT) === 465, // true for port 465
+      secure: Number(process.env.SMTP_PORT) === 465,
       auth: {
-        user: process.env.SMTP_USER, // e.g. no-reply@onxius.com
+        user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
     });
 
-    // ✅ Email details
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: process.env.RECEIVER_EMAIL, // your business inbox
+      to: process.env.RECEIVER_EMAIL,
       subject: "New Contact Message",
       html: `
 <div style="margin:0; padding:0; background-color:#f4f6f9; font-family:Arial, Helvetica, sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 0;">
     <tr>
       <td align="center">
-        
         <table width="600" cellpadding="0" cellspacing="0" 
           style="background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.05);">
-
+          
           <!-- Header -->
           <tr>
             <td style="background:#1E3A8A; padding:30px; text-align:center;">
               <img 
-                src="https://onxius.com/assets%2Flogo%2light-logo.png" 
+                src="https://onxius.com/assets%2Flogo%2flight-logo.png" 
                 alt="Onxius Logo" 
                 width="150"
                 style="display:block; margin:0 auto 15px auto;"
@@ -89,30 +71,12 @@ export async function POST(req: Request) {
           <!-- Body -->
           <tr>
             <td style="padding:30px; color:#333333; font-size:15px; line-height:1.6;">
-              
-              <table width="100%" cellpadding="8" cellspacing="0" 
-                style="border-collapse:collapse;">
-                
-                <tr>
-                  <td style="background:#f8fafc;"><strong>Name</strong></td>
-                  <td>${name}</td>
-                </tr>
-                <tr>
-                  <td style="background:#f8fafc;"><strong>Email</strong></td>
-                  <td>${email}</td>
-                </tr>
-                <tr>
-                  <td style="background:#f8fafc;"><strong>Phone</strong></td>
-                  <td>${phone}</td>
-                </tr>
-                <tr>
-                  <td style="background:#f8fafc;"><strong>Project</strong></td>
-                  <td>${project}</td>
-                </tr>
-                <tr>
-                  <td style="background:#f8fafc;"><strong>Budget</strong></td>
-                  <td>£${budget}</td>
-                </tr>
+              <table width="100%" cellpadding="8" cellspacing="0" style="border-collapse:collapse;">
+                <tr><td style="background:#f8fafc;"><strong>Name</strong></td><td>${name}</td></tr>
+                <tr><td style="background:#f8fafc;"><strong>Email</strong></td><td>${email}</td></tr>
+                <tr><td style="background:#f8fafc;"><strong>Phone</strong></td><td>${phone}</td></tr>
+                <tr><td style="background:#f8fafc;"><strong>Project</strong></td><td>${project}</td></tr>
+                <tr><td style="background:#f8fafc;"><strong>Budget</strong></td><td>£${budget}</td></tr>
               </table>
 
               <div style="margin-top:25px;">
@@ -121,7 +85,6 @@ export async function POST(req: Request) {
                   ${message}
                 </div>
               </div>
-
             </td>
           </tr>
 
@@ -134,19 +97,18 @@ export async function POST(req: Request) {
           </tr>
 
         </table>
-
       </td>
     </tr>
   </table>
 </div>
-`
+      `,
     });
 
     return NextResponse.json({ success: true, message: "Email sent successfully!" });
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error("Error in send-email API:", error);
     return NextResponse.json(
-      { success: false, message: "Email failed to send" },
+      { success: false, message: "Server error occurred" },
       { status: 500 }
     );
   }

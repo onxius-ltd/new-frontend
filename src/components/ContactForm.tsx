@@ -1,6 +1,7 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import Swal from "sweetalert";
 
 
 interface FormData {
@@ -14,6 +15,8 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
+      // ✅ Create a ref to control the ReCAPTCHA
+      const recaptchaRef = useRef<ReCAPTCHA>(null);
       const [formData, setFormData] = useState<FormData>({
             name: "",
             email: "",
@@ -23,7 +26,7 @@ const ContactForm: React.FC = () => {
             // subject: "",
             message: "",
       });
-      const [status, setStatus] = useState<string>("");
+      // const [status, setStatus] = useState<string>("");
       const [loading, setLoading] = useState<boolean>(false);
       const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
@@ -39,11 +42,12 @@ const ContactForm: React.FC = () => {
             e.preventDefault();
 
             if (!captchaToken) {
-                  setStatus("Please verify reCAPTCHA");
+                  // setStatus("Please verify reCAPTCHA");
+                  Swal("Oops!", "Please verify reCAPTCHA", "error");
                   return;
             }
             setLoading(true);
-            setStatus("");
+            // setStatus("");
             const data = { ...formData, captchaToken };
 
             try {
@@ -54,7 +58,9 @@ const ContactForm: React.FC = () => {
                   });
 
                   if (res.ok) {
-                        setStatus("✅ Message sent successfully!");
+                        Swal("Success", "Message sent successfully!", "success");
+
+                        // setStatus("✅ Message sent successfully!");
                         setFormData({
                               name: "",
                               email: "",
@@ -65,12 +71,16 @@ const ContactForm: React.FC = () => {
                               message: "",
                         });
                         setCaptchaToken(null);
+                        // ✅ Reset the ReCAPTCHA after submission
+                        recaptchaRef.current?.reset();
                   } else {
-                        setStatus("❌ Failed to send message. Please try again.");
+                        // setStatus("❌ Failed to send message. Please try again.");
+                        Swal("Oops!", "Failed to send message. Please try again.", "error");
                   }
             } catch (error) {
                   console.error(error);
-                  setStatus("❌ Something went wrong. Try again later.");
+                  // setStatus("❌ Something went wrong. Try again later.");
+                  Swal("Oops!", "Something went wrong. Try again later.", "error");
             } finally {
                   setLoading(false);
             }
@@ -153,8 +163,10 @@ const ContactForm: React.FC = () => {
                         </div>
 
                         <ReCAPTCHA
+                              ref={recaptchaRef} // controlled via ref
                               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                               onChange={(token: string | null) => setCaptchaToken(token)}
+                              onExpired={() => setCaptchaToken(null)} // reset token if it expires
                         />
 
                         {/* Submit Button */}
@@ -168,11 +180,11 @@ const ContactForm: React.FC = () => {
                               </button>
                         </div>
 
-                        {status && (
+                        {/* {status && (
                               <div className="col-12 text-center mt-2">
                                     <p>{status}</p>
                               </div>
-                        )}
+                        )} */}
                   </div>
             </form>
       );
