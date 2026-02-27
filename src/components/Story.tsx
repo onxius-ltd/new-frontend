@@ -22,7 +22,7 @@ export default function OurStory() {
                                           <p className="pb-4">
                                                 Our journey began with a simple idea — to make technology meaningful and accessible for everyone. What started as a small group of creative thinkers has grown into a full-service digital agency trusted by clients across diverse industries. Through dedication and innovation, we’ve built long-term partnerships grounded in trust and quality.
                                           </p>
-                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link>
+                                          <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Get a Free Quote &#x2799;</Link>
                                     </div>
                               </div>
                         </div>

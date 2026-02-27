@@ -35,7 +35,7 @@ export default function ChooseUs() {
                                                       Strong focus on long-term client relationships
                                                 </li>
                                           </ul>
-                                          {/* <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link> */}
+                                          {/* <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Get a Free Quote &#x2799;</Link> */}
                                     </div>
                               </div>
                         </div>

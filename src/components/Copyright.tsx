@@ -16,7 +16,7 @@ export default function Copyright() {
                                                       <i className="fas fa-copyright text-light me-2" />
                                                       Onxius
                                                 </Link>
-                                                , All right reserved.
+                                                , All rights reserved
                                           </span>
                                     </div>
                                     <div className="col-md-6 text-center text-md-end text-white">

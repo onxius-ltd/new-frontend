@@ -58,7 +58,7 @@ export default function Fearutes() {
                                     </p>
                               </div>
                               {/* process cards */}
-                              <div className="row g-4 justify-content-start items-stretch mb-5">
+                              <div className="row g-4 justify-content-start items-stretch mb-5 pb-2">
                                     {process?.length > 0 &&
                                           process.map((item, index) => {
                                                 const delay = index * 0.1; // fade-in delay

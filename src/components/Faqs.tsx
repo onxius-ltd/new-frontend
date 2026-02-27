@@ -4,28 +4,54 @@ import Image from "next/image";
 const faqs = [
       {
             "id": 1,
-            "title": "What is Onxius?",
-            "description": "Onxius is a digital solutions company that specializes in creating modern, scalable, and user-friendly websites and applications. Our goal is to help businesses grow through innovative design and technology."
+            "title": "1. How much does a website cost?",
+            "description": "   Our basic business website starts from £299. The final price depends on how many pages and features you need. We will always give you a clear quote before starting."
       },
       {
             "id": 2,
-            "title": "What services does Onxius offer?",
-            "description": "We provide a wide range of services including web development, UI/UX design, digital strategy, branding, and custom software solutions — all tailored to meet your business needs."
+            "title": "2. How long does it take to make a website?",
+            "description": " It takes normally 5 to 10 working days for a basic website. Larger projects like online shops may take 2 to 3 weeks or longer time."
       },
       {
             "id": 3,
-            "title": "How does Onxius ensure quality in its projects?",
-            "description": "Our team follows a structured process that includes research, design, testing, and optimization. We ensure every product we deliver is fast, secure, and optimized for the best user experience."
+            "title": "3. Do I need technical knowledge?",
+            "description": "   No. We set everything up for you. You can simply use WhatsApp or email us for any changes."
       },
       {
             "id": 4,
-            "title": "Can Onxius help my business grow online?",
-            "description": "Yes! Onxius focuses on creating digital experiences that attract, engage, and convert your audience — helping you increase traffic, build trust, and boost sales."
+            "title": "4. Will my business appear on Google?",
+            "description": "Yes. We set up Google Business Profile and basic SEO so customers can find your business on Google and Google Maps."
       },
       {
             "id": 5,
-            "title": "How can I start a project with Onxius?",
-            "description": "Getting started is easy. Simply contact us through our website or email us with your project details. Our team will reach out to discuss your goals, timeline, and how we can bring your vision to life."
+            "title": "5. Can customers message me directly?",
+            "description": "Yes. We can connect your website to WhatsApp so customers can message you instantly."
+      },
+      {
+            "id": 6,
+            "title": "6. Do you provide support after the website is finished?",
+            "description": "Yes. We provide on-going support and updates. Monthly support plans start from £39 per month."
+      },
+      {
+            "id": 7,
+            "title": "7. Can I sell products online?",
+            "description": "Yes. We can create an online shop where customers can order and pay online."
+      }
+      ,
+      {
+            "id": 8,
+            "title": "8. What information do you need from me?",
+            "description": "Your business name, services, contact number, address and photos. We help you with everything else."
+      },
+      {
+            "id": 9,
+            "title": "9. Do I need hosting and domain?",
+            "description": "We can arrange domain and hosting for you, or we can use your existing one."
+      },
+      {
+            "id": 10,
+            "title": "10. Can you update my old website?",
+            "description": "Yes. We can fix, improve or redesign your existing website."
       }
 ]
 

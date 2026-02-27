@@ -53,7 +53,7 @@ export default function Navbar() {
                         <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-2 py-lg-0 d-flex justify-content-between align-items-cetner gap-2 w-full">
                               {/* nav logo */}
                               <Link href="/" className="navbar-brand p-0">
-                                    <Image src="/assets/logo/new-onxius-logo-without-bg.png" className="img-fluid w-auto h-40 sm:h-100" alt="ONXIUS Logo" width={240} height={65} />
+                                    <Image src="/assets/logo/new-onxius-logo-without-bg.png" className="img-fluid w-auto h-40 sm:h-100" alt="ONXIUS Logo" width={220} height={65} />
                               </Link>
                               {/* nav toggler */}
                               <button
@@ -75,7 +75,7 @@ export default function Navbar() {
                                           {/* menu options */}
                                           {
                                                 menus?.length > 0 && menus?.map((item, index) =>
-                                                      <Link href={item.href} className={`nav-item nav-link ${index == 0 ? "active" : ""}`} key={index}>
+                                                      <Link href={item.href} className={`nav-item nav-link ${index == 0 ? "active" : ""}`} key={index} onClick={() => setIsOpen(false)}>
                                                             {item.label}
                                                       </Link>
                                                 )
@@ -84,9 +84,9 @@ export default function Navbar() {
                                           {/* <div className="border talk-button"> */}
                                           <Link
                                                 href="/contact"
-                                                className="nav-item nav-link btn butn-custom rounded-pill py-2 px-4 talk-button"
+                                                className="nav-item nav-link btn butn-custom rounded-pill py-2 px-4 talk-button" style={{ color: "white !important" }} onClick={() => setIsOpen(false)}
                                           >
-                                                Let&apos;s Talk &#x2799;
+                                                Get a Free Quote &#x2799;
                                           </Link>
                                           {/* </div> */}
                                     </div>
