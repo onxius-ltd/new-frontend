@@ -1,120 +1,161 @@
-// "use client";
-// import { useEffect, useState } from "react";
-
-// export default function Preloader() {
-//       const [loading, setLoading] = useState(true);
-
-//       useEffect(() => {
-//             const timer = setTimeout(() => setLoading(false), 1500); // fake delay
-//             return () => clearTimeout(timer);
-//       }, []);
-
-//       if (!loading) return null;
-
-//       return (
-//             // < !--Spinner Start-- >
-//             <div id="spinner" className="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-//                   <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
-//                         <span className="sr-only">Loading...</span>
-//                   </div>
-//             </div>
-//             //   <!--Spinner End-- >
-//       )
-// }
-
 "use client";
+
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Preloader() {
+      const pathname = usePathname();
       const [loading, setLoading] = useState(true);
 
       useEffect(() => {
-            // Check if page is already loaded
+            // ── Show preloader on every route change.
+            // On the very first load we also respect window.load so all assets
+            // are ready. On subsequent client-side navigations document.readyState
+            // is already "complete", so we just show a brief branded delay.
+            setLoading(true);
+
+            let hideTimer: ReturnType<typeof setTimeout>;
+
+            const scheduleHide = () => {
+                  // 600ms is enough to see the brand — not long enough to annoy
+                  hideTimer = setTimeout(() => setLoading(false), 600);
+            };
+
             if (document.readyState === "complete") {
-                  setLoading(false);
-                  return;
+                  scheduleHide();
+            } else {
+                  // Initial hard load — wait for window load event
+                  const onLoad = () => scheduleHide();
+                  window.addEventListener("load", onLoad);
+
+                  // Safety fallback: never block longer than 3s
+                  const fallback = setTimeout(() => setLoading(false), 3000);
+
+                  return () => {
+                        window.removeEventListener("load", onLoad);
+                        clearTimeout(fallback);
+                        clearTimeout(hideTimer);
+                  };
             }
 
-            const handleLoad = () => {
-                  // Optional: minimum display time for branding (500ms is enough)
-                  setTimeout(() => setLoading(false), 500);
-            };
-
-            window.addEventListener("load", handleLoad);
-
-            // Fallback timeout in case load event doesn't fire
-            const fallbackTimer = setTimeout(() => {
-                  setLoading(false);
-            }, 3000); // Maximum 3 seconds
-
-            return () => {
-                  window.removeEventListener("load", handleLoad);
-                  clearTimeout(fallbackTimer);
-            };
-      }, []);
+            return () => clearTimeout(hideTimer);
+      }, [pathname]); // ← this is the key fix: re-runs on every page change
 
       if (!loading) return null;
 
       return (
             <div
                   id="preloader"
-                  className="preloader show bg-white position-fixed w-100 vh-100 top-0 start-0 d-flex flex-column align-items-center justify-content-center z-1050"
-                  aria-live="polite"
-                  aria-label="Loading website"
+                  role="status"
+                  aria-label="Loading page"
+                  style={{
+                        position: "fixed",
+                        inset: 0,
+                        zIndex: 9999,
+                        background: "#ffffff",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "1.5rem",
+                  }}
             >
-                  {/* Option 1: Logo + Spinner (Professional) */}
-                  <div className="preloader-content text-center">
-                        {/* Your Logo */}
-                        <div className="logo mb-4">
-                              {/* Replace with your actual logo */}
-                              <div className="brand-logo" style={{
-                                    fontSize: "2.5rem",
-                                    fontWeight: "700",
-                                    color: "var(--sky-clr)",
-                                    letterSpacing: "1px"
-                              }}>
-                                    ONXIUS
-                              </div>
-                              {/* Or use Image component for logo */}
-                              {/* <Image 
-            src="/logo.png" 
-            alt="Onxius Logo" 
-            width={120} 
-            height={40}
-            priority
-          /> */}
-                        </div>
-
-                        {/* Animated Spinner */}
-                        <div className="spinner-container position-relative">
-                              {/* Modern dual-ring spinner */}
-                              <div className="dual-ring-spinner">
-                                    <div className="ring ring-1"></div>
-                                    <div className="ring ring-2"></div>
-                              </div>
-
-                              {/* Loading percentage (optional) */}
-                              <div className="loading-text mt-3 text-muted small">
-                                    Preparing your digital experience...
-                              </div>
-                        </div>
+                  {/* ── Brand Logo ── */}
+                  <div
+                        style={{
+                              fontSize: "2.2rem",
+                              fontWeight: 700,
+                              letterSpacing: "2px",
+                              background: "linear-gradient(90deg, #F4622A, #D4307A, #7B2FBE)",
+                              WebkitBackgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                              backgroundClip: "text",
+                        }}
+                  >
+                        ONXIUS
                   </div>
 
-                  {/* Progress Bar (Optional, adds sophistication) */}
-                  <div className="progress-container position-absolute bottom-0 w-100" style={{ height: "3px" }}>
-                        <div
-                              className="progress-bar bg-primary"
-                              style={{
-                                    width: "0%",
-                                    height: "100%",
-                                    transition: "width 0.3s ease"
-                              }}
-                              id="preloader-progress"
-                        />
-                  </div>
+                  {/* ── Dual-ring spinner ── */}
+                  <SpinnerRing />
 
-                  {/* Screen reader announcement */}
-                  <span className="visually-hidden">Loading Onxius website, please wait...</span>
+                  {/* ── Tagline ── */}
+                  <p
+                        style={{
+                              fontSize: "0.75rem",
+                              color: "#9ca3af",
+                              margin: 0,
+                              letterSpacing: "0.12em",
+                              textTransform: "uppercase",
+                        }}
+                  >
+                        Preparing your experience…
+                  </p>
+
+                  {/* ── Bottom progress bar ── */}
+                  <ProgressBar />
+
+                  <span className="visually-hidden">Loading Onxius, please wait…</span>
             </div>
+      );
+}
+
+/* ─── Dual-ring spinner in brand colors ─────────────────────────────────── */
+function SpinnerRing() {
+      return (
+            <>
+                  <style>{`
+        @keyframes _onxius_cw  { to { transform: rotate(360deg);  } }
+        @keyframes _onxius_ccw { to { transform: rotate(-360deg); } }
+        ._onxius_outer {
+          position: absolute; inset: 0; border-radius: 50%;
+          border: 3px solid transparent;
+          border-top-color: #F4622A;
+          border-right-color: #D4307A;
+          animation: _onxius_cw 0.9s linear infinite;
+        }
+        ._onxius_inner {
+          position: absolute; inset: 10px; border-radius: 50%;
+          border: 3px solid transparent;
+          border-bottom-color: #7B2FBE;
+          border-left-color: #D4307A;
+          animation: _onxius_ccw 0.7s linear infinite;
+        }
+      `}</style>
+                  <div style={{ position: "relative", width: 52, height: 52 }}>
+                        <div className="_onxius_outer" />
+                        <div className="_onxius_inner" />
+                  </div>
+            </>
+      );
+}
+
+/* ─── Indeterminate progress bar ────────────────────────────────────────── */
+function ProgressBar() {
+      return (
+            <>
+                  <style>{`
+        @keyframes _onxius_bar {
+          0%   { transform: translateX(-100%); }
+          100% { transform: translateX(250%);  }
+        }
+        ._onxius_bar_fill {
+          height: 100%; width: 40%;
+          background: linear-gradient(90deg, #F4622A, #D4307A, #7B2FBE);
+          animation: _onxius_bar 1.2s ease-in-out infinite;
+          border-radius: 0 2px 2px 0;
+        }
+      `}</style>
+                  <div
+                        style={{
+                              position: "absolute",
+                              bottom: 0, left: 0, right: 0,
+                              height: 3,
+                              background: "#f3f4f6",
+                              overflow: "hidden",
+                        }}
+                  >
+                        <div className="_onxius_bar_fill" />
+                  </div>
+            </>
       );
 }

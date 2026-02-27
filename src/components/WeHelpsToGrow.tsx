@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { CSSProperties, useRef } from "react";
 import {
       motion,
       useScroll,
@@ -28,7 +28,16 @@ const G_H = "linear-gradient(135deg, #F4622A 0%, #D4307A 100%)"; // orange→pin
 const G_M = "linear-gradient(135deg, #D4307A 0%, #7B2FBE 100%)"; // pink→purple
 const G_FULL = "linear-gradient(90deg, #F4622A, #D4307A, #7B2FBE)";
 
-const features = [
+type FeatureItem = {
+      id: number;
+      label: string;
+      gradient: string;
+      glowColor: string;
+      delay: number;
+      svgContent: React.ReactNode
+}
+
+const features: FeatureItem[] = [
       {
             id: 1,
             label: "Customers find you on Google",
@@ -110,7 +119,7 @@ const features = [
 ];
 
 /* ─── Card ─────────────────────────────────────────── */
-function FeatureCard({ feature }) {
+function FeatureCard({ feature }: { feature: FeatureItem }) {
       const ref = useRef(null);
       const inView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -191,8 +200,13 @@ function FeatureCard({ feature }) {
       );
 }
 
+interface OrbProps {
+      style: CSSProperties;
+      delay?: number;
+}
+
 /* ─── Floating ambient orb ─────────────────────────── */
-function Orb({ style, delay = 0 }) {
+function Orb({ style, delay = 0 }: OrbProps) {
       return (
             <motion.div
                   className="absolute rounded-full pointer-events-none"
@@ -363,7 +377,7 @@ export default function WeHelpsToGrow() {
 
                         {/* ── Feature Grid ── */}
                         <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-24">
-                              {features.map((feature) => (
+                              {features?.length > 0 && features.map((feature) => (
                                     <FeatureCard key={feature.id} feature={feature} />
                               ))}
                         </div>
