@@ -59,31 +59,31 @@ const services = [
             icon: "/assets/images/Web Design  Development icon.png",
             title: "Web Development",
             subtitle: "Stunning, High-Performance Websites",
-            desc: "Responsive and scalable websites built with modern technologies to grow your brand online."
+            desc: "We create easy to use websites for your shop or business so customers can find you on Google and contact you."
       },
       {
             icon: "/assets/images/pwa-icon.png",
             title: "Progressive Web Apps",
             subtitle: "Fast, App-Like Web Experiences",
-            desc: "Installable PWAs with offline support, delivering smooth performance across all devices."
+            desc: "Mobile friendly website (works like an app on phone, no download needed)"
       },
       {
             icon: "/assets/images/Mobile App Development icon .png",
             title: "Mobile Apps",
             subtitle: "Engaging iOS & Android Applications",
-            desc: "Cross-platform mobile apps with intuitive design and reliable performance for better engagement."
+            desc: "We create mobile apps if your business needs online orders, bookings or customer accounts."
       },
       {
             icon: "/assets/images/WordPress  E-Commerce Solutions icon .png",
             title: "WordPress & E-Commerce",
             subtitle: "Flexible, Growth-Ready Online Stores",
-            desc: "Custom WordPress and WooCommerce solutions optimized for speed, security, and easy management."
+            desc: "Online shop (customers can order and pay on your website)"
       },
       {
             icon: "/assets/images/SEO and Digital Marketing icon .png",
             title: "SEO & Marketing",
             subtitle: "Get Found, Ranked, and Recognized",
-            desc: "Strategic SEO and digital marketing to increase visibility, traffic, and qualified leads."
+            desc: "We help your business appear on Google and Google Maps so nearby customers can find you."
       },
       {
             icon: "/assets/images/UI UX Design icon .png",
@@ -98,7 +98,7 @@ const services = [
             desc: "Secure and efficient desktop apps with offline capability built for productivity and performance."
       },
       {
-            icon: "/assets/images/Maintenance & Support icon.png",
+            icon: "/assets/images/Maintenance and Support icon.png",
             title: "Support & Maintenance",
             subtitle: "Reliable Care After Launch",
             desc: "Ongoing updates, monitoring, and support to keep your systems secure, stable, and optimized."
@@ -148,7 +148,7 @@ export default function Services() {
                                                                               href="/contact"
                                                                               className="butn-custom butn-custom-outline rounded-pill text-primary font-bold py-2 px-4 mt-auto"
                                                                         >
-                                                                              Let&apos;s Talk &#x2799;
+                                                                             Get a Free Quote &#x2799;
                                                                         </Link>
                                                                   </div>
                                                             </div>

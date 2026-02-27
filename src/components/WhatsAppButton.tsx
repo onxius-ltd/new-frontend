@@ -11,7 +11,7 @@ const WhatsAppIcon = () => (
 )
 
 const WhatsAppButton: React.FC = () => {
-      const phoneNumber = "923261639746"; // 👉 Replace with your number (no + sign)
+      const phoneNumber = "+447723819735"; // 👉 Replace with your number (no + sign)
       const message = "Hello! I'm interested in your services.";
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
             message
@@ -23,9 +23,9 @@ const WhatsAppButton: React.FC = () => {
                         href={whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="whatsapp-float fixed right-3 bottom-4 z-[999999] text-white cursor-pointer rounded-full p-2 shadow"
+                        className="whatsapp-float fixed right-3 bottom-4 z-[999999] text-white cursor-pointer rounded-full p-2 shadow opacity-95 hover:opacity-100"
                         aria-label="Chat on WhatsApp"
-style={{background: "#075E54  !important;"}}
+                        style={{ background: "#25D366  !important;" }}
                   >
                         <WhatsAppIcon />
                   </Link>

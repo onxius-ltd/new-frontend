@@ -44,7 +44,7 @@ export default function AboutFearute() {
                                     </div>
                               </div>
                               <div className="py-8">
-                                    <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link>
+                                    <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Get a Free Quote &#x2799;</Link>
                               </div>
                         </div>
                   </div>

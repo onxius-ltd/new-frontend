@@ -23,10 +23,10 @@ export default function HomeHeader() {
                                           data-wow-delay="0.3s"
                                           style={{ fontWeight: 500 }}
                                     >
-                                          We Build Scalable Web & SaaS Solutions for Growing Businesses
+                                          Websites, booking systems, online stores, and smart business tools that save time and grow your sales.
                                     </h1>
                                     <p className="text-xl mb-3 md:mb-4 wow fadeInUp xl:max-w-2xl" data-wow-delay="0.5s">
-                                          Custom web development, SaaS platforms, and IT solutions designed to increase revenue and automate operations.
+                                          We build simple websites and online systems that help your business get more customers.
                                     </p>
                                     {/* cta button */}
                                     <div className="d-flex gap-3 flex-wrap">

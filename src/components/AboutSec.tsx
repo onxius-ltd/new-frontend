@@ -25,7 +25,7 @@ export default function AboutSec() {
                                                 scalable, and user-friendly solutions that help businesses grow and succeed in
                                                 today’s fast-paced world.
                                           </p>
-                                          <div> <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Let&apos;s Talk &#x2799;</Link></div>
+                                          <div> <Link href="/contact" className="butn-custom rounded-pill py-3 px-5">Get a Free Quote &#x2799;</Link></div>
                                     </div>
                               </div>
                         </div>

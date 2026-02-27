@@ -5,6 +5,7 @@ import Faqs from "@/components/Faqs";
 import ChooseUs from "@/components/ChooseUs";
 import Portfolio from "@/components/Portfolio";
 import ClientLogos from "@/components/ClientLogos";
+import WeHelpsToGrow from "@/components/WeHelpsToGrow";
 
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       <ClientLogos />
       <Portfolio />
       <Services />
+      <div className="mb-2 mt-4">
+        <WeHelpsToGrow />
+      </div>
       <ChooseUs />
       <Fearutes />
       <Faqs />

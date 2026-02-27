@@ -5,6 +5,11 @@ import { useRef, useEffect, useState } from "react";
 
 const logos = [
       "/assets/partner-logos/heavenly-meals.png",
+      "/assets/partner-logos/fatima-quranic-academy.png",
+      "/assets/partner-logos/myrasbeds.png",
+      "/assets/partner-logos/mr-oil.png",
+      "/assets/partner-logos/great-transfers-uk.png",
+      "/assets/partner-logos/frenco-ltd.png",
       "/assets/partner-logos/auto-bids.png",
       "/assets/partner-logos/online-quran-home.png",
       "/assets/partner-logos/tei-logo.jpg",
