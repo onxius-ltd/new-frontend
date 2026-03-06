@@ -6,6 +6,7 @@ import AppStore from "@/icons/AppStore";
 import Car from "@/icons/Car";
 import Consultancy from "@/icons/Consultancy";
 import Microchrip from "@/icons/Microchrip";
+import Link from "next/link";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // WHY A FUNCTION INSTEAD OF A MODULE-LEVEL CONST:
@@ -22,62 +23,23 @@ import Microchrip from "@/icons/Microchrip";
 function getPortfolioData(): ItemProps[] {
   return [
     {
-      id: 1,
-      title: "Auto-Bids",
-      industry: "Automotive SaaS Platform",
+      id: 6,
+      title: "Great Transfers UK",
+      industry: "Transportation & Airport Transfer Services",
       role: "Full-Stack Developer",
-      engagement: "Delivered during tenure at previous organization",
-      description:
-        "Scalable vehicle auction and bidding platform engineered with secure transaction handling, real-time bidding logic, and role-based dashboards for buyers and administrators.",
-      image: "/assets/img/auto-bids.png",
-      tags: [
-        { icon: <Car />, label: "Auction Platform" },
-        { label: "Automotive" },
-        { label: "React & Laravel" },
-      ],
-      link: "https://auto-bids.com/",
-      attributes: [
-        { counting: "5,000+", label: "Vehicles Listed" },
-        { counting: "+58%", label: "Bidding Activity Growth" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Fatima Quranic Academy",
-      industry: "Online Quran Education Platform",
-      role: "Full-Stack Wordpress Developer",
       engagement: "Developed and Managed Under Current Organization",
       description:
-        "A trusted online Quran academy connecting students worldwide with qualified tutors for Tajweed, Tafseer, and Hifz, built for performance and seamless inquiries.",
-      image: "/assets/images/fatimaquranicacademy.png",
+        "A professional airport transfer and private transportation platform designed for seamless bookings, service reliability, and optimized performance to drive customer inquiries.",
+      image: "/assets/images/greattransfers.png",
       tags: [
-        { icon: <Globe />, label: "Online Quran Academy" },
+        { icon: <Globe />, label: "Booking Website" },
+        { label: "Transportation Services" },
         { label: "Performance Optimized" },
       ],
-      link: "https://fatimaquranicacademy.com/",
+      link: "https://greattransfers.uk/",
       attributes: [
-        { counting: "+60%", label: "Growth in Student Inquiries" },
-        { counting: "Worldwide", label: "Student Reach" },
-      ],
-    },
-    {
-      id: 3,
-      title: "Heavenly Meats LLC",
-      industry: "E-commerce / Retail",
-      role: "Full-Stack Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "High-performance e-commerce platform developed for a premium meat brand, focused on conversion optimization and seamless ordering experience across devices.",
-      image: "/assets/img/heavenlymeatsllc.png",
-      tags: [
-        { icon: <Globe />, label: "E-commerce Website" },
-        { label: "Online Store" },
-        { label: "Conversion Optimization" },
-      ],
-      link: "https://heavenlymeatsllc.com/",
-      attributes: [
-        { counting: "+42%", label: "Increase in Online Orders" },
-        { counting: "2.5s", label: "Average Load Time" },
+        { counting: "+60%", label: "Increase in Bookings" },
+        { counting: "UK Wide", label: "Service Coverage" },
       ],
     },
     {
@@ -101,6 +63,65 @@ function getPortfolioData(): ItemProps[] {
       ],
     },
     {
+      id: 1,
+      title: "Auto-Bids",
+      industry: "Automotive SaaS Platform",
+      role: "Full-Stack Developer",
+      engagement: "Delivered during tenure at previous organization",
+      description:
+        "Scalable vehicle auction and bidding platform engineered with secure transaction handling, real-time bidding logic, and role-based dashboards for buyers and administrators.",
+      image: "/assets/img/auto-bids.png",
+      tags: [
+        { icon: <Car />, label: "Auction Platform" },
+        { label: "Automotive" },
+        { label: "React & Laravel" },
+      ],
+      link: "https://auto-bids.com/",
+      attributes: [
+        { counting: "5,000+", label: "Vehicles Listed" },
+        { counting: "+58%", label: "Bidding Activity Growth" },
+      ],
+    },
+    {
+      id: 3,
+      title: "Heavenly Meats LLC",
+      industry: "E-commerce / Retail",
+      role: "Full-Stack Developer",
+      engagement: "Developed and Managed Under Current Organization",
+      description:
+        "High-performance e-commerce platform developed for a premium meat brand, focused on conversion optimization and seamless ordering experience across devices.",
+      image: "/assets/img/heavenlymeatsllc.png",
+      tags: [
+        { icon: <Globe />, label: "E-commerce Website" },
+        { label: "Online Store" },
+        { label: "Conversion Optimization" },
+      ],
+      link: "https://heavenlymeatsllc.com/",
+      attributes: [
+        { counting: "+42%", label: "Increase in Online Orders" },
+        { counting: "2.5s", label: "Average Load Time" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Fatima Quranic Academy",
+      industry: "Online Quran Education Platform",
+      role: "Full-Stack Wordpress Developer",
+      engagement: "Developed and Managed Under Current Organization",
+      description:
+        "A trusted online Quran academy connecting students worldwide with qualified tutors for Tajweed, Tafseer, and Hifz, built for performance and seamless inquiries.",
+      image: "/assets/images/fatimaquranicacademy.png",
+      tags: [
+        { icon: <Globe />, label: "Online Quran Academy" },
+        { label: "Performance Optimized" },
+      ],
+      link: "https://fatimaquranicacademy.com/",
+      attributes: [
+        { counting: "+60%", label: "Growth in Student Inquiries" },
+        { counting: "Worldwide", label: "Student Reach" },
+      ],
+    },
+    {
       id: 5,
       title: "MR Oil",
       industry: "Oil & Petroleum Services",
@@ -118,26 +139,6 @@ function getPortfolioData(): ItemProps[] {
       attributes: [
         { counting: "B2B", label: "Client Focused" },
         { counting: "Industrial", label: "Market Reach" },
-      ],
-    },
-    {
-      id: 6,
-      title: "Great Transfers UK",
-      industry: "Transportation & Airport Transfer Services",
-      role: "Full-Stack Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "A professional airport transfer and private transportation platform designed for seamless bookings, service reliability, and optimized performance to drive customer inquiries.",
-      image: "/assets/images/greattransfers.png",
-      tags: [
-        { icon: <Globe />, label: "Booking Website" },
-        { label: "Transportation Services" },
-        { label: "Performance Optimized" },
-      ],
-      link: "https://greattransfers.uk/",
-      attributes: [
-        { counting: "+60%", label: "Increase in Bookings" },
-        { counting: "UK Wide", label: "Service Coverage" },
       ],
     },
     {
@@ -253,13 +254,14 @@ export default function Portfolio({
   const allData = getPortfolioData();
   const displayedData = isPortfolioPage ? allData : allData.slice(0, 6);
 
+
   return (
     // suppressHydrationWarning is a safety net for any minor attribute
     // differences (e.g. class names from third-party libs like WOW.js)
     // that don't affect rendering correctness.
     <section
       id="portfolio"
-      className="relative px-2 py-12 md:py-16 bg-transparent backdrop-blur-md"
+      className={`relative px-2 py-12 md:py-16 ${isPortfolioPage ? "" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat"}`}
       suppressHydrationWarning
     >
       <div className="container mx-auto px-6">
@@ -281,6 +283,10 @@ export default function Portfolio({
             <PorfolioCard data={item} key={item.id} />
           ))}
         </div>
+        {/* view all projects button */}
+        {!isPortfolioPage && <div className="mt-5 flex justify-center items-center wow fadeIn">
+          <Link href="/portfolio" className="butn-custom rounded-pill py-2.5 px-16">View All Projects &#x2799;</Link>
+        </div>}
       </div>
     </section>
   );

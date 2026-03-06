@@ -8,7 +8,7 @@ export default function PortfolioPage() {
     <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
       <ClientLogos />
       <Portfolio isPortfolioPage={true} />
-      {/* <Faqs /> */}
+      <Faqs />
     </div>
   );
 }
