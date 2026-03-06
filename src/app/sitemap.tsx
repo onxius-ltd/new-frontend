@@ -1,13 +1,13 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-      const baseUrl = "https://onxius.com/";
+      const baseUrl = "https://onxius.com";
 
       return [
             {
-                  url: `${baseUrl}`,
+                  url: baseUrl,
                   lastModified: new Date(),
-                  changeFrequency: "yearly",
+                  changeFrequency: "monthly",
                   priority: 1,
             },
             {
@@ -25,13 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             {
                   url: `${baseUrl}/portfolio`,
                   lastModified: new Date(),
-                  changeFrequency: "yearly",
+                  changeFrequency: "monthly",
                   priority: 0.7,
             },
             {
                   url: `${baseUrl}/contact`,
                   lastModified: new Date(),
-                  changeFrequency: "yearly",
+                  changeFrequency: "monthly",
                   priority: 0.7,
             },
       ];

@@ -10,6 +10,7 @@
   --dark-blue-clr: #ee5f11;
 }
 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

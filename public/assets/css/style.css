@@ -1204,9 +1204,10 @@
     background-color: var(--dark-blue-clr) !important;
     border-color: var(--dark-blue-clr) !important;
     color: white !important;
-    text-shadow: 0 0 0 1px rgba(238, 95, 17, 0.5) !important;
+    text-shadow: 0 0 1px 1px rgba(238, 95, 17, 0.5) !important;
     transition: all 0.5s ease-out !important;
     text-decoration: none !important;
+    font-weight: 600;
 }
 
 .butn-custom:hover,

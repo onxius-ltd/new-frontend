@@ -11,9 +11,13 @@ import WeHelpsToGrow from "@/components/WeHelpsToGrow";
 export default function Home() {
   return (
     <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
-      <ClientLogos />
+      <div className="mb-2">
+        <ClientLogos />
+      </div>
       <Portfolio />
-      <Services />
+      <div className="mb-2 mt-4">
+        <Services />
+      </div>
       <div className="mb-2 mt-4">
         <WeHelpsToGrow />
       </div>

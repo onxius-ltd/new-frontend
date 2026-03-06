@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 export type attributesType = {
       counting: string;
@@ -49,7 +50,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   className="rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden h-full flex flex-col"
             >
                   {/* Image */}
-                  <div className="relative w-full h-[220px] overflow-hidden flex-shrink-0">
+                  <div className="relative w-full h-[250px] overflow-hidden flex-shrink-0">
                         <Image
                               src={data.image}
                               alt={data.title ?? "ONXIUS PROJECT"}
@@ -60,7 +61,7 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                   </div>
 
                   {/* Content */}
-                  <div className="p-4 md:p-6 flex flex-col gap-3 flex-1">
+                  <div className="p-4 md:p-6 flex flex-col gap-2 flex-1">
                         {/* Industry */}
                         <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">
                               {data.industry}
@@ -70,7 +71,6 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                         <h3 className="text-xl font-semibold text-gray-900 leading-snug m-0">
                               {data.title}
                         </h3>
-
                         {/* Role & Engagement */}
                         {(data.role || data.engagement) && (
                               <p className="text-sm text-gray-500 m-0">
@@ -79,12 +79,10 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                     {data.engagement}
                               </p>
                         )}
-
                         {/* Description */}
                         <p className="text-sm text-gray-600 leading-relaxed m-0">
                               {data.description}
                         </p>
-
                         {/* Attributes */}
                         {data.attributes?.length > 0 && (
                               <div className="flex flex-wrap gap-6 pt-1">
@@ -100,7 +98,6 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                     ))}
                               </div>
                         )}
-
                         {/* Tags */}
                         {data.tags?.length > 0 && (
                               <div className="flex flex-wrap gap-1.5 pt-1 mt-auto">
@@ -115,6 +112,10 @@ export default function PorfolioCard({ data }: PorfolioCardProps) {
                                     ))}
                               </div>
                         )}
+                        {/* CTA */}
+                        <div className="mt-4 text-shadow-2xs">
+                              <Link href="/contact" className="butn-custom-outline border rounded-pill py-2 px-4">Get a Free Quote &#x2799;</Link>
+                        </div>
                   </div>
             </motion.div>
       );

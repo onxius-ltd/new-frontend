@@ -11,7 +11,7 @@ export default function ChooseUs() {
                         <div className="container">
                               <div className="flex justify-center lg:justify-between items-center gap-3 lg:gap-5 flex-col-reverse lg:flex-row">
                                     {/* image */}
-                                    <div className="lg:w-1/2 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div className="lg:w-1/2 wow fadeInUp shadow" data-wow-delay="0.1s">
                                           <div className="">
                                                 <Image src="/assets/images/why-choose-us.png" className="img-fluid w-100" alt="why choose onxius?" width={500} height={500} />
                                           </div>
