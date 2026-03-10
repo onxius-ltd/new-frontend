@@ -5,8 +5,10 @@ import Portfolio from "@/components/Portfolio";
 
 export default function PortfolioPage() {
   return (
-    <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
-      <ClientLogos />
+    <div className="flex flex-col gap-3 md:gap-4 lg:gap-5 -mt-2"
+      // style={{ position: "relative", zIndex: 1 }}
+    >
+      {/* <ClientLogos /> */}
       <Portfolio isPortfolioPage={true} />
       <Faqs />
     </div>

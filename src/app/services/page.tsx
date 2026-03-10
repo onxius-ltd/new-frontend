@@ -5,7 +5,7 @@ import WeHelpsToGrow from "@/components/WeHelpsToGrow";
 
 export default function ServicePage() {
   return (
-    <div className="flex flex-col gap-3 md:gap-4 lg:gap-5">
+    <div className="flex flex-col gap-3 md:gap-4 lg:gap-5 -mt-10">
       <Services />
       <div className="mb-2 mt-4">
         <WeHelpsToGrow />

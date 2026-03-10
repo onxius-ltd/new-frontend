@@ -64,6 +64,18 @@ body {
   padding-right: 60px !important;
 }
 
+/* ── Visit Link Hover Fix ── */
+.visit-link {
+  color: var(--metalic-gray-clr) !important;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.visit-link:hover {
+  color: var(--sky-clr) !important;
+  opacity: 1 !important;
+  border-color: var(--sky-clr) !important;
+}
+
 /* nav bar styling */
 @media only screen and (max-width:991px) {
   .toggleNav {

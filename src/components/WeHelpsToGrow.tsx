@@ -355,25 +355,28 @@ export default function WeHelpsToGrow() {
                                     initial={{ opacity: 0, y: 28 }}
                                     animate={titleInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                                    className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-0 flex justify-center items-center gap-2"
+                                    className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-0 flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-center"
                                     style={{ color: "#FFFFFF" }}
                               >
-                                    How{" "}
-                                    {/* <span className="relative inline-block">
-                                          <span>Onxius</span>
-                                    </span> */}
-                                    <Link href="/">
+                                    <span className="whitespace-nowrap">How</span>
+
+                                    <Link href="/" className="inline-flex items-center">
                                           <Image
                                                 src="/assets/logo/light-logo-2.png"
-                                                className="img-fluid w-100 h-auto"
+                                                className="img-fluid h-auto"
                                                 alt="ONXIUS Logo"
-                                                width={100}
-                                                height={30}
+                                                width={130}
+                                                height={35}
                                           />
                                     </Link>
-                                    {" "}Helps Your{" "}
-                                    <span style={{ color: "rgba(255,255,255,0.85)" }}>Business</span>
+
+                                    <span className="whitespace-nowrap">Helps Your</span>
+
+                                    <span className="whitespace-nowrap" style={{ color: "rgba(255,255,255,0.85)" }}>
+                                          Business
+                                    </span>
                               </motion.h2>
+
 
                               {/* Divider */}
                               <motion.div

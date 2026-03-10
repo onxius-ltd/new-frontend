@@ -40,7 +40,7 @@ export default function ClientLogos() {
       }, []);
 
       return (
-            <section className="px-2 py-4 sm:py-8 md:py-12 lg:py-16 overflow-hidden" id="logos">
+            <section className="px-2 py-2 sm:py-4 md:py-6 lg:py-8 overflow-hidden -mt-10 " id="logos">
                   {/* title */}
                   {/* <h2 className="text-center text-2xl md:text-3xl font-semibold pb-10 text-gray-800">
                         Trusted by Industry Leaders
@@ -58,7 +58,7 @@ export default function ClientLogos() {
                                           x: {
                                                 repeat: Infinity,
                                                 repeatType: "loop",
-                                                duration: 20,
+                                                duration: 30,
                                                 ease: "linear",
                                           },
                                     }}

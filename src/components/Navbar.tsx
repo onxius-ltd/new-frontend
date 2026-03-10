@@ -5,6 +5,7 @@ import { useState } from "react";
 import HomeHeader from "./HomeHeader";
 import { usePathname } from "next/navigation";
 import Header from "./Header";
+import Header2 from "./Header2";
 
 type menuItem = { label: string; href: string };
 
@@ -86,7 +87,7 @@ export default function Navbar() {
         </nav>
 
         {/* Hero / Page Header */}
-        {pathname === "/" ? <HomeHeader /> : <Header />}
+        {pathname === "/" ? <HomeHeader /> : <Header2 />}
       </div>
     </div>
   );

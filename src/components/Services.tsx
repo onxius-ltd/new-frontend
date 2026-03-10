@@ -116,8 +116,8 @@ export default function Services() {
                               {/* main content */}
                               <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
                                     <h4 className="mb-1 text-primary">Our Service</h4>
-                                    <h1 className="display-5 mb-2">What We Can Do For You</h1>
-                                    <p className="mb-0">We build reliable, secure, and scalable digital experiences that empower your business to thrive in a competitive digital landscape.
+                                    <h1 className="display-5 mb-2">Want a Website Like This for Your Business?</h1>
+                                    <p className="mb-0">Get in touch today for a free, no-obligation chat.
                                     </p>
                               </div>
                               {/* services */}
