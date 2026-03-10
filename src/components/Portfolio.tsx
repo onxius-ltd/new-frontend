@@ -23,224 +23,258 @@ import Link from "next/link";
 function getPortfolioData(): ItemProps[] {
   return [
     {
-      id: 6,
-      title: "Great Transfers UK",
-      industry: "Transportation & Airport Transfer Services",
-      role: "Full-Stack Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "A professional airport transfer and private transportation platform designed for seamless bookings, service reliability, and optimized performance to drive customer inquiries.",
-      image: "/assets/images/greattransfers.png",
-      tags: [
-        { icon: <Globe />, label: "Booking Website" },
-        { label: "Transportation Services" },
-        { label: "Performance Optimized" },
+      "id": 6,
+      "title": "Great Transfers UK",
+      "industry": "TAXI, TRANSFERS & TRANSPORT SERVICES",
+      "role": "",
+      "engagement": "More bookings. Less hassle. Your transport business — online.",
+      "description": "A professional booking website where customers enter their journey details and confirm a transfer in minutes — day or night, no phone call needed. Since launching, bookings have risen by 57% and the business now serves customers UK wide.",
+      "list": [
+        "✓ Customers book at any hour — even while you are out driving.",
+        "✓ Instant confirmations reduce no-shows and build customer confidence.",
+        "✓ Less time on the phone means more time focused on your service."
       ],
-      link: "https://greattransfers.uk/",
-      attributes: [
-        { counting: "+60%", label: "Increase in Bookings" },
-        { counting: "UK Wide", label: "Service Coverage" },
+      "image": "/assets/images/greattransfers.png",
+      "tags": [
+        { "label": "Booking Website" },
+        { "label": "Airport Transfers" },
+        { "label": "Private Hire" },
+        { "label": "Online Reservations" }
       ],
+      "link": "https://greattransfers.uk/",
+      "attributes": [
+        { "counting": "+57%", "label": "INCREASE IN BOOKINGS" },
+        { "counting": "UK Wide", "label": "SERVICE COVERAGE" }
+      ]
     },
     {
-      id: 4,
-      title: "MYRAS BEDS",
-      industry: "Furniture & Bedding E-Commerce",
-      role: "Full-Stack WordPress Developer",
-      engagement: "Delivered during tenure at previous organization",
-      description:
-        "A modern e-commerce bedding platform showcasing premium beds and mattresses, designed for seamless shopping, high performance, and an enhanced customer experience.",
-      image: "/assets/images/myrasbeds.png",
-      tags: [
-        { icon: <Globe />, label: "E-Commerce Website" },
-        { label: "Furniture & Bedding" },
-        { label: "Performance Optimized" },
+      "id": 4,
+      "title": "MYRAS BEDS UK",
+      "industry": "FURNITURE, BEDS & HOME GOODS",
+      "role": "",
+      "engagement": "A beautiful online showroom — open every day of the year.",
+      "description": "A stylish e-commerce website where UK customers can browse premium beds and mattresses and place orders entirely online. The business no longer depends solely on footfall — it now attracts customers from across the country.",
+      "list": [
+        "✓ Customers shop from home without needing to visit your store.",
+        "✓ Optimised for Google so new customers find you in search results.",
+        "✓ Sell across the whole of the UK, not just locally."
       ],
-      link: "https://www.myrasbeds.co.uk/",
-      attributes: [
-        { counting: "UK", label: "Market Reach" },
-        { counting: "Online", label: "Retail Platform" },
+      "image": "/assets/images/myrasbeds.png",
+      "tags": [
+        { "label": "Furniture E-Commerce", "is_active": true },
+        { "label": "Beds & Mattresses" },
+        { "label": "UK Retail" },
+        { "label": "Google Optimized" }
       ],
+      "link": "https://www.myrasbeds.co.uk/",
+      "attributes": [
+        { "counting": "UK Wide", "label": "MARKET REACH" },
+        { "counting": "Online", "label": "SALES PLATFORM" }
+      ]
     },
     {
-      id: 1,
-      title: "Auto-Bids",
-      industry: "Automotive SaaS Platform",
-      role: "Full-Stack Developer",
-      engagement: "Delivered during tenure at previous organization",
-      description:
-        "Scalable vehicle auction and bidding platform engineered with secure transaction handling, real-time bidding logic, and role-based dashboards for buyers and administrators.",
-      image: "/assets/img/auto-bids.png",
-      tags: [
-        { icon: <Car />, label: "Auction Platform" },
-        { label: "Automotive" },
-        { label: "React & Laravel" },
+      "id": 1,
+      "title": "Auto-Bids",
+      "industry": "VEHICLE SALES & ONLINE AUCTIONS",
+      "role": "",
+      "engagement": "The smarter way to sell cars — online, 24 hours a day.",
+      "description": "Auto-Bids lets car dealers and auction houses list their full vehicle stock online. Buyers can browse, bid, and pay securely from any device — at any time of day. You manage everything from one simple dashboard.",
+      "list": [
+        "✓ Buyers compete in live bidding, driving up your sale prices.",
+        "✓ Secure payments handled through the website — no cash, no no-shows.",
+        "✓ Your showroom is open around the clock, even when you are not."
       ],
-      link: "https://auto-bids.com/",
-      attributes: [
-        { counting: "5,000+", label: "Vehicles Listed" },
-        { counting: "+58%", label: "Bidding Activity Growth" },
+      "image": "/assets/img/auto-bids.png",
+      "tags": [
+        { "label": "Car Sales Website", "is_active": true },
+        { "label": "Live Auction System" },
+        { "label": "Secure Payments" },
+        { "label": "Dealer Dashboard" }
       ],
+      "link": "https://auto-bids.com/",
+      "attributes": [
+        { "counting": "100+", "label": "VEHICLES LISTED" },
+        { "counting": "+28%", "label": "RISE IN BIDDING ACTIVITY" }
+      ]
     },
     {
-      id: 3,
-      title: "Heavenly Meats LLC",
-      industry: "E-commerce / Retail",
-      role: "Full-Stack Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "High-performance e-commerce platform developed for a premium meat brand, focused on conversion optimization and seamless ordering experience across devices.",
-      image: "/assets/img/heavenlymeatsllc.png",
-      tags: [
-        { icon: <Globe />, label: "E-commerce Website" },
-        { label: "Online Store" },
-        { label: "Conversion Optimization" },
+      "id": 3,
+      "title": "Heavenly Meats LLC",
+      "industry": "FOOD, MEAT & GROCERY E-COMMERCE",
+      "role": "",
+      "engagement": "A premium online shop that turns visitors into paying customers.",
+      "description": "A high-performance online shop where customers can browse, order, and pay fully online — from any device, at any hour. Since launching, the business has seen a dramatic rise in orders and a much wider customer base.",
+      "list": [
+        "✓ Simple checkout means customers complete their purchase rather than giving up.",
+        "✓ Loads in under 3 seconds — keeping customers engaged.",
+        "✓ Sell beyond your local area and reach customers across the UK."
       ],
-      link: "https://heavenlymeatsllc.com/",
-      attributes: [
-        { counting: "+42%", label: "Increase in Online Orders" },
-        { counting: "2.5s", label: "Average Load Time" },
+      "image": "/assets/img/heavenlymeatsllc.png",
+      "tags": [
+        { "label": "Online Shop", "is_active": true },
+        { "label": "Food & Grocery" },
+        { "label": "Easy Checkout" },
+        { "label": "Fast Loading" }
       ],
+      // "link": "https://heavenlymeatsllc.com/",
+      "link": "",
+      "attributes": [
+        { "counting": "+42%", "label": "INCREASE IN ONLINE ORDERS" },
+        { "counting": "2.5s", "label": "AVERAGE PAGE LOAD TIME" }
+      ]
     },
     {
-      id: 2,
-      title: "Fatima Quranic Academy",
-      industry: "Online Quran Education Platform",
-      role: "Full-Stack Wordpress Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "A trusted online Quran academy connecting students worldwide with qualified tutors for Tajweed, Tafseer, and Hifz, built for performance and seamless inquiries.",
-      image: "/assets/images/fatimaquranicacademy.png",
-      tags: [
-        { icon: <Globe />, label: "Online Quran Academy" },
-        { label: "Performance Optimized" },
+      "id": 2,
+      "title": "Fatima Quranic Academy",
+      "industry": "ONLINE EDUCATION & TUTORING",
+      "role": "",
+      "engagement": "Reaching students across the globe — from one professional website.",
+      "description": "A fully managed education platform that makes it effortless for parents and students to find your courses and get in touch. Works perfectly on mobile, and brings in new enquiries automatically — no constant advertising needed.",
+      "list": [
+        "✓ Parents can browse courses, pricing, and teacher profiles in minutes.",
+        "✓ Reach students locally, nationally, and internationally.",
+        "✓ A professional website builds trust and makes families choose you."
       ],
-      link: "https://fatimaquranicacademy.com/",
-      attributes: [
-        { counting: "+60%", label: "Growth in Student Inquiries" },
-        { counting: "Worldwide", label: "Student Reach" },
+      "image": "/assets/images/fatimaquranicacademy.png",
+      "tags": [
+        { "label": "Education Website", "is_active": true },
+        { "label": "Online Tutoring" },
+        { "label": "Course Listings" },
+        { "label": "Mobile Friendly" }
       ],
+      "link": "https://fatimaquranicacademy.com/",
+      "attributes": [
+        { "counting": "+31%", "label": "GROWTH IN STUDENT ENQUIRIES" },
+        { "counting": "Worldwide", "label": "STUDENT REACH" }
+      ]
     },
     {
-      id: 5,
-      title: "MR Oil",
-      industry: "Oil & Petroleum Services",
-      role: "Full-Stack WordPress Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "A professional oil and petroleum services platform showcasing products, bulk supply solutions, and streamlined customer inquiries with a performance-focused design.",
-      image: "/assets/images/mr-oil.png",
-      tags: [
-        { icon: <Globe />, label: "Corporate Website" },
-        { label: "Energy & Petroleum" },
-        { label: "Performance Optimized" },
+      "id": 5,
+      "title": "MR Oil",
+      "industry": "OIL, FUEL & INDUSTRIAL SUPPLIES",
+      "role": "",
+      "engagement": "A professional online presence that brings in business clients.",
+      "description": "A corporate website that showcases products and services clearly, builds credibility with business buyers, and makes it straightforward for new clients to send enquiries or request bulk quotes — all online, at any time.",
+      "list": [
+        "✓ Clients find your business on Google when searching for your supplies.",
+        "✓ Professionally presented services build trust with larger buyers.",
+        "✓ Stands you apart from competitors still relying on word of mouth."
       ],
-      link: "",
-      attributes: [
-        { counting: "B2B", label: "Client Focused" },
-        { counting: "Industrial", label: "Market Reach" },
+      "image": "/assets/images/mr-oil.png",
+      "tags": [
+        { "label": "Corporate Website", "is_active": true },
+        { "label": "Oil & Petroleum" },
+        { "label": "B2B Enquiries" },
+        { "label": "Industrial Supplies" }
       ],
+      "link": "",
+      "attributes": [
+        { "counting": "B2B", "label": "BUSINESS-FOCUSED" },
+        { "counting": "Industrial", "label": "MARKET REACH" }
+      ]
     },
     {
-      id: 7,
-      title: "Frenco LTD",
-      industry: "Corporate Services Platform",
-      role: "Full-Stack Developer",
-      engagement: "Delivered during tenure at previous organization",
-      description:
-        "A professional corporate website developed to showcase services, strengthen brand credibility, and generate qualified leads through a performance-driven design.",
-      image: "/assets/images/frencoltd.png",
-      tags: [
-        { icon: <Globe />, label: "Corporate Website" },
-        { label: "Lead Generation" },
-        { label: "Performance Optimized" },
+      "id": 7,
+      "title": "Frenco LTD",
+      "industry": "CORPORATE SERVICES PLATFORM",
+      "role": "Full-Stack Developer",
+      "engagement": "Delivered during tenure at previous organization",
+      "description": "A professional corporate website developed to showcase services, strengthen brand credibility, and generate qualified leads through a performance-driven design.",
+      "list": [],
+      "image": "/assets/images/frencoltd.png",
+      "tags": [
+        { "label": "Corporate Website" },
+        { "label": "Lead Generation" },
+        { "label": "Performance Optimized" }
       ],
-      link: "https://frencoltd.com/",
-      attributes: [
-        { counting: "+60%", label: "Increase in Inquiries" },
-        { counting: "International", label: "Client Reach" },
-      ],
+      "link": "https://frencoltd.com/",
+      "attributes": [
+        { "counting": "+47%", "label": "INCREASE IN INQUIRIES" },
+        { "counting": "International", "label": "CLIENT REACH" }
+      ]
     },
     {
-      id: 8,
-      title: "Online Quran Home",
-      industry: "Educational Services Platform",
-      role: "Full-Stack Developer",
-      engagement: "Delivered under current organization",
-      description:
-        "Lead-generation focused educational platform built to connect students with qualified Quran tutors worldwide. Designed for performance, trust-building, and seamless inquiry management.",
-      image: "/assets/img/onlinequranhome.png",
-      tags: [
-        { icon: <Globe />, label: "Service Website" },
-        { label: "Lead Generation" },
-        { label: "Performance Optimized" },
+      "id": 8,
+      "title": "Online Quran Home",
+      "industry": "EDUCATIONAL SERVICES PLATFORM",
+      "role": "Full-Stack Developer",
+      "engagement": "Delivered under current organization",
+      "description": "Lead-generation focused educational platform built to connect students with qualified Quran tutors worldwide. Designed for performance, trust-building, and seamless inquiry management.",
+      "list": [],
+      "image": "/assets/img/onlinequranhome.png",
+      "tags": [
+        { "label": "Service Website" },
+        { "label": "Lead Generation" },
+        { "label": "Performance Optimized" }
       ],
-      link: "https://onlinequranhome.com/",
-      attributes: [
-        { counting: "+60%", label: "Increase in Inquiries" },
-        { counting: "Global", label: "Student Reach" },
-      ],
+      "link": "https://onlinequranhome.com/",
+      "attributes": [
+        { "counting": "+26%", "label": "INCREASE IN INQUIRIES" },
+        { "counting": "Global", "label": "STUDENT REACH" }
+      ]
     },
     {
-      id: 9,
-      title: "LA121 Consultants",
-      industry: "Business Consultancy",
-      role: "Full-Stack Developer",
-      engagement: "Developed and Delivered Under Current Organization",
-      description:
-        "Modern consultancy website designed to strengthen brand authority and generate qualified business leads through structured service presentation and optimized UI.",
-      image: "/assets/img/la121consultants.png",
-      tags: [
-        { icon: <Consultancy />, label: "Corporate Website" },
-        { label: "Lead Generation" },
-        { label: "Business Branding" },
+      "id": 9,
+      "title": "LA121 Consultants",
+      "industry": "BUSINESS CONSULTANCY",
+      "role": "Full-Stack Developer",
+      "engagement": "Developed and Delivered Under Current Organization",
+      "description": "Modern consultancy website designed to strengthen brand authority and generate qualified business leads through structured service presentation and optimized UI.",
+      "list": [],
+      "image": "/assets/img/la121consultants.png",
+      "tags": [
+        { "label": "Corporate Website" },
+        { "label": "Lead Generation" },
+        { "label": "Business Branding" }
       ],
-      link: "https://la121consultants.netlify.app/",
-      attributes: [
-        { counting: "+58%", label: "Increase in Client Inquiries" },
-        { counting: "99.9%", label: "System Uptime" },
-      ],
+      // "link": "https://la121consultants.netlify.app/",
+      "link": "",
+      "attributes": [
+        { "counting": "+39%", "label": "INCREASE IN CLIENT INQUIRIES" },
+        { "counting": "99.9%", "label": "SYSTEM UPTIME" }
+      ]
     },
     {
-      id: 10,
-      title: "NFT Neighbors",
-      industry: "Blockchain / Web3 Platform",
-      role: "Full-Stack Developer & Web3 Integration Developer",
-      engagement: "Concept & Development Project",
-      description:
-        "Web3-enabled NFT community platform integrating wallet connectivity, smart contract interaction, and scalable frontend architecture.",
-      image: "/assets/img/nftneighbors.png",
-      tags: [
-        { icon: <Microchrip />, label: "Blockchain" },
-        { label: "NFT Platform" },
-        { label: "Web3 Integration" },
+      "id": 10,
+      "title": "NFT Neighbors",
+      "industry": "BLOCKCHAIN / WEB3 PLATFORM",
+      "role": "Full-Stack Developer & Web3 Integration Developer",
+      "engagement": "Concept & Development Project",
+      "description": "Web3-enabled NFT community platform integrating wallet connectivity, smart contract interaction, and scalable frontend architecture.",
+      "list": [],
+      "image": "/assets/img/nftneighbors.png",
+      "tags": [
+        { "label": "Blockchain" },
+        { "label": "NFT Platform" },
+        { "label": "Web3 Integration" }
       ],
-      link: "https://nftneighbors.com/",
-      attributes: [
-        { counting: "500+", label: "NFTs Minted" },
-        { counting: "+65%", label: "Community Growth" },
-      ],
+      "link": "https://nftneighbors.com/",
+      "attributes": [
+        { "counting": "10+", "label": "NFTS MINTED" },
+        { "counting": "+35%", "label": "COMMUNITY GROWTH" }
+      ]
     },
     {
-      id: 11,
-      title: "TEI Enterprises App",
-      industry: "Business Management / Mobile Application",
-      role: "Lead Mobile Developer",
-      engagement: "Developed and Managed Under Current Organization",
-      description:
-        "Cross-platform business management application built to streamline internal operations, improve client coordination, and enhance overall engagement.",
-      image: "/assets/img/tei-enterprises.png",
-      tags: [
-        { icon: <AppStore />, label: "Mobile App" },
-        { label: "Android & iOS" },
-        { label: "React Native" },
+      "id": 11,
+      "title": "TEI Enterprises App",
+      "industry": "BUSINESS MANAGEMENT / MOBILE APPLICATION",
+      "role": "Lead Mobile Developer",
+      "engagement": "Developed and Managed Under Current Organization",
+      "description": "Cross-platform business management application built to streamline internal operations, improve client coordination, and enhance overall engagement.",
+      "list": [],
+      "image": "/assets/img/tei-enterprises.png",
+      "tags": [
+        { "label": "Mobile App" },
+        { "label": "Android & iOS" },
+        { "label": "React Native" }
       ],
-      link: "https://play.google.com/store/apps/details?id=app.tei.enterprises&hl=en",
-      attributes: [
-        { counting: "10K+", label: "Active Users" },
-        { counting: "+35%", label: "Engagement Growth" },
-      ],
-    },
+      // "link": "https://play.google.com/store/apps/details?id=app.tei.enterprises&hl=en",
+      "link": "https://tei.enterprises/",
+      "attributes": [
+        { "counting": "1K+", "label": "ACTIVE USERS" },
+        { "counting": "+25%", "label": "ENGAGEMENT GROWTH" }
+      ]
+    }
   ];
 }
 
@@ -261,19 +295,20 @@ export default function Portfolio({
     // that don't affect rendering correctness.
     <section
       id="portfolio"
-      className={`relative px-2 py-12 md:py-16 ${isPortfolioPage ? "" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat"}`}
+      className={`relative px-2 ${isPortfolioPage ? "" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
       suppressHydrationWarning
     >
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="mb-3 drop-shadow-sm text-capitalize text-primary">
-            Selected Projects & Case Studies
+        <div className="text-center mb-10">
+          {/* <h2 className="mb-3 drop-shadow-sm text-capitalize text-primary">
+            ONXIUS
+          </h2> */}
+          <h2 className="mb-2 drop-shadow-sm text-capitalize text-lg">
+            Real Websites. Real Results. For Businesses Just Like Yours.
           </h2>
           <p className="text-gray-700 max-w-3xl mx-auto text-xl">
-            A selection of web, Software as a Service, and mobile solutions
-            built to improve performance, automate workflows, and drive
-            measurable business growth.
+            Browse our work below and imagine what a website like this could do for your business.
           </p>
         </div>
 

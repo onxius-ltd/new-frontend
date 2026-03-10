@@ -11,7 +11,7 @@ const WhatsAppIcon = () => (
 )
 
 const WhatsAppButton: React.FC = () => {
-      const phoneNumber = "+447723819735"; // 👉 Replace with your number (no + sign)
+      const phoneNumber = "+447424765976"; // 👉 Replace with your number (no + sign)
       const message = "Hello! I'm interested in your services.";
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
             message
