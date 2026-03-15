@@ -193,7 +193,7 @@ export default function PortfolioCard({ data, delay = 0 }: PortfolioCardProps) {
                   {/* CTA */}
                   <div className="px-7 pb-6">
                         <Link
-                              href="/contact"
+                              href="/get-free-quotation"
                               className="inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-wide  text-white bg-[#111] hover:bg-[var(--sky-clr)] transition-colors duration-200 rounded-lg px-4 py-2 no-underline"
                         >
                               Start a Project →

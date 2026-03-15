@@ -76,11 +76,11 @@ export default function Navbar() {
 
               {/* CTA */}
               <Link
-                href="/contact"
+                href="/get-free-quotation"
                 className="nav-item nav-link btn butn-custom rounded-pill py-2 px-4 talk-button"
                 onClick={() => setIsOpen(false)}
               >
-                <span style={{ color: "white !important" }}>Get a Free Quote &#x2799;</span>
+                <span>Get a Free Quote &#x2799;</span>
               </Link>
             </div>
           </div>

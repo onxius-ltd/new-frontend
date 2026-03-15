@@ -145,7 +145,7 @@ export default function Services() {
                                                                   {/* link */}
                                                                   <div>
                                                                         <Link
-                                                                              href="/contact"
+                                                                              href="/get-free-quotation"
                                                                               className="butn-custom butn-custom-outline rounded-pill text-primary font-bold py-2 px-4 mt-auto"
                                                                         >
                                                                              Get a Free Quote &#x2799;

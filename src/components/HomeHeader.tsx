@@ -31,7 +31,7 @@ export default function HomeHeader() {
                                     {/* cta button */}
                                     <div className="d-flex gap-3 flex-wrap">
                                           <Link
-                                                href="/contact"
+                                                href="/get-free-quotation"
                                                 className="btn butn-custom-outline rounded-pill py-3 px-5 wow fadeInUp w-full md:w-fit"
                                                 data-wow-delay="0.7s"
                                           >

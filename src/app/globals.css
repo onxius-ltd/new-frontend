@@ -76,6 +76,15 @@ body {
   border-color: var(--sky-clr) !important;
 }
 
+.talk-button {
+  color: white !important;
+}
+
+.talk-button:active,
+.talk-button:hover {
+  color: var(--sky-clr) !important;
+}
+
 /* nav bar styling */
 @media only screen and (max-width:991px) {
   .toggleNav {

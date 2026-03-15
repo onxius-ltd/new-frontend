@@ -161,14 +161,13 @@ const ContactForm: React.FC = () => {
                                     <label htmlFor="message">Message</label>
                               </div>
                         </div>
-
+                        {/* ReCAPTCHA */}
                         <ReCAPTCHA
                               ref={recaptchaRef} // controlled via ref
                               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                               onChange={(token: string | null) => setCaptchaToken(token)}
                               onExpired={() => setCaptchaToken(null)} // reset token if it expires
                         />
-
                         {/* Submit Button */}
                         <div className="col-12">
                               <button
