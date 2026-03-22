@@ -20,7 +20,7 @@ export default function OurStory() {
                                           <h4 className="mb-1 text-primary">Our Story</h4>
                                           <h1 className="display-5 mb-4">From a Small Vision to a Trusted Digital Partner</h1>
                                           <p className="pb-4">
-                                                Our journey began with a simple idea — to make technology meaningful and accessible for everyone. What started as a small group of creative thinkers has grown into a full-service digital agency trusted by clients across diverse industries. Through dedication and innovation, we’ve built long-term partnerships grounded in trust and quality.
+                                                Our journey began with a simple idea: to make technology meaningful and accessible for everyone. What started as a small group of creative thinkers has grown into a full-service digital agency trusted by clients across diverse industries. Through dedication and innovation, we’ve built long-term partnerships grounded in trust and quality.
                                           </p>
                                           <Link href="/get-free-quotation" className="butn-custom rounded-pill py-3 px-5">Get a Free Quote &#x2799;</Link>
                                     </div>

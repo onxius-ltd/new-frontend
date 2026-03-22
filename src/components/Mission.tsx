@@ -25,7 +25,7 @@ export default function OurMission() {
                                                 <br />
                                                 <strong className="text-lg py-1">Shaping the Future With Technology That Inspires Progress</strong>
                                                 <br />
-                                                We envision a world where innovation bridges every gap and helps businesses reach new heights. Our vision is to lead this change — guiding brands toward digital excellence and sustainable success in an ever-evolving marketplace.
+                                                We envision a world where innovation bridges every gap and helps businesses reach new heights. Our vision is to lead this change, guiding brands toward digital excellence and sustainable success in an ever-evolving marketplace.
                                           </p>
                                           <Link href="/get-free-quotation" className="butn-custom rounded-pill py-3 px-5">Get a Free Quote &#x2799;</Link>
                                     </div>

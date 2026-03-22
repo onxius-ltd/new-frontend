@@ -119,11 +119,12 @@ const ContactForm: React.FC = () => {
                                                       required
                                                 >
                                                       <option value="">Select Budget</option>
-                                                      <option value="0-1000">£0 - £1,000</option>
-                                                      <option value="1000-3000">£1,000 - £3,000</option>
-                                                      <option value="3000-5000">£3,000 - £5,000</option>
-                                                      <option value="5000-10000">£5,000 - £10,000</option>
-                                                      <option value="10000+">£10,000+</option>
+                                                      <option value="£239-£499">£239 - £499</option>
+                                                      <option value="£500-£999">£500 - £999</option>
+                                                      <option value="£1,000-£2,500">£1,000 - £2,500</option>
+                                                      <option value="£2,500-£5,000">£2,500 - £5,000</option>
+                                                      <option value="£5,000+">£5,000+</option>
+                                                      <option value="Not sure yet">Not sure yet</option>
                                                 </select>
                                           ) : (
                                                 <input

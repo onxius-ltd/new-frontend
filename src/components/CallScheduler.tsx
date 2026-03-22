@@ -55,14 +55,14 @@ const CallScheduler = ({ value, onChange, index, dateError, timeError }: CallSch
                   >
                         {/* Header */}
                         <div className="flex items-start gap-3 mb-4">
-                              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-lg flex-shrink-0 bg-[var(--sky-clr)]/20">
+                              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-xl flex-shrink-0 bg-[var(--sky-clr)]/20">
                                     📞
                               </div>
                               <div>
-                                    <p className="text-sm font-semibold" style={{ color: "var(--metalic-gray-clr)" }}>
+                                    <p className="text-lg font-semibold m-0" style={{ color: "var(--metalic-gray-clr)" }}>
                                           Best Time to Call
                                     </p>
-                                    <p className="text-xs leading-relaxed" style={{ color: "var(--dark-grey-clr)" }}>
+                                    <p className="text-base leading-relaxed m-0" style={{ color: "var(--dark-grey-clr)" }}>
                                           Our team will call you at your preferred time to discuss your project and provide a tailored quotation.
                                     </p>
                               </div>
