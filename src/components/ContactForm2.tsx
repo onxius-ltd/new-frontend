@@ -13,6 +13,7 @@ import SampleSitesInput from "./SampleSitesInput";
 import FloatingTextarea from "./FloatingTextarea";
 import ReCAPTCHA from "react-google-recaptcha";
 import FieldError from "./FieldError";
+import PhoneInput, { COUNTRY_CODES } from "./PhoneInput";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface FormState {
@@ -42,11 +43,11 @@ const ApplicationTypes = [
 const LanguageOptions = ["English", "Urdu", "Arabic", "French", "German", "Spanish", "All other languages"];
 const MaintenanceSupportOptions = ["Yes (monthly support)", "No (one-time build only)"];
 const BudgetOptions = [
-      "£0 – £1,000",
-      "£1,000 – £3,000",
-      "£3,000 – £5,000",
-      "£5,000 – £10,000",
-      "£10,000+",
+      "£239  – £499",
+      "£500 – £999",
+      "£1,000 – £2,500",
+      "£2,500 – £5,000",
+      "£5,000+",
       "Not sure yet",
 ];
 
@@ -176,6 +177,7 @@ const ContactForm2: React.FC = () => {
       const [submitted, setSubmitted] = useState(false);
       const [captchaToken, setCaptchaToken] = useState<string | null>(null);
       const [errors, setErrors] = useState<Record<string, string>>({});
+      const [countryCode, setCountryCode] = useState(""); // ← was "+1"
 
       const get = (k: string) => form[k] as string;
       const getArr = (k: string) => form[k] as string[];
@@ -250,6 +252,25 @@ const ContactForm2: React.FC = () => {
                   next.email = "Please enter a valid email address.";
             }
 
+            // ── Phone validation ──────────────────────────────────────────────────
+            const phone = (form.phone as string).trim().replace(/\s|-|\(|\)/g, "");
+
+            if (!countryCode) {
+                  next.phone = "Please select a country code.";
+            } else if (!phone) {
+                  next.phone = "Phone number is required.";
+            } else if (!/^\d+$/.test(phone)) {
+                  next.phone = "Phone number must contain digits only.";
+            } else {
+                  const country = COUNTRY_CODES.find(c => c.code === countryCode);
+                  if (country && (phone.length < country.minLen || phone.length > country.maxLen)) {
+                        next.phone = `Phone number for ${countryCode} must be ${country.minLen === country.maxLen
+                              ? `${country.minLen} digits`
+                              : `${country.minLen}–${country.maxLen} digits`
+                              }.`;
+                  }
+            }
+
             // ── Business logo — type check if a file was provided ─────────────
             const logo = form["business-logo"] as File | null;
             if (logo) {
@@ -260,7 +281,7 @@ const ContactForm2: React.FC = () => {
             }
 
             // ── Conditional: updating existing → URL required ─────────────────
-            if (get("service-type") === "Yes — update existing") {
+            if (get("service-type") === "Yes, update existing") {
                   if (!(form["existing-app-web-link-update"] as string).trim()) {
                         next["existing-app-web-link-update"] = "Please provide the URL of your existing site.";
                   }
@@ -321,7 +342,7 @@ const ContactForm2: React.FC = () => {
             }
       };
 
-      const isUpdating = get("service-type") === "Yes — update existing";
+      const isUpdating = get("service-type") === "Yes, update existing";
       const hasOwnDomain = get("domain-and-hosting") === "Yes";
       const isOtherApp = get("application-type") === "Other";
 
@@ -378,7 +399,7 @@ const ContactForm2: React.FC = () => {
                                                                   <FieldError msg={errors.email} />
                                                             </div>
                                                             <div className="flex flex-col" data-error={!!errors.phone}>
-                                                                  <FloatingInput name="phone" label="Your Phone" type="tel" value={get("phone")} onChange={handleChange} required index={idx()} />
+                                                                  <PhoneInput name="phone" label="Your Phone" value={get("phone")} onChange={handleChange} onCountryChange={setCountryCode} countryCode={countryCode} required index={idx()} />
                                                                   <FieldError msg={errors.phone} />
                                                             </div>
                                                             <div className="flex flex-col" data-error={!!errors["business-name"]}>
@@ -397,7 +418,7 @@ const ContactForm2: React.FC = () => {
                                                             <div className="col-span-2 flex flex-col" data-error={!!errors["business-logo"]}>
                                                                   <FileUpload
                                                                         name="business-logo"
-                                                                        label="Business Logo (optional — PNG, JPG, JPEG, SVG only)"
+                                                                        label="Business Logo (optional PNG, JPG, JPEG, SVG only)"
                                                                         onChange={(n, f) => {
                                                                               set(n, f);
                                                                               if (f) {
@@ -420,12 +441,12 @@ const ContactForm2: React.FC = () => {
                                                                   <RadioGroup
                                                                         name="service-type"
                                                                         label="New build or update an existing site / app?"
-                                                                        options={["Yes — update existing", "No — build new"]}
+                                                                        options={["Yes, update existing", "No, build new"]}
                                                                         value={get("service-type")}
                                                                         onChange={set}
                                                                         index={idx()}
                                                                         fullWidth
-                                                                        tooltip="Select 'Yes — update existing' if you already have a live website or app you'd like improved."
+                                                                        tooltip="Select 'Yes, update existing' if you already have a live website or app you'd like improved."
                                                                   />
                                                                   <FieldError msg={errors["service-type"]} />
                                                             </div>
@@ -468,9 +489,10 @@ const ContactForm2: React.FC = () => {
                                                             </div>
 
                                                             {/* Technical Requirements */}
+                                                            {/* Technical Requirements */}
                                                             <SectionHeading label="Technical Requirements" index={idx()} />
 
-                                                            <div className="col-span-2 flex flex-col" data-error={!!errors["domain-and-hosting"]}>
+                                                            <div className="flex flex-col" data-error={!!errors["domain-and-hosting"]}>
                                                                   <RadioGroup
                                                                         name="domain-and-hosting"
                                                                         label="Do you already have a domain & hosting?"
@@ -478,10 +500,23 @@ const ContactForm2: React.FC = () => {
                                                                         value={get("domain-and-hosting")}
                                                                         onChange={set}
                                                                         index={idx()}
-                                                                        fullWidth
                                                                         tooltip="Domain = your website name (e.g. example.com). Hosting = the server your files live on."
                                                                   />
                                                                   <FieldError msg={errors["domain-and-hosting"]} />
+                                                            </div>
+
+                                                            <div className="flex flex-col" data-error={!!errors["application-type"]}>
+                                                                  <FloatingSelect
+                                                                        name="application-type"
+                                                                        label="What type of app or website do you want?"
+                                                                        options={ApplicationTypes}
+                                                                        value={get("application-type")}
+                                                                        onChange={handleChange}
+                                                                        required
+                                                                        index={idx()}
+                                                                        tooltip="Choose the closest match, we'll discuss the details during the call."
+                                                                  />
+                                                                  <FieldError msg={errors["application-type"]} />
                                                             </div>
 
                                                             <AnimatePresence>
@@ -507,11 +542,6 @@ const ContactForm2: React.FC = () => {
                                                                         </motion.div>
                                                                   )}
                                                             </AnimatePresence>
-
-                                                            <div className="col-span-2 flex flex-col" data-error={!!errors["application-type"]}>
-                                                                  <FloatingSelect name="application-type" label="What type of website or app?" options={ApplicationTypes} value={get("application-type")} onChange={handleChange} required index={idx()} fullWidth tooltip="Choose the closest match — we'll discuss the details during the call." />
-                                                                  <FieldError msg={errors["application-type"]} />
-                                                            </div>
 
                                                             <AnimatePresence>
                                                                   {isOtherApp && (
@@ -565,7 +595,7 @@ const ContactForm2: React.FC = () => {
                                                                   <FieldError msg={errors["media-content"]} />
                                                             </div>
                                                             <div className="col-span-2 flex flex-col" data-error={!!errors["project-brief"]}>
-                                                                  <FloatingTextarea name="project-brief" label="Project Brief — describe your project in detail" value={get("project-brief")} onChange={handleChange} required index={idx()} tooltip="The more detail you share, the more accurate and personalised our quotation will be." />
+                                                                  <FloatingTextarea name="project-brief" label="Project Brief, describe your project in detail" value={get("project-brief")} onChange={handleChange} required index={idx()} tooltip="The more detail you share, the more accurate and personalised our quotation will be." />
                                                                   <FieldError msg={errors["project-brief"]} />
                                                             </div>
 
@@ -573,7 +603,7 @@ const ContactForm2: React.FC = () => {
                                                             <SectionHeading label="Admin & Support" index={idx()} />
 
                                                             <div className="flex flex-col" data-error={!!errors["admin-panel"]}>
-                                                                  <RadioGroup name="admin-panel" label="Do you need an admin panel to manage your site?" options={BooleanOptions} value={get("admin-panel")} onChange={set} index={idx()} tooltip="An admin panel lets you edit content, manage users and view stats — no coding needed." />
+                                                                  <RadioGroup name="admin-panel" label="Do you need an admin panel to manage your site?" options={BooleanOptions} value={get("admin-panel")} onChange={set} index={idx()} tooltip="An admin panel lets you edit content, manage users and view stats, no coding needed." />
                                                                   <FieldError msg={errors["admin-panel"]} />
                                                             </div>
                                                             <div className="col-span-2 flex flex-col" data-error={!!errors["on-going-maintenance"]}>
@@ -581,7 +611,7 @@ const ContactForm2: React.FC = () => {
                                                                   <FieldError msg={errors["on-going-maintenance"]} />
                                                             </div>
                                                             <div className="col-span-2 flex flex-col" data-error={!!errors["admin-panel-brief"]}>
-                                                                  <FloatingTextarea name="admin-panel-brief" label="Admin Panel Brief — what features do you need?" value={get("admin-panel-brief")} onChange={handleChange} required index={idx()} tooltip="e.g. user management, order tracking, analytics dashboard, blog editor…" />
+                                                                  <FloatingTextarea name="admin-panel-brief" label="Admin Panel Brief (what features do you need?)" value={get("admin-panel-brief")} onChange={handleChange} required index={idx()} tooltip="e.g. user management, order tracking, analytics dashboard, blog editor…" />
                                                                   <FieldError msg={errors["admin-panel-brief"]} />
                                                             </div>
 

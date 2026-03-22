@@ -27,10 +27,10 @@ function getPortfolioData(): ItemProps[] {
       "title": "Great Transfers UK",
       "industry": "TAXI, TRANSFERS & TRANSPORT SERVICES",
       "role": "",
-      "engagement": "More bookings. Less hassle. Your transport business — online.",
-      "description": "A professional booking website where customers enter their journey details and confirm a transfer in minutes — day or night, no phone call needed. Since launching, bookings have risen by 57% and the business now serves customers UK wide.",
+      "engagement": "More bookings. Less hassle. Your transport business online.",
+      "description": "A professional booking website where customers enter their journey details and confirm a transfer in minutes, day or night, no phone call needed. Since launching, bookings have risen by 57% and the business now serves customers UK wide.",
       "list": [
-        "✓ Customers book at any hour — even while you are out driving.",
+        "✓ Customers book at any hour, even while you are out driving.",
         "✓ Instant confirmations reduce no-shows and build customer confidence.",
         "✓ Less time on the phone means more time focused on your service."
       ],
@@ -52,8 +52,8 @@ function getPortfolioData(): ItemProps[] {
       "title": "MYRAS BEDS UK",
       "industry": "FURNITURE, BEDS & HOME GOODS",
       "role": "",
-      "engagement": "A beautiful online showroom — open every day of the year.",
-      "description": "A stylish e-commerce website where UK customers can browse premium beds and mattresses and place orders entirely online. The business no longer depends solely on footfall — it now attracts customers from across the country.",
+      "engagement": "A beautiful online showroom, open every day of the year.",
+      "description": "A stylish e-commerce website where UK customers can browse premium beds and mattresses and place orders entirely online. The business no longer depends solely on footfall, it now attracts customers from across the country.",
       "list": [
         "✓ Customers shop from home without needing to visit your store.",
         "✓ Optimised for Google so new customers find you in search results.",
@@ -77,11 +77,11 @@ function getPortfolioData(): ItemProps[] {
       "title": "Auto-Bids",
       "industry": "VEHICLE SALES & ONLINE AUCTIONS",
       "role": "",
-      "engagement": "The smarter way to sell cars — online, 24 hours a day.",
-      "description": "Auto-Bids lets car dealers and auction houses list their full vehicle stock online. Buyers can browse, bid, and pay securely from any device — at any time of day. You manage everything from one simple dashboard.",
+      "engagement": "The smarter way to sell cars online, 24 hours a day.",
+      "description": "Auto-Bids lets car dealers and auction houses list their full vehicle stock online. Buyers can browse, bid, and pay securely from any device, at any time of day. You manage everything from one simple dashboard.",
       "list": [
         "✓ Buyers compete in live bidding, driving up your sale prices.",
-        "✓ Secure payments handled through the website — no cash, no no-shows.",
+        "✓ Secure payments handled through the website, no cash, no no-shows.",
         "✓ Your showroom is open around the clock, even when you are not."
       ],
       "image": "/assets/img/auto-bids.png",
@@ -103,10 +103,10 @@ function getPortfolioData(): ItemProps[] {
       "industry": "FOOD, MEAT & GROCERY E-COMMERCE",
       "role": "",
       "engagement": "A premium online shop that turns visitors into paying customers.",
-      "description": "A high-performance online shop where customers can browse, order, and pay fully online — from any device, at any hour. Since launching, the business has seen a dramatic rise in orders and a much wider customer base.",
+      "description": "A high-performance online shop where customers can browse, order, and pay fully online, from any device, at any hour. Since launching, the business has seen a dramatic rise in orders and a much wider customer base.",
       "list": [
         "✓ Simple checkout means customers complete their purchase rather than giving up.",
-        "✓ Loads in under 3 seconds — keeping customers engaged.",
+        "✓ Loads in under 3 seconds, keeping customers engaged.",
         "✓ Sell beyond your local area and reach customers across the UK."
       ],
       "image": "/assets/img/heavenlymeatsllc.png",
@@ -128,8 +128,8 @@ function getPortfolioData(): ItemProps[] {
       "title": "Fatima Quranic Academy",
       "industry": "ONLINE EDUCATION & TUTORING",
       "role": "",
-      "engagement": "Reaching students across the globe — from one professional website.",
-      "description": "A fully managed education platform that makes it effortless for parents and students to find your courses and get in touch. Works perfectly on mobile, and brings in new enquiries automatically — no constant advertising needed.",
+      "engagement": "Reaching students across the globe from one professional website.",
+      "description": "A fully managed education platform that makes it effortless for parents and students to find your courses and get in touch. Works perfectly on mobile, and brings in new enquiries automatically, no constant advertising needed.",
       "list": [
         "✓ Parents can browse courses, pricing, and teacher profiles in minutes.",
         "✓ Reach students locally, nationally, and internationally.",
@@ -154,7 +154,7 @@ function getPortfolioData(): ItemProps[] {
       "industry": "OIL, FUEL & INDUSTRIAL SUPPLIES",
       "role": "",
       "engagement": "A professional online presence that brings in business clients.",
-      "description": "A corporate website that showcases products and services clearly, builds credibility with business buyers, and makes it straightforward for new clients to send enquiries or request bulk quotes — all online, at any time.",
+      "description": "A corporate website that showcases products and services clearly, builds credibility with business buyers, and makes it straightforward for new clients to send enquiries or request bulk quotes, all online, at any time.",
       "list": [
         "✓ Clients find your business on Google when searching for your supplies.",
         "✓ Professionally presented services build trust with larger buyers.",

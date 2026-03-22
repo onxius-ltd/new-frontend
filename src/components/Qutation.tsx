@@ -18,7 +18,7 @@ export default function Qutation() {
                                     <h4 className="text-primary mb-4">Customer Enquiry</h4>
                                     <h1 className="display-5 mb-4">Get Free Quotation</h1>
                                     <p className="mb-0">
-                                          Have a question or an idea? The Onxius team is here to help you craft innovative digital solutions. Reach out today — we'd love to discuss your project.
+                                          Have a question or an idea? The Onxius team is here to help you craft innovative digital solutions. Reach out today, we'd love to discuss your project.
                                     </p>
                               </div>
                               {/* contact form 2 */}

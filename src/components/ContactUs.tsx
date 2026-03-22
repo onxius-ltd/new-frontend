@@ -19,7 +19,7 @@ export default function ContactUs() {
                                     <h4 className="text-primary mb-4">Contact Us</h4>
                                     <h1 className="display-5 mb-4">Let’s Build Something Great Together</h1>
                                     <p className="mb-0">
-                                          Have a question or an idea? The Onxius team is here to help you craft innovative digital solutions. Reach out today — we’d love to discuss your project and explore how we can make it succeed.
+                                          Have a question or an idea? The Onxius team is here to help you craft innovative digital solutions. Reach out today, we’d love to discuss your project and explore how we can make it succeed.
                                     </p>
                               </div>
                               <div className="row g-5 align-items-center">
