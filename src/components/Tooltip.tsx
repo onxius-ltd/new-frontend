@@ -36,7 +36,7 @@ const Tooltip = ({ text }: { text: string }) => {
                                     transition={{ duration: 0.15 }}
                                     onMouseEnter={handleMouseEnter}   // hovering tooltip itself cancels the timer
                                     onMouseLeave={handleMouseLeave}
-                                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-56 rounded-xl px-2.5 py-2 text-xs shadow-lg z-50 normal-case font-normal leading-normal tracking-wide"
+                                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 rounded-xl px-2.5 py-2 text-xs shadow-lg z-50 normal-case font-normal leading-normal tracking-wide"
                                     style={{ background: "var(--metalic-gray-clr)", color: "#fff", fontFamily: "var(--bs-body-font-family) !important" }}
                               >
                                     {text}

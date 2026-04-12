@@ -14,8 +14,7 @@ import FloatingTextarea from "./FloatingTextarea";
 import ReCAPTCHA from "react-google-recaptcha";
 import FieldError from "./FieldError";
 import PhoneInput, {COUNTRY_CODES} from "./PhoneInput";
-// ↓ Import both the component AND the built-in options list
-import MultiSelectAutocomplete, { LanguageOptions } from "./MultiSelectAutocomplete";
+import MultiSelectAutocomplete, {LanguageOptions} from "./MultiSelectAutocomplete";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface FormState {
@@ -25,11 +24,14 @@ interface FormState {
 // ─── Data options ─────────────────────────────────────────────────────────────
 const ProjectType = [
     "Website",
-    "Mobile App",
-    "IOS",
-    "Website, Android and IOS App",
-    "Website or App Management",
-    "Not sure (need advice)",
+    "Mobile app Android",
+    "Mobile app IOS",
+    "Mobile app (Android and IOS)",
+    "Website, Mobile app Android and IOS",
+    "Website Management",
+    "App management",
+    "Website and Apps management",
+    "Not Sure, Need advice"
 ];
 const BusinessScope = ["Local area only", "Country Wide", "Internal MarketPlace"];
 const BooleanOptions = ["Yes", "No"];
@@ -146,7 +148,7 @@ const SuccessScreen = ({onReset}: { onReset: () => void }) => (
 
 // ─── Allowed logo file types ──────────────────────────────────────────────────
 const ALLOWED_LOGO_TYPES = ["image/png", "image/jpg", "image/jpeg", "image/svg+xml"];
-const ALLOWED_LOGO_EXTS  = [".png", ".jpg", ".jpeg", ".svg"];
+const ALLOWED_LOGO_EXTS = [".png", ".jpg", ".jpeg", ".svg"];
 
 // ─── Main Form ────────────────────────────────────────────────────────────────
 const ContactForm2: React.FC = () => {
@@ -181,14 +183,14 @@ const ContactForm2: React.FC = () => {
         "call-schedule": {date: "", time: ""},
     });
 
-    const [loading, setLoading]           = useState(false);
-    const [submitted, setSubmitted]       = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-    const [errors, setErrors]             = useState<Record<string, string>>({});
-    const [countryCode, setCountryCode]   = useState("");
+    const [errors, setErrors] = useState<Record<string, string>>({});
+    const [countryCode, setCountryCode] = useState("");
 
-    const get         = (k: string) => form[k] as string;
-    const getArr      = (k: string) => form[k] as string[];
+    const get = (k: string) => form[k] as string;
+    const getArr = (k: string) => form[k] as string[];
     const getSchedule = () => form["call-schedule"] as { date: string; time: string };
 
     const clearError = (key: string) => {
@@ -223,31 +225,31 @@ const ContactForm2: React.FC = () => {
         const schedule = getSchedule();
 
         const requiredStr: { key: string; label: string }[] = [
-            {key: "name",               label: "Your name"},
-            {key: "email",              label: "Your email"},
-            {key: "phone",              label: "Phone number"},
-            {key: "business-name",      label: "Business name"},
-            {key: "project",            label: "Project type"},
-            {key: "service-type",       label: "New build or update answer"},
-            {key: "business-location",  label: "Business location"},
-            {key: "business-scope",     label: "Business scope"},
+            {key: "name", label: "Your name"},
+            {key: "email", label: "Your email"},
+            {key: "phone", label: "Phone number"},
+            {key: "business-name", label: "Business name"},
+            {key: "project", label: "Project type"},
+            {key: "service-type", label: "New build or update answer"},
+            {key: "business-location", label: "Business location"},
+            {key: "business-scope", label: "Business scope"},
             {key: "domain-and-hosting", label: "Domain & hosting answer"},
-            {key: "website-content",    label: "Website content answer"},
-            {key: "media-content",      label: "Professional photos answer"},
-            {key: "project-brief",      label: "Project brief"},
-            {key: "admin-panel",        label: "Admin panel answer"},
+            {key: "website-content", label: "Website content answer"},
+            {key: "media-content", label: "Professional photos answer"},
+            {key: "project-brief", label: "Project brief"},
+            {key: "admin-panel", label: "Admin panel answer"},
             {key: "on-going-maintenance", label: "Ongoing maintenance answer"},
-            {key: "admin-panel-brief",  label: "Admin panel brief"},
-            {key: "budget",             label: "Budget range"},
+            {key: "admin-panel-brief", label: "Admin panel brief"},
+            {key: "budget", label: "Budget range"},
         ];
         requiredStr.forEach(({key, label}) => {
             if (!(form[key] as string).trim()) next[key] = `${label} is required.`;
         });
 
         const requiredArr: { key: string; label: string }[] = [
-            {key: "application-type",  label: "Please select at least one application type"},
-            {key: "website-features",  label: "Please select at least one website feature"},
-            {key: "language-options",  label: "Please select at least one language option"},
+            {key: "application-type", label: "Please select at least one application type"},
+            {key: "website-features", label: "Please select at least one website feature"},
+            {key: "language-options", label: "Please select at least one language option"},
         ];
         requiredArr.forEach(({key, label}) => {
             if ((form[key] as string[]).length === 0) next[key] = `${label}.`;
@@ -348,9 +350,9 @@ const ContactForm2: React.FC = () => {
         }
     };
 
-    const isUpdating  = get("service-type") === "Yes, update existing";
+    const isUpdating = get("service-type") === "Yes, update existing";
     const hasOwnDomain = get("domain-and-hosting") === "Yes";
-    const isOtherApp  = (form["application-type"] as string[]).includes("Other");
+    const isOtherApp = (form["application-type"] as string[]).includes("Other");
 
     let fi = 0;
     const idx = () => fi++;
@@ -368,7 +370,10 @@ const ContactForm2: React.FC = () => {
             <div className="relative mx-auto">
                 <AnimatePresence mode="wait">
                     {submitted ? (
-                        <SuccessScreen key="success" onReset={() => { setSubmitted(false); fi = 0; }}/>
+                        <SuccessScreen key="success" onReset={() => {
+                            setSubmitted(false);
+                            fi = 0;
+                        }}/>
                     ) : (
                         <motion.div
                             key="form"
@@ -393,7 +398,8 @@ const ContactForm2: React.FC = () => {
                             {/* Main card */}
                             <div className="rounded-lg p-4 lg:p-5 bg-white shadow-sm mb-1">
                                 <form onSubmit={handleSubmit} noValidate>
-                                    <div className="flex flex-column gap-4 md:grid md:grid-cols-2 gap-x-3 lg:gap-x-4 gap-y-4 lg:gap-y-5">
+                                    <div
+                                        className="flex flex-column gap-4 md:grid md:grid-cols-2 gap-x-3 lg:gap-x-4 gap-y-4 lg:gap-y-5">
 
                                         {/* ── Personal Info ─────────────────────────────── */}
                                         <SectionHeading label="Personal Info" index={idx()}/>
@@ -468,7 +474,8 @@ const ContactForm2: React.FC = () => {
                                                 onChange={set}
                                                 index={idx()}
                                                 fullWidth
-                                                tooltip="Select 'Yes, update existing' if you already have a live website or app you'd like improved."
+                                                // tooltip="Select 'Yes, update existing' if you already have a live website or app you'd like improved."
+                                                tooltip="Choose “Update existing” if your current site/app needs improvements or new features, or “Build new” if you’re starting from scratch."
                                             />
                                             <FieldError msg={errors["service-type"]}/>
                                         </div>
@@ -513,7 +520,8 @@ const ContactForm2: React.FC = () => {
                                             <FloatingSelect name="business-scope" label="Business Scope"
                                                             options={BusinessScope} value={get("business-scope")}
                                                             onChange={handleChange} required index={idx()}
-                                                            tooltip="Which audience are you targeting? Local, nationwide, or international?"/>
+                                                            tooltip="Select your audience scope (Local, Countrywide, or International) to guide design, SEO, and hosting decisions. Example: A local barber chooses “Local,” a UK  shop “Countrywide,” and a global business “International."
+                                            />
                                             <FieldError msg={errors["business-scope"]}/>
                                         </div>
 
@@ -528,7 +536,7 @@ const ContactForm2: React.FC = () => {
                                                 value={get("domain-and-hosting")}
                                                 onChange={set}
                                                 index={idx()}
-                                                tooltip="Domain = your website name (e.g. example.com). Hosting = the server your files live on."
+                                                tooltip="Domain = your website address (e.g. yourbusiness.com). Hosting = where your site is stored online. If you’re unsure, we’ll handle everything for you."
                                             />
                                             <FieldError msg={errors["domain-and-hosting"]}/>
                                         </div>
@@ -655,7 +663,7 @@ const ContactForm2: React.FC = () => {
                                                 value={getArr("language-options")}
                                                 onChange={(n, v) => set(n, v)}
                                                 index={idx()}
-                                                tooltip="Select all languages your website should support."
+                                                tooltip="Choose the languages your website should support. If your customers speak different languages, a multilingual site can help you reach more people and improve conversions.Example A business in Hounslow serving English and Urdu speakers may choose both languages."
                                                 error={errors["language-options"]}
                                             />
                                             <FieldError msg={errors["language-options"]}/>
@@ -678,7 +686,7 @@ const ContactForm2: React.FC = () => {
                                                         options={BooleanOptions}
                                                         value={get("website-content")}
                                                         onChange={set} index={idx()}
-                                                        tooltip="Our professional writers craft compelling, SEO-friendly copy tailored to your audience."/>
+                                                        tooltip="Do you need us to write your website content? This includes all text on your site such as your homepage, about section, and service descriptions. If you don’t have content ready, we can write it for you (extra cost may apply). Example If you are starting a new business and do not have any written content, choose Yes and we will handle it for you."/>
                                             <FieldError msg={errors["website-content"]}/>
                                         </div>
                                         <div className="flex flex-col" data-error={!!errors["media-content"]}>
@@ -687,7 +695,7 @@ const ContactForm2: React.FC = () => {
                                                         options={BooleanOptions}
                                                         value={get("media-content")}
                                                         onChange={set} index={idx()}
-                                                        tooltip="Our design team produces custom imagery and branding assets."/>
+                                                        tooltip="Do you need professional photos or graphics? Good quality images help your website look more professional and build trust. If you don’t have your own images, we can provide or create them for you. Example An online store without good product photos may find it hard to get sales. Choose Yes and we will handle it for you."/>
                                             <FieldError msg={errors["media-content"]}/>
                                         </div>
                                         <div className="col-span-2 flex flex-col"
@@ -697,7 +705,7 @@ const ContactForm2: React.FC = () => {
                                                               value={get("project-brief")}
                                                               onChange={handleChange}
                                                               required index={idx()}
-                                                              tooltip="The more detail you share, the more accurate and personalised our quotation will be."/>
+                                                              tooltip="Describe your project in detail so we can give you an accurate quote. Include your business type, goals, target audience, and any key features you need. Example I run a cleaning business in West London and need a website for online bookings, pricing, and reviews with a modern mobile friendly design."/>
                                             <FieldError msg={errors["project-brief"]}/>
                                         </div>
 
@@ -709,7 +717,7 @@ const ContactForm2: React.FC = () => {
                                                         label="Do you need an admin panel to manage your site?"
                                                         options={BooleanOptions} value={get("admin-panel")}
                                                         onChange={set} index={idx()}
-                                                        tooltip="An admin panel lets you edit content, manage users and view stats, no coding needed."/>
+                                                        tooltip="Do you need an admin panel to manage your website? It lets you update content, add products, change prices, and manage orders without needing a developer. Example If you want to manage your own online shop without calling us each time, an admin panel is very useful."/>
                                             <FieldError msg={errors["admin-panel"]}/>
                                         </div>
                                         <div className="flex flex-col"
@@ -720,7 +728,7 @@ const ContactForm2: React.FC = () => {
                                                         value={get("on-going-maintenance")} onChange={set}
                                                         index={idx()}
                                                         fullWidth
-                                                        tooltip="Monthly maintenance keeps your site secure, updated and running smoothly."/>
+                                                        tooltip="Do you need ongoing maintenance and support? Websites need regular updates, security checks, and fixes to keep everything running smoothly. Our monthly support plan keeps your site secure and supported whenever you need help. Example If your booking system stops working, you can contact us anytime and we’ll fix it quickly instead of waiting for a one off developer."/>
                                             <FieldError msg={errors["on-going-maintenance"]}/>
                                         </div>
                                         <div className="col-span-2 flex flex-col"
@@ -730,7 +738,7 @@ const ContactForm2: React.FC = () => {
                                                               value={get("admin-panel-brief")}
                                                               onChange={handleChange}
                                                               required index={idx()}
-                                                              tooltip="e.g. user management, order tracking, analytics dashboard, blog editor…"/>
+                                                              tooltip="Tell us what you want to manage in your admin panel. This helps us build the right tools into your dashboard from the start. Example I want to add or remove products, manage orders, update prices, and view customer enquiries."/>
                                             <FieldError msg={errors["admin-panel-brief"]}/>
                                         </div>
 
@@ -783,7 +791,8 @@ const ContactForm2: React.FC = () => {
                                                         <motion.span key="loading" initial={{opacity: 0}}
                                                                      animate={{opacity: 1}} exit={{opacity: 0}}
                                                                      className="flex items-center justify-center gap-2">
-                                                            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                                                            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24"
+                                                                 fill="none">
                                                                 <circle className="opacity-25" cx="12" cy="12" r="10"
                                                                         stroke="currentColor" strokeWidth="4"/>
                                                                 <path className="opacity-75" fill="currentColor"

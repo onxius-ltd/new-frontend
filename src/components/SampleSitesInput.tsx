@@ -34,7 +34,7 @@ const SampleSitesInput = ({
                         style={{ color: "var(--dark-grey-clr)" }}
                   >
                         Do you have any sample websites in mind?
-                        <Tooltip text="Add URLs or names of websites / apps you like the look or feel of. We'll use these as design and feature inspiration for your project. e.g. https://airbnb.com or 'Apple website style'" />
+                        <Tooltip text="Share any websites you like the look or feel of so we can understand your style and design preferences. This helps us design faster and closer to your vision. Example I like how amazon.co.uk displays products or I want a clean modern style like apple.com." />
                   </p>
                   <p className="text-[11px] mb-3" style={{ color: "var(--dark-grey-clr)", opacity: 0.6 }}>
                         Type a URL or site name then press Enter or tap +
