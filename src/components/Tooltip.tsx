@@ -18,15 +18,15 @@ const Tooltip = ({ text }: { text: string }) => {
 
       return (
             <span className="relative inline-flex ml-1.5 align-middle">
-                  <button
-                        type="button"
+                  <span
+                        // type="button"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                         className="w-[17px] h-[17px] rounded-full text-[10px] leading-none flex items-center justify-center border transition-opacity hover:opacity-70"
                         style={{ borderColor: "var(--sky-clr)", color: "var(--sky-clr)", background: "#fff7f2" }}
                   >
                         ?
-                  </button>
+                  </span>
                   <AnimatePresence>
                         {open && (
                               <motion.div
