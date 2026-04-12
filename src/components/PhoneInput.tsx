@@ -58,7 +58,7 @@ const PhoneInput = ({
                   >
                         {/* ── Country Code ── */}
                         <div
-                              className="flex items-center shrink-0 border-r px-3"
+                              className="flex items-center shrink-0 border-r px-1 sm:px-3 w-fit"
                               style={{ borderColor: "var(--light-gray-clr)" }}
                         >
                               <select
@@ -92,7 +92,7 @@ const PhoneInput = ({
                                     onBlur={() => setFocused(false)}
                                     required={required}
                                     placeholder=" "
-                                    className="w-full bg-transparent px-4 pt-6 pb-2.5 text-sm outline-none"
+                                    className="w-full bg-transparent px-2.5 sm:px-4 pt-6 pb-2.5 text-sm outline-none"
                                     style={{ color: "var(--metalic-gray-clr)" }}
                               />
                               <label
