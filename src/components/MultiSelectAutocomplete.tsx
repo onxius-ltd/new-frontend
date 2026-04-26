@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Tooltip from "@/components/Tooltip";
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 export interface LanguageOption {
@@ -301,31 +302,8 @@ const MultiSelectAutocomplete = ({
                 >
                     {label}
                 </label>
-
-                {tooltip && (
-                    <div className="relative group inline-flex">
-                        <span
-                            className="w-3.5 h-3.5 rounded-full inline-flex items-center justify-center text-[9px] font-bold cursor-help select-none"
-                            style={{ background: "rgba(241,128,39,0.15)", color: "#F18027" }}
-                        >
-                            ?
-                        </span>
-                        <div
-                            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 rounded-lg text-[11px] leading-snug w-56 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-50 shadow-lg"
-                            style={{ background: "#1a1a2e", color: "#fff" }}
-                        >
-                            {tooltip}
-                            <div
-                                className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0"
-                                style={{
-                                    borderLeft: "5px solid transparent",
-                                    borderRight: "5px solid transparent",
-                                    borderTop: "5px solid #1a1a2e",
-                                }}
-                            />
-                        </div>
-                    </div>
-                )}
+                {/* tooltip */}
+                {tooltip && <Tooltip text={tooltip}/>}
             </div>
 
             {/* Sub-label */}

@@ -83,50 +83,50 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        {/* Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
+    <head>
+      {/* Google Fonts */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
           rel="stylesheet"
-        />
+      />
 
-        {/* Icon Fonts */}
-        <link
+      {/* Icon Fonts */}
+      <link
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-          rel="stylesheet"
-        />
+      />
+      {/*<link*/}
+      {/*    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"*/}
+      {/*    rel="stylesheet"*/}
+      {/*/>*/}
 
-        {/* Libraries CSS */}
-        <link href="/assets/lib/animate/animate.min.css" rel="stylesheet" />
-        <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-        {/* <link href="/assets/lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" /> */}
-        {/* <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" /> */}
-        {/* <link href="/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet" /> */}
+      {/* Libraries CSS */}
+      <link href="/assets/lib/animate/animate.min.css" rel="stylesheet"/>
+      {/*<link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />*/}
+      {/* <link href="/assets/lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet" /> */}
+      {/* <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" /> */}
+      {/* <link href="/assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet" /> */}
 
-        {/*  Customized Bootstrap Stylesheet */}
-        {/* <link href="/assets/css/bootstrap.min.css" rel="stylesheet" /> */}
+      {/*  Customized Bootstrap Stylesheet */}
+      {/* <link href="/assets/css/bootstrap.min.css" rel="stylesheet" /> */}
 
-        {/*  Template Stylesheet  */}
-        <link href="/assets/css/style.css" rel="stylesheet" />
-      </head>
-      <body
-      >
-        {
-          <div>
-            <Preloader />
-            <Navbar />
-            {children}
-            {/* <TrustPilotReviews /> */}
-            <Footer />
-            <Copyright />
-            {/* <BackToTop /> */}
-            {/* <!-- JavaScript Libraries --> */}
+      {/*  Template Stylesheet  */}
+      <link href="/assets/css/style.css" rel="stylesheet"/>
+    </head>
+    <body
+    >
+    {
+      <div>
+        <Preloader/>
+        <Navbar/>
+        {children}
+        {/* <TrustPilotReviews /> */}
+        <Footer/>
+        <Copyright/>
+        {/* <BackToTop /> */}
+        {/* <!-- JavaScript Libraries --> */}
             {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
             <script src="/assets/lib/wow/wow.min.js"></script>
@@ -143,7 +143,7 @@ export default function RootLayout({
 
             {/* jQuery & Bootstrap (must load first) */}
             <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="beforeInteractive" />
-            <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" strategy="beforeInteractive" />
+            {/*<Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" strategy="beforeInteractive" />*/}
 
             {/* Animation + utilities */}
             <Script src="/assets/lib/wow/wow.min.js" strategy="afterInteractive" />
@@ -161,10 +161,10 @@ export default function RootLayout({
             <Script src="/assets/js/main.js" strategy="afterInteractive" />
 
             {/* bootstrap js */}
-            <Script
-              src="bootstrap/dist/js/bootstrap.bundle.min.js"
-              strategy="afterInteractive"
-            />
+            {/*<Script*/}
+            {/*  src="bootstrap/dist/js/bootstrap.bundle.min.js"*/}
+            {/*  strategy="afterInteractive"*/}
+            {/*/>*/}
 
             {/* <!-- Google tag (gtag.js) --> */}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JZ0YM6EKD"></script>

@@ -136,7 +136,8 @@ const FeaturesSelector = ({ value, onChange, index }: FeaturesSelectorProps) => 
                 style={{ color: "var(--dark-grey-clr)" }}
             >
                 Website / App Features
-                <Tooltip text="Select all features you'd like included. Don't worry if you're unsure, our team will advise you during the discovery call." />
+                <Tooltip text="Select the features you want for your website or app. If you are not sure just choose what fits your idea and we will guide you. More features may increase cost.
+Example An online shop may need cart checkout and product filters while a service business may need booking and contact form." />
             </div>
 
             <p className="text-[11px] mb-3" style={{ color: "var(--dark-grey-clr)", opacity: 0.6 }}>
