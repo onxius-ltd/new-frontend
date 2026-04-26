@@ -7,7 +7,7 @@ import WhatsAppButton from "./WhatsAppButton";
 export default function Footer() {
 
       return (
-            <div>
+            <footer className="z-2 relative bg-white">
                   {/* Footer Start */}
                   <div className="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
                         <div className="container py-5">
@@ -107,6 +107,6 @@ export default function Footer() {
                   {/* whatsapp me */}
                   <WhatsAppButton />
                   {/* Footer End */}
-            </div>
+            </footer>
       );
 }

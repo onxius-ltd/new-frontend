@@ -124,26 +124,6 @@ function getPortfolioData(): ItemProps[] {
       ]
     },
     {
-      "id": 7,
-      "title": "Frenco LTD",
-      "industry": "CORPORATE SERVICES PLATFORM",
-      "role": "Full-Stack Developer",
-      "engagement": "Delivered during tenure at previous organization",
-      "description": "A professional corporate website developed to showcase services, strengthen brand credibility, and generate qualified leads through a performance-driven design.",
-      "list": [],
-      "image": "/assets/images/frencoltd.png",
-      "tags": [
-        { "label": "Corporate Website" },
-        { "label": "Lead Generation" },
-        { "label": "Performance Optimized" }
-      ],
-      "link": "https://frencoltd.com/",
-      "attributes": [
-        { "counting": "+47%", "label": "INCREASE IN INQUIRIES" },
-        { "counting": "International", "label": "CLIENT REACH" }
-      ]
-    },
-    {
       "id": 8,
       "title": "Online Quran Home",
       "industry": "EDUCATIONAL SERVICES PLATFORM",
@@ -224,7 +204,7 @@ export default function Portfolio({
       // that don't affect rendering correctness.
       <section
           id="portfolio"
-          className={`relative px-2 ${isPortfolioPage ? "" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
+          className={`relative px-2 ${isPortfolioPage ? "pb-5" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
       >
         <div className="container mx-auto px-6">
           {/* Header */}

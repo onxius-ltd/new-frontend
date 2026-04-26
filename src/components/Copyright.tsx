@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Copyright() {
 
       return (
-            <div>
+            <div className="z-2 relative bg-white">
                   {/* Copyright Start */}
                   <div className="container-fluid copyright py-4">
                         <div className="container">
