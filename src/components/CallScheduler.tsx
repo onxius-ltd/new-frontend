@@ -49,7 +49,7 @@ const CallScheduler = ({value, onChange, index, dateError, timeError}: CallSched
                 style={{border: `1.5px solid var(--sky-clr)`}}
             >
                 {/* Header */}
-                <div className="flex flex-column md:flex-row items-start gap-3 mb-4">
+                <div className="flex flex-col sm:flex-row items-start gap-3 mb-4">
                     <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center text-white text-xl flex-shrink-0 bg-[var(--sky-clr)]/20">
                         📞

@@ -48,56 +48,6 @@ function getPortfolioData(): ItemProps[] {
       ]
     },
     {
-      "id": 4,
-      "title": "MYRAS BEDS UK",
-      "industry": "FURNITURE, BEDS & HOME GOODS",
-      "role": "",
-      "engagement": "A beautiful online showroom, open every day of the year.",
-      "description": "A stylish e-commerce website where UK customers can browse premium beds and mattresses and place orders entirely online. The business no longer depends solely on footfall, it now attracts customers from across the country.",
-      "list": [
-        "✓ Customers shop from home without needing to visit your store.",
-        "✓ Optimised for Google so new customers find you in search results.",
-        "✓ Sell across the whole of the UK, not just locally."
-      ],
-      "image": "/assets/images/myrasbeds.png",
-      "tags": [
-        { "label": "Furniture E-Commerce", "is_active": true },
-        { "label": "Beds & Mattresses" },
-        { "label": "UK Retail" },
-        { "label": "Google Optimized" }
-      ],
-      "link": "https://www.myrasbeds.co.uk/",
-      "attributes": [
-        { "counting": "UK Wide", "label": "MARKET REACH" },
-        { "counting": "Online", "label": "SALES PLATFORM" }
-      ]
-    },
-    {
-      "id": 1,
-      "title": "Auto-Bids",
-      "industry": "VEHICLE SALES & ONLINE AUCTIONS",
-      "role": "",
-      "engagement": "The smarter way to sell cars online, 24 hours a day.",
-      "description": "Auto-Bids lets car dealers and auction houses list their full vehicle stock online. Buyers can browse, bid, and pay securely from any device, at any time of day. You manage everything from one simple dashboard.",
-      "list": [
-        "✓ Buyers compete in live bidding, driving up your sale prices.",
-        "✓ Secure payments handled through the website, no cash, no no-shows.",
-        "✓ Your showroom is open around the clock, even when you are not."
-      ],
-      "image": "/assets/img/auto-bids.png",
-      "tags": [
-        { "label": "Car Sales Website", "is_active": true },
-        { "label": "Live Auction System" },
-        { "label": "Secure Payments" },
-        { "label": "Dealer Dashboard" }
-      ],
-      "link": "https://auto-bids.com/",
-      "attributes": [
-        { "counting": "100+", "label": "VEHICLES LISTED" },
-        { "counting": "+28%", "label": "RISE IN BIDDING ACTIVITY" }
-      ]
-    },
-    {
       "id": 3,
       "title": "Heavenly Meats LLC",
       "industry": "FOOD, MEAT & GROCERY E-COMMERCE",
@@ -235,26 +185,6 @@ function getPortfolioData(): ItemProps[] {
       ]
     },
     {
-      "id": 10,
-      "title": "NFT Neighbors",
-      "industry": "BLOCKCHAIN / WEB3 PLATFORM",
-      "role": "Full-Stack Developer & Web3 Integration Developer",
-      "engagement": "Concept & Development Project",
-      "description": "Web3-enabled NFT community platform integrating wallet connectivity, smart contract interaction, and scalable frontend architecture.",
-      "list": [],
-      "image": "/assets/img/nftneighbors.png",
-      "tags": [
-        { "label": "Blockchain" },
-        { "label": "NFT Platform" },
-        { "label": "Web3 Integration" }
-      ],
-      "link": "https://nftneighbors.com/",
-      "attributes": [
-        { "counting": "10+", "label": "NFTS MINTED" },
-        { "counting": "+35%", "label": "COMMUNITY GROWTH" }
-      ]
-    },
-    {
       "id": 11,
       "title": "TEI Enterprises App",
       "industry": "BUSINESS MANAGEMENT / MOBILE APPLICATION",
@@ -279,8 +209,8 @@ function getPortfolioData(): ItemProps[] {
 }
 
 export default function Portfolio({
-  isPortfolioPage = false,
-}: {
+                                    isPortfolioPage = false,
+                                  }: {
   isPortfolioPage?: boolean;
 }) {
   // Call at render time — NOT at module level — so JSX elements are created
@@ -290,39 +220,34 @@ export default function Portfolio({
 
 
   return (
-    // suppressHydrationWarning is a safety net for any minor attribute
-    // differences (e.g. class names from third-party libs like WOW.js)
-    // that don't affect rendering correctness.
-    <section
-      id="portfolio"
-      className={`relative px-2 ${isPortfolioPage ? "" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
-      suppressHydrationWarning
-    >
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-10">
-          {/* <h2 className="mb-3 drop-shadow-sm text-capitalize text-primary">
-            ONXIUS
-          </h2> */}
-          <h2 className="mb-2 drop-shadow-sm text-capitalize text-lg">
-            Real Websites. Real Results. For Businesses Just Like Yours.
-          </h2>
-          <p className="text-gray-700 max-w-3xl mx-auto text-xl">
-            Browse our work below and imagine what a website like this could do for your business.
-          </p>
-        </div>
+      // differences (e.g. class names from third-party libs like WOW.js)
+      // that don't affect rendering correctness.
+      <section
+          id="portfolio"
+          className={`relative px-2 ${isPortfolioPage ? "" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
+      >
+        <div className="container mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <h2 className="mb-2 drop-shadow-sm text-capitalize text-lg">
+              Real Websites. Real Results. For Businesses Just Like Yours.
+            </h2>
+            <p className="text-gray-700 max-w-3xl mx-auto text-xl">
+              Browse our work below and imagine what a website like this could do for your business.
+            </p>
+          </div>
 
-        {/* Portfolio Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {displayedData.map((item) => (
-            <PorfolioCard data={item} key={item.id} />
-          ))}
+          {/* Portfolio Cards */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {displayedData.map((item) => (
+                <PorfolioCard data={item} key={item.id} />
+            ))}
+          </div>
+          {/* view all projects button */}
+          {!isPortfolioPage && <div className="mt-5 flex justify-center items-center wow fadeIn">
+            <Link href="/portfolio" className="butn-custom rounded-pill py-2.5 px-16">View All Projects &#x2799;</Link>
+          </div>}
         </div>
-        {/* view all projects button */}
-        {!isPortfolioPage && <div className="mt-5 flex justify-center items-center wow fadeIn">
-          <Link href="/portfolio" className="butn-custom rounded-pill py-2.5 px-16">View All Projects &#x2799;</Link>
-        </div>}
-      </div>
-    </section>
+      </section>
   );
 }

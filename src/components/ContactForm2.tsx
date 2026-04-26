@@ -157,6 +157,7 @@ const ContactForm2: React.FC = () => {
     const [form, setForm] = useState<FormState>({
         name: "",
         email: "",
+        countryCode: "",
         phone: "",
         "business-name": "",
         project: "",
@@ -187,7 +188,7 @@ const ContactForm2: React.FC = () => {
     const [submitted, setSubmitted] = useState(false);
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const [errors, setErrors] = useState<Record<string, string>>({});
-    const [countryCode, setCountryCode] = useState("");
+    // const [countryCode, setCountryCode] = useState("");
 
     const get = (k: string) => form[k] as string;
     const getArr = (k: string) => form[k] as string[];
@@ -227,6 +228,7 @@ const ContactForm2: React.FC = () => {
         const requiredStr: { key: string; label: string }[] = [
             {key: "name", label: "Your name"},
             {key: "email", label: "Your email"},
+            {key: "countryCode", label: "Country code"},
             {key: "phone", label: "Phone number"},
             {key: "business-name", label: "Business name"},
             {key: "project", label: "Project type"},
@@ -417,8 +419,7 @@ const ContactForm2: React.FC = () => {
                                         </div>
                                         <div className="flex flex-col" data-error={!!errors.phone}>
                                             <PhoneInput name="phone" label="Your Phone" value={get("phone")}
-                                                        onChange={handleChange} onCountryChange={setCountryCode}
-                                                        countryCode={countryCode} required index={idx()}/>
+                                                        onChange={handleChange} countryCode={get("countryCode")} required index={idx()}/>
                                             <FieldError msg={errors.phone}/>
                                         </div>
                                         <div className="flex flex-col" data-error={!!errors["business-name"]}>
