@@ -48,14 +48,14 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[var(--dark-blue-clr)] border-[var(--dark-blue-clr)] text-2xl"
+            className="lg:hidden text-[var(--dark-blue-clr)] border-[var(--dark-blue-clr)] text-2xl"
           >
             {isOpen ? "X" : <span className="fa fa-bars text-2xl" />}
           </button>
 
           {/* Menu */}
           <div
-            className={`flex flex-column md:flex-row justify-content-center md:justify-content-end align-items-center flex-1 toggleNav ${
+            className={`flex flex-column lg:flex-row justify-content-center md:justify-content-end align-items-center flex-1 toggleNav ${
               isOpen ? "show" : "hide"
             }`}
           >

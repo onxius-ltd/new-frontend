@@ -2,43 +2,73 @@
 import React, { useState, ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "./ContactForm2";
+import countryData from '../json/countries.json'; // Direct import
 
-const COUNTRY_CODES = [
-      { code: "+1", flag: "🇺🇸", minLen: 10, maxLen: 10 },
-      { code: "+44", flag: "🇬🇧", minLen: 10, maxLen: 10 },
-      { code: "+92", flag: "🇵🇰", minLen: 10, maxLen: 10 },
-      { code: "+91", flag: "🇮🇳", minLen: 10, maxLen: 10 },
-      { code: "+971", flag: "🇦🇪", minLen: 9, maxLen: 9 },
-      { code: "+966", flag: "🇸🇦", minLen: 9, maxLen: 9 },
-      { code: "+61", flag: "🇦🇺", minLen: 9, maxLen: 9 },
-      { code: "+49", flag: "🇩🇪", minLen: 10, maxLen: 11 },
-      { code: "+33", flag: "🇫🇷", minLen: 9, maxLen: 9 },
-      { code: "+86", flag: "🇨🇳", minLen: 11, maxLen: 11 },
-];
+// ─── Country codes ────────────────────────────────────────────────────────────
+// export const COUNTRY_CODES = [
+//     { name: "United States", code: "+1", flag: "🇺🇸", minLen: 10, maxLen: 10 },
+//     { name: "Canada", code: "+1", flag: "🇨🇦", minLen: 10, maxLen: 10 },
+//     { name: "United Kingdom", code: "+44", flag: "🇬🇧", minLen: 10, maxLen: 10 },
+//     { name: "Pakistan", code: "+92", flag: "🇵🇰", minLen: 10, maxLen: 10 },
+//     { name: "India", code: "+91", flag: "🇮🇳", minLen: 10, maxLen: 10 },
+//     { name: "United Arab Emirates", code: "+971", flag: "🇦🇪", minLen: 9, maxLen: 9 },
+//     { name: "Saudi Arabia", code: "+966", flag: "🇸🇦", minLen: 9, maxLen: 9 },
+//     { name: "Qatar", code: "+974", flag: "🇶🇦", minLen: 8, maxLen: 8 },
+//     { name: "Australia", code: "+61", flag: "🇦🇺", minLen: 9, maxLen: 9 },
+//     { name: "Germany", code: "+49", flag: "🇩🇪", minLen: 10, maxLen: 11 },
+//     { name: "France", code: "+33", flag: "🇫🇷", minLen: 9, maxLen: 9 },
+//     { name: "China", code: "+86", flag: "🇨🇳", minLen: 11, maxLen: 11 },
+//     { name: "Japan", code: "+81", flag: "🇯🇵", minLen: 10, maxLen: 10 },
+//     { name: "Turkey", code: "+90", flag: "🇹🇷", minLen: 10, maxLen: 10 },
+//     { name: "Singapore", code: "+65", flag: "🇸🇬", minLen: 8, maxLen: 8 },
+//     { name: "Malaysia", code: "+60", flag: "🇲🇾", minLen: 9, maxLen: 10 },
+//     { name: "South Africa", code: "+27", flag: "🇿🇦", minLen: 9, maxLen: 9 },
+//     { name: "Brazil", code: "+55", flag: "🇧🇷", minLen: 10, maxLen: 11 },
+//     { name: "Netherlands", code: "+31", flag: "🇳🇱", minLen: 9, maxLen: 9 },
+//     { name: "Bangladesh", code: "+880", flag: "🇧🇩", minLen: 10, maxLen: 10 },
+//     { name: "Kuwait", code: "+965", flag: "🇰🇼", minLen: 8, maxLen: 8 },
+//     { name: "Oman", code: "+968", flag: "🇴🇲", minLen: 8, maxLen: 8 },
+//     { name: "Bahrain", code: "+973", flag: "🇧🇭", minLen: 8, maxLen: 8 },
+//     { name: "Italy", code: "+39", flag: "🇮🇹", minLen: 10, maxLen: 10 },
+//     { name: "Spain", code: "+34", flag: "🇪🇸", minLen: 9, maxLen: 9 },
+//     { name: "Ireland", code: "+353", flag: "🇮🇪", minLen: 7, maxLen: 9 },
+//     { name: "New Zealand", code: "+64", flag: "🇳🇿", minLen: 8, maxLen: 10 },
+//     { name: "Hong Kong", code: "+852", flag: "🇭🇰", minLen: 8, maxLen: 8 },
+//     { name: "Sri Lanka", code: "+94", flag: "🇱🇰", minLen: 9, maxLen: 9 },
+//     { name: "Egypt", code: "+20", flag: "🇪🇬", minLen: 10, maxLen: 10 }
+// ];
 
-export { COUNTRY_CODES };
+export const COUNTRY_CODES = countryData
 
-const PhoneInput = ({
-      name,
-      label,
-      value,
-      onChange,
-      onCountryChange,
-      countryCode,
-      required = false,
-      index,
-}: {
+// ─── Props ────────────────────────────────────────────────────────────────────
+interface PhoneInputProps {
       name: string;
       label: string;
       value: string;
       onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-      onCountryChange: (code: string) => void;
+      /** Called with the new country-code string whenever the user changes it */
+      onCountryCodeChange: (code: string) => void;
       countryCode: string;
       required?: boolean;
       index: number;
+}
+
+// ─── Component ────────────────────────────────────────────────────────────────
+const PhoneInput: React.FC<PhoneInputProps> = ({
+      name,
+      label,
+      value,
+      onChange,
+      onCountryCodeChange,
+      countryCode,
+      required = false,
+      index,
 }) => {
       const [focused, setFocused] = useState(false);
       const active = focused || value !== "";
+
+      const borderColor = focused ? "var(--sky-clr)" : "var(--light-gray-clr)";
+      const boxShadow = focused ? "0 0 0 3px rgba(241,128,39,0.12)" : "none";
 
       return (
             <motion.div
@@ -50,28 +80,24 @@ const PhoneInput = ({
             >
                   <div
                         className="flex w-full rounded-xl transition-all"
-                        style={{
-                              background: "#f9f9f9",
-                              border: `1.5px solid ${focused ? "var(--sky-clr)" : "var(--light-gray-clr)"}`,
-                              boxShadow: focused ? "0 0 0 3px rgba(241,128,39,0.12)" : "none",
-                        }}
+                        style={{ background: "#f9f9f9", border: `1.5px solid ${borderColor}`, boxShadow }}
                   >
-                        {/* ── Country Code ── */}
+                        {/* ── Country code selector ── */}
                         <div
-                              className="flex items-center shrink-0 border-r px-1 sm:px-3 w-fit"
+                              className="flex items-center shrink-0 border-r px-1 sm:px-3"
                               style={{ borderColor: "var(--light-gray-clr)" }}
                         >
                               <select
+                                    name="country_code"
+                                    id="country_code"
                                     value={countryCode}
-                                    onChange={(e) => onCountryChange(e.target.value)}
+                                    onChange={(e) => onCountryCodeChange(e.target.value)}
                                     onFocus={() => setFocused(true)}
                                     onBlur={() => setFocused(false)}
                                     className="bg-transparent outline-none text-sm cursor-pointer"
                                     style={{ color: "var(--metalic-gray-clr)" }}
-                                    name="country_code"
-                                    id="country_code"
                               >
-                                    <option value="" disabled>🌐 +--</option>  {/* ← placeholder */}
+                                    <option value="" disabled>🌐 +--</option>
                                     {COUNTRY_CODES.map((c) => (
                                           <option key={c.code} value={c.code}>
                                                 {c.flag} {c.code}
@@ -80,7 +106,7 @@ const PhoneInput = ({
                               </select>
                         </div>
 
-                        {/* ── Phone Input ── */}
+                        {/* ── Phone number input ── */}
                         <div className="relative flex-1">
                               <input
                                     id={name}
