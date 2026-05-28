@@ -8,6 +8,10 @@
   --metalic-gray-clr: #303347;
   --light-gray-clr: #cfd2d8;
   --dark-blue-clr: #ee5f11;
+  --card-shadow-soft: 0 8px 20px rgba(15, 23, 42, 0.08);
+  --card-shadow-hover: 0 12px 26px rgba(15, 23, 42, 0.12);
+  --button-shadow-soft: 0 6px 14px rgba(2, 132, 199, 0.16);
+  --button-shadow-hover: 0 10px 18px rgba(2, 132, 199, 0.22);
 }
 
 
@@ -38,10 +42,6 @@ body {
 
 .navbar.sticky-top {
   box-shadow: none !important;
-}
-
-.text-shadow {
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1)
 }
 
 .service-content h2 {

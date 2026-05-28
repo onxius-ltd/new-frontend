@@ -1,4 +1,4 @@
-"use client";
+import type { Metadata } from "next";
 import Services from "@/components/Services"; // 👈 import your component
 import Fearutes from "@/components/Features";
 import Faqs from "@/components/Faqs";
@@ -6,7 +6,34 @@ import ChooseUs from "@/components/ChooseUs";
 import Portfolio from "@/components/Portfolio";
 import ClientLogos from "@/components/ClientLogos";
 import WeHelpsToGrow from "@/components/WeHelpsToGrow";
+import TrustPilotReviews from "@/components/TrustPilotReviews";
 
+export const metadata: Metadata = {
+  title: "Web Development & IT Solutions Agency",
+  description:
+    "Onxius builds high-converting websites, custom software, and scalable cloud solutions for startups and growing businesses in the UK and worldwide.",
+  keywords: [
+    "web development agency",
+    "website design London",
+    "custom software development",
+    "IT solutions company",
+    "Onxius",
+  ],
+  openGraph: {
+    title: "Onxius | Web Development & IT Solutions Agency",
+    description:
+      "From modern business websites to custom software and cloud infrastructure, Onxius helps companies launch, scale, and grow online.",
+    url: "https://www.onxius.com/",
+    siteName: "Onxius",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Onxius | Web Development & IT Solutions Agency",
+    description:
+      "Onxius delivers reliable web, software, and cloud solutions to help businesses grow faster.",
+  },
+};
 
 export default function Home() {
   return (
@@ -24,6 +51,7 @@ export default function Home() {
       <ChooseUs />
       <Fearutes />
       <Faqs />
+      <TrustPilotReviews />
       {/* <Testimonial /> */}
     </div>
   );
