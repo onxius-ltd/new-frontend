@@ -5,7 +5,10 @@ import Preloader from "@/components/Preloader"; // 👈 import your component
 import Footer from "@/components/Footer";
 import Copyright from "@/components/Copyright";
 import Script from "next/script";
+import { GoogleTagManager } from '@next/third-parties/google'
+
 import "./globals.css";
+
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -103,27 +106,96 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Onxius | Web Development, Software Development & IT Solutions", // Replace with your actual business name
+    "url": "https://onxius.com/", // Your website URL
+    "telephone": "+44 7723 819735", // Your phone number in international format
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "15 Shenley Road",
+      "addressLocality": "Hounslow",
+      "addressRegion": "United Kingdom",
+      "postalCode": "TW5 0AD",
+      "addressCountry": "UK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.47815187180674, // Your latitude
+      "longitude": -0.38744932353192524 // Your longitude
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/groups/25806318469010091/",
+      // "https://www.instagram.com/yourprofile"
+      //  "https://www.linkedin.com/yourprofile"
+    ]
+  };
+
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-WWF9DCJ6" />
       <head>
-        {/* Google Fonts */}
+        {/* Preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+
+        {/* Google Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
           rel="stylesheet"
         />
 
-        {/* Icon Fonts */}
+        {/* Font Awesome 6 — single source, loaded non-render-blocking.
+      NOTE: the old `onLoad="this.media='all'"` trick is a JSX string,
+      not a function — React drops it silently, so that link was
+      actually render-blocking the whole time, on top of a SECOND
+      duplicate Font Awesome v5 request below it. Using a real
+      preload + plain inline <script> swap instead, which genuinely
+      defers the CSS off the critical path. */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          id="fa-preload"
+        />
         <link
           rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          media="print"
+          id="fa-stylesheet"
+        />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          />
+        </noscript>
+        <script
+          // Plain inline JS (not a React event handler), so it's safe in a
+          // server component and actually executes in the browser.
+          dangerouslySetInnerHTML={{
+            __html: `
+        (function () {
+          var s = document.getElementById('fa-stylesheet');
+          if (s) { s.media = 'all'; }
+        })();
+      `,
+          }}
         />
 
         {/* Libraries CSS */}
         <link href="/assets/lib/animate/animate.min.css" rel="stylesheet" />
 
-        {/*  Template Stylesheet  */}
+        {/* Template Stylesheet */}
         <link href="/assets/css/style.css" rel="stylesheet" />
       </head>
       <body
@@ -139,16 +211,16 @@ export default function RootLayout({
 
 
             {/* jQuery & Bootstrap (must load first) */}
-            <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="beforeInteractive" />
+            <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" strategy="lazyOnload" />
 
             {/* Animation + utilities */}
-            <Script src="/assets/lib/wow/wow.min.js" strategy="afterInteractive" />
-            <Script src="/assets/lib/easing/easing.min.js" strategy="afterInteractive" />
-            <Script src="/assets/lib/waypoints/waypoints.min.js" strategy="afterInteractive" />
-            <Script src="/assets/lib/counterup/counterup.min.js" strategy="afterInteractive" />
+            <Script src="/assets/lib/wow/wow.min.js" strategy="lazyOnload" />
+            <Script src="/assets/lib/easing/easing.min.js" strategy="lazyOnload" />
+            <Script src="/assets/lib/waypoints/waypoints.min.js" strategy="lazyOnload" />
+            <Script src="/assets/lib/counterup/counterup.min.js" strategy="lazyOnload" />
 
             {/* Lightbox */}
-            <Script src="/assets/lib/lightbox/js/lightbox.min.js" strategy="afterInteractive" />
+            <Script src="/assets/lib/lightbox/js/lightbox.min.js" strategy="lazyOnload" />
 
             {/* Your custom template script */}
             <Script src="/assets/js/main.js" strategy="afterInteractive" />

@@ -5,31 +5,31 @@ import AboutFearute from "./AboutFeature";
 
 const process = [
       {
-            icon: "/assets/icons/Discover-and-Plan 2.png",
+            icon: "/assets/icons/Discover-and-Plan 2.webp",
             title: "Discover & Plan",
             subtitle: "Understanding Goals & Strategy",
             desc: "We start by understanding your business objectives, target audience, and project requirements to create a clear roadmap for success."
       },
       {
-            icon: "/assets/icons/design-icon.png",
+            icon: "/assets/icons/design-icon.webp",
             title: "Design & Prototype",
             subtitle: "Creating Intuitive Experiences",
             desc: "Our team crafts wireframes and interactive prototypes to visualize the user journey and design seamless interfaces."
       },
       {
-            icon: "/assets/icons/development-icon.png",
+            icon: "/assets/icons/development-icon.webp",
             title: "Develop & Build",
             subtitle: "Turning Ideas into Reality",
             desc: "We develop high-quality, scalable, and secure solutions using modern technologies, ensuring performance and reliability."
       },
       {
-            icon: "/assets/icons/launch-icon.png",
+            icon: "/assets/icons/launch-icon.webp",
             title: "Launch & Optimize",
             subtitle: "Deploy, Monitor & Improve",
             desc: "After deployment, we monitor performance, optimize for speed, and provide continuous support to ensure your solution thrives."
       },
       {
-            icon: "/assets/icons/support-icon.png",
+            icon: "/assets/icons/support-icon.webp",
             title: "Support & Scale",
             subtitle: "Ongoing Maintenance & Growth",
             desc: "We provide ongoing maintenance, updates, and scaling strategies to help your digital product grow alongside your business."
@@ -76,6 +76,7 @@ export default function Fearutes() {
                                                                               width={160}
                                                                               height={160}
                                                                               className="img-fluid w-full h-auto"
+                                                                              loading={"lazy"}
                                                                         />
                                                                   </div>
                                                                   <h5 className="fw-bold mb-1.5 text-primary">{item.title}</h5>

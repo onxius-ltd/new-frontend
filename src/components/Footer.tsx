@@ -15,7 +15,10 @@ export default function Footer() {
                                     <div className="col-md-6 col-lg-6 col-xl-3">
                                           <div className="footer-item d-flex flex-column">
                                                 <Link href="/" className="navbar-brand p-0">
-                                                      <Image src="/assets/logo/new-onxius-logo-without-bg.png" className="img-fluid w-100 h-100" alt="ONXIUS Logo" width={240} height={85} />
+                                                      <Image src="/assets/logo/new-onxius-logo-without-bg.png" className="img-fluid w-100 h-100" alt="ONXIUS Logo" width={240} height={85}
+                                                            sizes="(max-width: 640px) 150px, 220px"
+                                                            quality={80}
+                                                      />
                                                 </Link>
                                                 <p className="ps-3 py-2">
                                                       Create modern, scalable, and user-friendly digital solutions that help businesses grow and succeed online.

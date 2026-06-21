@@ -6,7 +6,7 @@ import Portfolio from '@/components/Portfolio';
 import TrustPilotReviews from "@/components/TrustPilotReviews";
 
 export const metadata: Metadata = {
-  title: "Website & Project Portfolio",
+  title: "Onxius Portfolio | Web & Software Projects",
   description:
     "See recent websites, platforms, and digital products designed and built by Onxius for clients across different industries.",
   openGraph: {

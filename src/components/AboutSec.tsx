@@ -13,7 +13,7 @@ export default function AboutSec() {
                               <div className="row g-5">
                                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                           <div className="RotateMoveLeft">
-                                                <Image src="/assets/images/about.png" className="img-fluid w-100" alt="about onxius" width={500} height={500} />
+                                                <Image src="/assets/images/about.webp" className="img-fluid w-100" alt="about onxius" width={500} height={500} loading="lazy" quality={80} priority />
                                           </div>
                                     </div>
                                     <div className="col-lg-6 wow fadeInUp flex flex-col justify-center" data-wow-delay="0.3s">

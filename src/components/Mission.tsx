@@ -13,7 +13,7 @@ export default function OurMission() {
                               <div className="row g-5">
                                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                           <div className="RotateMoveLeft">
-                                                <Image src="/assets/images/mission.png" className="img-fluid w-100" alt="onxius mission" width={500} height={500} />
+                                                <Image src="/assets/images/mission.webp" className="img-fluid w-100" alt="onxius mission" width={500} height={500} />
                                           </div>
                                     </div>
                                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
