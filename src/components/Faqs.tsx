@@ -126,11 +126,13 @@ export default function Faqs({ isPortfolioPage }: { isPortfolioPage?: boolean })
                                     <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                                           <div className="FAQ-img RotateMoveRight rounded">
                                                 <Image
-                                                      src="/assets/images/faqs-onxius.png"
+                                                      src="/assets/images/faqs-onxius.webp"
                                                       className="img-fluid w-100 h-100"
                                                       alt="ONXIUS FAQs"
                                                       width={500}
                                                       height={500}
+                                                      loading="lazy"
+                                                      quality={70}
                                                 />
                                           </div>
                                     </div>

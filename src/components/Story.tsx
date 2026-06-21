@@ -13,7 +13,7 @@ export default function OurStory() {
                               <div className="row flex-row-reverse g-5">
                                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                           <div className="RotateMoveLeft">
-                                                <Image src="/assets/images/story.png" className="img-fluid w-100" alt="onxius story" width={500} height={500} />
+                                                <Image src="/assets/images/story.webp" className="img-fluid w-100" alt="onxius story" width={500} height={500} />
                                           </div>
                                     </div>
                                     <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">

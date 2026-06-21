@@ -591,7 +591,7 @@
     bottom: 100px;
     width: 58px;
     height: 50px;
-    background: url(../img/sty-1.png) center center no-repeat;
+    background: url(../img/sty-1.webp) center center no-repeat;
     animation: RotateMoveSty-3 45s linear infinite;
     transition: 0.5s;
     z-index: -1;

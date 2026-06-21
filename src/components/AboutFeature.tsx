@@ -12,7 +12,7 @@ export default function AboutFearute() {
                                     className="feature-img RotateMoveLeft h-100"
                                     style={{ objectFit: "cover" }}
                               >
-                                    <Image src="/assets/images/Feature-side-image.png" className="img-fluid w-100 h-100" alt="Features" width={500} height={500} />
+                                    <Image src="/assets/images/Feature-side-image.webp" className="img-fluid w-100 h-100" alt="Features" width={500} height={500} />
                               </div>
                         </div>
                         <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">

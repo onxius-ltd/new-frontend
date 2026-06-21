@@ -11,7 +11,7 @@ export default function HomeHeader() {
                   <div className="hero-header overflow-hidden md:mt-5" >
                         {/* animated rotated image */}
                         <div className="rotate-img">
-                              <Image src="/assets/img/sty-1.png" className="img-fluid w-100" alt="" fill />
+                              <Image src="/assets/img/sty-1.webp" className="img-fluid w-100" alt="" fill priority quality={80} />
                               <div className="rotate-sty-2" />
                         </div>
                         {/* header content */}
@@ -48,8 +48,7 @@ export default function HomeHeader() {
                               </div>
                               {/* right side content */}
                               <div className="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                                    <Image src="/assets/images/business-grow.png" className="img-fluid w-100 h-100" alt="onxius" width={500} height={500} />
-
+                                    <Image src="/assets/images/business-grow.webp" className="img-fluid w-100 h-100" alt="onxius" width={500} height={500} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                               </div>
                         </div>
                   </div>

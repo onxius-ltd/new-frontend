@@ -2,103 +2,51 @@
 import Link from "next/link";
 import Image from "next/image";
 
-// const services = [
-//       {
-//             icon: "/assets/images/Web Design  Development icon.png",
-//             title: "Web Design & Development",
-//             subtitle: "Crafting Stunning, High-Performance Websites",
-//             desc: "We specialize in creating responsive, user-friendly, and visually appealing websites that help your business stand out. Using modern frameworks like React, Next.js, and Laravel, we deliver custom solutions that combine creativity with functionality."
-//       },
-//       {
-//             icon: "/assets/images/pwa-icon.png",
-//             title: "Progressive Web Apps (PWA)",
-//             subtitle: "Delivering App-Like Experiences on the Web",
-//             desc: "We develop Progressive Web Apps that combine the best of web and mobile technologies. Our PWAs are fast, reliable, installable, and capable of working offline — giving users a seamless and engaging experience across all devices."
-//       },
-//       {
-//             icon: "/assets/images/Mobile App Development icon .png",
-//             title: "Mobile App Development",
-//             subtitle: "Engaging Mobile Experiences for Every Platform",
-//             desc: "Using React Native, we develop high-performance mobile applications for Android and iOS. Our apps deliver intuitive interfaces and real-time functionality designed to keep users engaged."
-//       },
-//       {
-//             icon: "/assets/images/WordPress  E-Commerce Solutions icon .png",
-//             title: "WordPress & E-Commerce Solutions",
-//             subtitle: "Flexible, Manageable, and Growth-Ready Websites",
-//             desc: "We design and develop professional WordPress websites, from portfolios to full-featured e-commerce stores using WooCommerce. Every site is optimized for performance, SEO, and easy content management."
-//       },
-//       {
-//             icon: "/assets/images/SEO and Digital Marketing icon .png",
-//             title: "SEO & Digital Marketing",
-//             subtitle: "Helping You Get Found, Ranked, and Recognized",
-//             desc: "Our SEO and marketing services ensure your business reaches the right audience. We optimize your website for search engines, improve page rankings, and enhance visibility through keyword research and content strategy."
-//       },
-//       {
-//             icon: "/assets/images/UI UX Design icon .png",
-//             title: "UI/UX Design",
-//             subtitle: "Designs That Blend Creativity With Usability",
-//             desc: "We focus on creating seamless user experiences through intuitive and engaging designs. Every interface we craft is visually appealing, user-friendly, and responsive across all devices."
-//       },
-//       {
-//             icon: "/assets/images/Desktop App Development icon.png",
-//             title: "Desktop App Development",
-//             subtitle: "Smart Desktop Solutions With Electron.js",
-//             desc: "We build powerful and efficient desktop applications using Electron.js, enabling cross-platform compatibility and offline functionality — perfect for internal business tools and productivity apps."
-//       },
-//       {
-//             icon: "/assets/images/Maintenance & Support icon.png",
-//             title: "Maintenance & Support",
-//             subtitle: "Reliable Post-Launch Assistance",
-//             desc: "Our relationship doesn’t end after project delivery. We offer continuous technical support, performance monitoring, and maintenance to ensure your website or application remains secure and up to date."
-//       }
-// ];
-
-
 const services = [
       {
-            icon: "/assets/images/Web Design  Development icon.png",
+            icon: "/assets/images/Web Design  Development icon.webp",
             title: "Web Development",
             subtitle: "Stunning, High-Performance Websites",
             desc: "We create easy to use websites for your shop or business so customers can find you on Google and contact you."
       },
       {
-            icon: "/assets/images/pwa-icon.png",
+            icon: "/assets/images/pwa-icon.webp",
             title: "Progressive Web Apps",
             subtitle: "Fast, App-Like Web Experiences",
             desc: "Mobile friendly website (works like an app on phone, no download needed)"
       },
       {
-            icon: "/assets/images/Mobile App Development icon .png",
+            icon: "/assets/images/Mobile App Development icon .webp",
             title: "Mobile Apps",
             subtitle: "Engaging iOS & Android Applications",
             desc: "We create mobile apps if your business needs online orders, bookings or customer accounts."
       },
       {
-            icon: "/assets/images/WordPress  E-Commerce Solutions icon .png",
+            icon: "/assets/images/WordPress  E-Commerce Solutions icon .webp",
             title: "WordPress & E-Commerce",
             subtitle: "Flexible, Growth-Ready Online Stores",
             desc: "Online shop (customers can order and pay on your website)"
       },
       {
-            icon: "/assets/images/SEO and Digital Marketing icon .png",
+            icon: "/assets/images/SEO and Digital Marketing icon .webp",
             title: "SEO & Marketing",
             subtitle: "Get Found, Ranked, and Recognized",
             desc: "We help your business appear on Google and Google Maps so nearby customers can find you."
       },
       {
-            icon: "/assets/images/UI UX Design icon .png",
+            icon: "/assets/images/UI UX Design icon .webp",
             title: "UI/UX Design",
             subtitle: "Beautiful, User-Focused Experiences",
             desc: "Clean and intuitive interfaces that enhance usability and keep users engaged across platforms."
       },
       {
-            icon: "/assets/images/Desktop App Development icon.png",
+            icon: "/assets/images/Desktop App Development icon.webp",
             title: "Desktop Apps",
             subtitle: "Smart Cross-Platform Desktop Solutions",
             desc: "Secure and efficient desktop apps with offline capability built for productivity and performance."
       },
       {
-            icon: "/assets/images/Maintenance and Support icon.png",
+            icon: "/assets/images/Maintenance and Support icon.webp",
             title: "Support & Maintenance",
             subtitle: "Reliable Care After Launch",
             desc: "Ongoing updates, monitoring, and support to keep your systems secure, stable, and optimized."
@@ -134,7 +82,7 @@ export default function Services() {
                                                             {/* service item content */}
                                                             <div className="h-full service-item text-left rounded p-4 d-flex flex-column align-items-start">
                                                                   <div className="service-icon d-inline-block mb-4">
-                                                                        {item.icon && <Image src={item.icon} className="img-fluid w-full mx-auto" alt={item.title} width={100} height={100} />}
+                                                                        {item.icon && <Image src={item.icon} className="img-fluid w-full mx-auto" alt={item.title} width={100} height={100} loading={"lazy"} />}
                                                                   </div>
                                                                   {/* description */}
                                                                   <div className="service-content flex-grow-1">
@@ -148,7 +96,7 @@ export default function Services() {
                                                                               href="/get-free-quotation"
                                                                               className="butn-custom butn-custom-outline rounded-pill text-primary font-bold py-2 px-4 mt-auto"
                                                                         >
-                                                                             Get a Free Quote &#x2799;
+                                                                              Get a Free Quote &#x2799;
                                                                         </Link>
                                                                   </div>
                                                             </div>

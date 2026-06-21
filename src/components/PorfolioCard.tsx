@@ -46,6 +46,8 @@ function CardImage({ image, title, link }: { image: string; title: string; link:
                   className="object-fill"
                   loading="lazy"
                   onError={() => setImgError(true)}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={75}
             />
       ) : (
             <ImagePlaceholder title={title} />
@@ -97,7 +99,7 @@ export default function PortfolioCard({ data, delay = 0 }: PortfolioCardProps) {
 
                         {/* Engagement / tagline */}
                         {data.engagement && (
-                              <p className="m-0 text-sm italic text-[#444] leading-[1.5] font-['Georgia'] font-semibold">
+                              <p className="m-0 text-sm italic text-[#444] leading-[1.5] font-['Georgia'] font-semibold tracking-wider">
                                     {data.engagement}
                               </p>
                         )}

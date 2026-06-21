@@ -13,7 +13,7 @@ export default function ChooseUs() {
                                     {/* image */}
                                     <div className="lg:w-1/2 wow fadeInUp shadow" data-wow-delay="0.1s">
                                           <div className="">
-                                                <Image src="/assets/images/why-choose-us.png" className="img-fluid w-100" alt="why choose onxius?" width={500} height={500} />
+                                                <Image src="/assets/images/why-choose-us.webp" className="img-fluid w-100" alt="why choose onxius?" width={500} height={500} loading="lazy" />
                                           </div>
                                     </div>
                                     {/* content */}

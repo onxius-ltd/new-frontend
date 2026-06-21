@@ -367,6 +367,7 @@ export default function WeHelpsToGrow() {
                                                 alt="ONXIUS Logo"
                                                 width={130}
                                                 height={35}
+                                                loading="lazy"
                                           />
                                     </Link>
 

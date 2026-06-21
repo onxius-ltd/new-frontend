@@ -10,11 +10,11 @@ import Header2 from "./Header2";
 type menuItem = { label: string; href: string };
 
 const menus: menuItem[] = [
-  { label: "Home",       href: "/"         },
-  { label: "Services",   href: "/services"  },
-  { label: "Portfolio",  href: "/portfolio" },
-  { label: "About",      href: "/about"     },
-  { label: "Contact Us", href: "/contact"   },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "About", href: "/about" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 // Returns true if this menu item should be considered active.
@@ -41,6 +41,9 @@ export default function Navbar() {
               alt="ONXIUS Logo"
               width={220}
               height={65}
+              sizes="(max-width: 640px) 150px, 220px"
+              quality={80}
+              priority
             />
           </Link>
 
@@ -55,9 +58,8 @@ export default function Navbar() {
 
           {/* Menu */}
           <div
-            className={`flex flex-column lg:flex-row justify-content-center md:justify-content-end align-items-center flex-1 toggleNav ${
-              isOpen ? "show" : "hide"
-            }`}
+            className={`flex flex-column lg:flex-row justify-content-center md:justify-content-end align-items-center flex-1 toggleNav ${isOpen ? "show" : "hide"
+              }`}
           >
             <div className="navbar-nav ms-auto py-0 align-items-center">
               {menus.map((item) => (
@@ -65,9 +67,8 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   // ── FIX: compare href against live pathname instead of index
-                  className={`nav-item nav-link ${
-                    isActive(item.href, pathname) ? "active" : ""
-                  }`}
+                  className={`nav-item nav-link ${isActive(item.href, pathname) ? "active" : ""
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

@@ -34,7 +34,7 @@ function getPortfolioData(): ItemProps[] {
         "✓ Instant confirmations reduce no-shows and build customer confidence.",
         "✓ Less time on the phone means more time focused on your service."
       ],
-      "image": "/assets/images/greattransfers.png",
+      "image": "/assets/images/greattransfers.webp",
       "tags": [
         { "label": "Booking Website" },
         { "label": "Airport Transfers" },
@@ -59,7 +59,7 @@ function getPortfolioData(): ItemProps[] {
         "✓ Loads in under 3 seconds, keeping customers engaged.",
         "✓ Sell beyond your local area and reach customers across the UK."
       ],
-      "image": "/assets/img/heavenlymeatsllc.png",
+      "image": "/assets/img/heavenlymeatsllc.webp",
       "tags": [
         { "label": "Online Shop", "is_active": true },
         { "label": "Food & Grocery" },
@@ -85,7 +85,7 @@ function getPortfolioData(): ItemProps[] {
         "✓ Reach students locally, nationally, and internationally.",
         "✓ A professional website builds trust and makes families choose you."
       ],
-      "image": "/assets/images/fatimaquranicacademy.png",
+      "image": "/assets/images/fatimaquranicacademy.webp",
       "tags": [
         { "label": "Education Website", "is_active": true },
         { "label": "Online Tutoring" },
@@ -110,7 +110,7 @@ function getPortfolioData(): ItemProps[] {
         "✓ Professionally presented services build trust with larger buyers.",
         "✓ Stands you apart from competitors still relying on word of mouth."
       ],
-      "image": "/assets/images/mr-oil.png",
+      "image": "/assets/images/mr-oil.webp",
       "tags": [
         { "label": "Corporate Website", "is_active": true },
         { "label": "Oil & Petroleum" },
@@ -131,7 +131,7 @@ function getPortfolioData(): ItemProps[] {
       "engagement": "Delivered under current organization",
       "description": "Lead-generation focused educational platform built to connect students with qualified Quran tutors worldwide. Designed for performance, trust-building, and seamless inquiry management.",
       "list": [],
-      "image": "/assets/img/onlinequranhome.png",
+      "image": "/assets/img/onlinequranhome.webp",
       "tags": [
         { "label": "Service Website" },
         { "label": "Lead Generation" },
@@ -151,7 +151,7 @@ function getPortfolioData(): ItemProps[] {
       "engagement": "Developed and Delivered Under Current Organization",
       "description": "Modern consultancy website designed to strengthen brand authority and generate qualified business leads through structured service presentation and optimized UI.",
       "list": [],
-      "image": "/assets/img/la121consultants.png",
+      "image": "/assets/img/la121consultants.webp",
       "tags": [
         { "label": "Corporate Website" },
         { "label": "Lead Generation" },
@@ -172,7 +172,7 @@ function getPortfolioData(): ItemProps[] {
       "engagement": "Developed and Managed Under Current Organization",
       "description": "Cross-platform business management application built to streamline internal operations, improve client coordination, and enhance overall engagement.",
       "list": [],
-      "image": "/assets/img/tei-enterprises.png",
+      "image": "/assets/img/tei-enterprises.webp",
       "tags": [
         { "label": "Mobile App" },
         { "label": "Android & iOS" },
@@ -204,7 +204,8 @@ export default function Portfolio({
       // that don't affect rendering correctness.
       <section
           id="portfolio"
-          className={`relative px-2 ${isPortfolioPage ? "pb-5" : "bg-[url('/assets/images/tech-light-bg.png')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
+          // className={`relative px-2 ${isPortfolioPage ? "pb-5" : "bg-[url('/assets/images/tech-light-bg.webp')] bg-cover bg-center bg-no-repeat py-6 md:py-8"}`}
+ className={`relative px-2 ${isPortfolioPage ? "pb-5" : "py-6 md:py-8"}`}
       >
         <div className="container mx-auto px-6">
           {/* Header */}
